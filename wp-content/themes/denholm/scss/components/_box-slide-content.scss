@@ -1,0 +1,11 @@
+.box-slide-content {
+  &__item {
+    display: flex !important;
+    align-items: center;
+  }
+
+  &__body {
+    width: 30%;
+    margin-left: 50px;
+  }
+}

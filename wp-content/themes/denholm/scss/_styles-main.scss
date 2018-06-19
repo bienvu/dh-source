@@ -33,10 +33,13 @@
 @import 'base/helpers';
 
 // Vendors
-//@import 'vendors/chosen';
+@import 'vendors/slick';
 
 // Components
 @import 'components/landing';
+@import 'components/box-slide';
+@import 'components/box-slide-content';
+@import 'components/box-product';
 
 // Layouts
 @import 'layouts/layout';

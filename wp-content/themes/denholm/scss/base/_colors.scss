@@ -28,7 +28,7 @@ $text-color: $gray;
 
 // Link color
 $link-color: $primary-color;
-$link-color-hover: lighten($primary-color, 25%);
+$link-color-hover: $gray;
 
 // Button color
 $btn-color: $primary-color;

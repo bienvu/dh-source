@@ -8,21 +8,32 @@
   // Add  functionality here.
 
   $(document).ready(function() {
-     $('.landing').multiscroll({
-       verticalCentered: true,
-       scrollingSpeed: 400,
-       easing: 'easeInQuart',
-       menu: false,
-       navigation: false,
-       loopBottom: false,
-       loopTop: false,
-       css3: true,
-       paddingTop: 0,
-       paddingBottom: 0,
-       normalScrollElements: null,
-       keyboardScrolling: true,
-       touchSensitivity: 5
-     });
+    if($('.landing').length) {
+      $('.landing').multiscroll({
+        verticalCentered: true,
+        scrollingSpeed: 400,
+        easing: 'easeInQuart',
+        menu: false,
+        navigation: false,
+        loopBottom: false,
+        loopTop: false,
+        css3: true,
+        paddingTop: 0,
+        paddingBottom: 0,
+        normalScrollElements: null,
+        keyboardScrolling: true,
+        touchSensitivity: 5
+      });
+    }
+
+
+     // $('.arrow-right').on('touchstart click', function (e) {
+     //   setTimeout(function(){ $('.landing').trigger('scroll'); }, 1000);
+     //
+     // });
+     // $('.arrow-left').on('touchstart click', function (e) {
+     //   setTimeout(function(){ $('.landing').trigger('scroll'); }, 1000);
+     // });
 
      //Rote title
      var strings = [],
@@ -44,6 +55,11 @@
 
        rotateHeadings();
      }
+
+     // Slider
+    $('.js-slide').slick({
+      infinite: false
+    });
 
   });
 

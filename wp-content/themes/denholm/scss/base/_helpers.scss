@@ -64,7 +64,7 @@
     display: inline-block;
     text-align: left;
     // font-size: 53.5px;
-    line-height: 1.5;
+
 
     // @include susy-media(desktopSuperwide) {
     //   font-size: 88.31px;
@@ -74,10 +74,16 @@
       position: absolute;
       border-bottom: 7px solid $white;
       left: 0;
-      bottom: 7px;
+      bottom: 0;
       height: 10px;
       width: 80px;
       content: '';
+
+      @include susy-media(desktopSuperwide) {
+        border-width: 12px;
+        height: 10px;
+        width: 140px;
+      }
     }
   }
 
@@ -85,7 +91,6 @@
     position: relative;
     display: inline-block;
     // font-size: 52.25px;
-    line-height: 1;
     color: $white;
     text-align: right;
 
@@ -98,6 +103,48 @@
       width: 100px;
       content: '';
       margin-top: -5px;
+
+      @include susy-media(desktopSuperwide) {
+        border-width: 12px;
+        left: -90px;
+        top: 50%;
+        height: 10px;
+        width: 125px;
+        content: '';
+        margin-top: -14px;
+      }
+    }
+  }
+}
+
+.denholm-logo {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  color: $text-color;
+  font-size: 86px;
+  font-weight: 700;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+  &:hover {
+    color: $text-color;
+  }
+
+  &:before {
+    position: absolute;
+    border-bottom: 7px solid $pink;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    width: 80px;
+    content: '';
+
+    @include susy-media(desktopSuperwide) {
+      border-width: 12px;
+      height: 10px;
+      width: 140px;
     }
   }
 }
