@@ -1,0 +1,26 @@
+<div id="barba-wrapper" class="wrapper">
+  <div class="barba-container" data-namespace="homepage">
+    {# {% include 'landing.twig' %} #}
+    <div class="pt-triggers">
+      <div class="dl-menuwrapper dl-menu">
+        <ul class="dl-menu arrow">
+        <li data-animation="1" class="left"><span class="arrow-left">Move to left/ from right</span></li>
+        <li data-animation="2" class="right"><span class="arrow-right">Move to right/ from left</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-perspective pt-main">
+      <div class="pt-page pt-page-1">{% include 'landing.twig' %}</div>
+      <div class="pt-page pt-page-2">{% include 'landing.twig' %}</div>
+      <div class="pt-page pt-page-3">{% include 'landing.twig' %}</div>
+    </div>
+  </div>
+</div>
+
+{# <div id="barba-wrapper" class="wrapper">
+  <div class="barba-container"  data-namespace="homepage">
+    <a class="prev" href="/pattern-lab/public/patterns/01-components-landing-sjc/01-components-landing-sjc.html">SJC page</a>
+    <br>
+    <a class="next" href="/pattern-lab/public/patterns/01-components-landing-denholm/01-components-landing-denholm.html">Holm page</a>
+  </div>
+</div> #}

@@ -1,0 +1,12 @@
+.object-specific {
+  display: flex;
+  align-items: center;
+
+  &__content {
+    width: 50%;
+  }
+
+  &__gallery {
+    width: 50%;
+  }
+}

@@ -34,6 +34,8 @@
 
 // Vendors
 @import 'vendors/slick';
+@import 'vendors/jquery-page';
+@import 'vendors/page-transition';
 
 // Components
 @import 'components/landing';
@@ -41,6 +43,9 @@
 @import 'components/box-slide-content';
 @import 'components/box-product';
 @import 'components/form-enquiries';
+@import 'components/page-transition';
+@import 'components/object-specific';
+@import 'components/box-form';
 
 // Layouts
 @import 'layouts/layout';

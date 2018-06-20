@@ -122,11 +122,18 @@
   display: inline-block;
   text-align: left;
   color: $text-color;
-  font-size: 86px;
+  font-size: 40px;
   font-weight: 700;
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 40px;
+  left: 127px;
+  z-index: 99;
+
+  // @include susy-media(desktopSuperwide) {
+  //   font-size: 86px;
+  //   top: 50px;
+  //   left: 50px
+  // }
 
   &:hover {
     color: $text-color;
@@ -134,17 +141,25 @@
 
   &:before {
     position: absolute;
-    border-bottom: 7px solid $pink;
-    left: 0;
-    bottom: 0;
-    height: 10px;
-    width: 80px;
+    border-bottom: 7px solid #e1bbba;
+    left: 8px;
+    bottom: -3px;
+    height: 7px;
+    width: 60px;
     content: '';
 
-    @include susy-media(desktopSuperwide) {
-      border-width: 12px;
-      height: 10px;
-      width: 140px;
-    }
+    // position: absolute;
+    // border-bottom: 7px solid $pink;
+    // left: 0;
+    // bottom: 0;
+    // height: 10px;
+    // width: 80px;
+    // content: '';
+
+    // @include susy-media(desktopSuperwide) {
+    //   border-width: 12px;
+    //   height: 10px;
+    //   width: 140px;
+    // }
   }
 }
