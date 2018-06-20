@@ -1,0 +1,12 @@
+.form-enquiries {
+  &__left,
+  &__right {
+    width: 50%;
+    float: left;
+  }
+
+  .form-wrap {
+    width: 100%;
+    clear: both;
+  }
+}

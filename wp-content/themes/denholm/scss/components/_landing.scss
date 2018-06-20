@@ -193,16 +193,7 @@
 }
 
 .pt-triggers {
-
-
   .dl-menu {
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
-    // width: 100%;
-    // padding: 0 15px;
-    // margin: 0;
-
     li {
       list-style: none;
       position: fixed;
@@ -247,6 +238,29 @@
         height: 27px;
         display: inline-block;
         cursor: pointer;
+      }
+    }
+
+    &.footer {
+      position: fixed;
+      bottom: 40px;
+      right: 50px;
+      display: flex;
+      align-items: center;
+      z-index: 99;
+
+      li {
+        position: relative;
+        margin-left: 20px;
+        text-transform: uppercase;
+
+        a {
+          color: $text-color;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
       }
     }
   }

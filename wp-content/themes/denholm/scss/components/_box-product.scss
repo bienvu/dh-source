@@ -4,9 +4,35 @@
     width: calc((100% - 60px) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
+    text-align: center;
 
     &:nth-child(3n) {
       margin-right: 0;
+    }
+  }
+
+  &__title {
+    font-size: 37.5px;
+    font-weight: 700;
+    margin-top: -30px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      background: url('../images/arrow-right.png') no-repeat scroll 0 0 transparent;
+      width: 20px;
+      height: 20px;
+      background-size: 100% auto;
+      font-size: 0;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      margin-left: 5px;
+      cursor: pointer;
     }
   }
 
