@@ -1,15 +1,19 @@
 <div id="barba-wrapper" class="wrapper">
   <div class="barba-container page-transition" data-namespace="denholm">
     <div class="page-transition__wrap">
-      <div class="page-transition__logo"><a href="#" class="denholm-logo">denHolm</a></div>
+      <div class="page-transition__logo"><a href="#" class="js-change-page denholm-logo" data-page-name="home" data-page-trans="slide-in-from-bottom">denHolm</a></div>
       <div class="page-transition__nav">
         <div class="js-change-page what nav" data-page-name="what" data-page-trans="slide-in-from-right">What?</div>
         <div class="js-change-page objects nav" data-page-name="objects" data-page-trans="slide-in-from-bottom">Objects</div>
         <div class="js-change-page commissions nav" data-page-name="commissions" data-page-trans="slide-in-from-left">Commissions</div>
       </div>
       <div class="page-transition__footer">
-        <div class="js-change-page nav" data-page-name="enquiries" data-page-trans="slide-in-from-top">Enquiries</div>
-        <div class="instagram"><a href="https://www.instagram.com/" target="_blank">Instagram</a></div>
+        <div class="container">
+          <div class="page-transition__footer__inner">
+            <div class="js-change-page nav" data-page-name="enquiries" data-page-trans="slide-in-from-top">Enquiries</div>
+            <div class="instagram"><a href="https://www.instagram.com/" target="_blank">Instagram</a></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="page-transition__content">
@@ -18,7 +22,7 @@
           <div class="page-transition__item" data-jquery-page-name="home">
             <div class="content-inner">
             <div class="box-slide">
-  <div class="box-slide__iiner js-slide">
+  <div class="box-slide__inner js-slide ">
     <div class="box-slide__item"><img src="../../images/slide1.png"></div>
     <div class="box-slide__item"><img src="../../images/slide1.png"></div>
     <div class="box-slide__item"><img src="../../images/slide1.png"></div>
@@ -68,32 +72,32 @@
                 <div class="box-product">
   <div class="box-product__item">
     <div class="box-product__image"><img src="../../images/product1.jpg"></div>
-    <div class="box-product__title">Bob</div>
+    <h3 class="box-product__title">Bob</h3>
     <div class="box-product__price"><span>$990 AUD</span><a href="/pattern-lab/public/patterns/01-components-landing-objects-specific/01-components-landing-objects-specific.html">Read More</a></div>
   </div>
   <div class="box-product__item">
     <div class="box-product__image"><img src="../../images/product2.jpg"></div>
-    <div class="box-product__title">Helen</div>
+    <h3 class="box-product__title">Helen</h3>
     <div class="box-product__price"><span>$990 AUD</span><a href="/pattern-lab/public/patterns/01-components-landing-objects-specific/01-components-landing-objects-specific.html">Read More</a></div>
   </div>
   <div class="box-product__item">
     <div class="box-product__image"><img src="../../images/product3.jpg"></div>
-    <div class="box-product__title">Laura</div>
+    <h3 class="box-product__title">Laura</h3>
     <div class="box-product__price"><span>$990 AUD</span><a href="/pattern-lab/public/patterns/01-components-landing-objects-specific/01-components-landing-objects-specific.html">Read More</a></div>
   </div>
   <div class="box-product__item">
     <div class="box-product__image"><img src="../../images/product4.jpg"></div>
-    <div class="box-product__title">Chippy</div>
+    <h3 class="box-product__title">Chippy</h3>
     <div class="box-product__price"><span>$990 AUD</span><a href="/pattern-lab/public/patterns/01-components-landing-objects-specific/01-components-landing-objects-specific.html">Read More</a></div>
   </div>
   <div class="box-product__item">
     <div class="box-product__image"><img src="../../images/product5.jpg"></div>
-    <div class="box-product__title">Duke</div>
+    <h3 class="box-product__title">Duke</h3>
     <div class="box-product__price"><span>$480 AUD</span><a href="/pattern-lab/public/patterns/01-components-landing-objects-specific/01-components-landing-objects-specific.html">Read More</a></div>
   </div>
   <div class="box-product__item">
     <div class="box-product__image"><img src="../../images/product6.jpg"></div>
-    <div class="box-product__title">Bolboa</div>
+    <h3 class="box-product__title">Bolboa</h3>
     <div class="box-product__price"><span>$480 AUD</span><a href="/pattern-lab/public/patterns/01-components-landing-objects-specific/01-components-landing-objects-specific.html">Read More</a></div>
   </div>
 </div>
@@ -142,10 +146,14 @@
           <option value="type3">Enquiry Type 3</option>
         </select>
       </div>
+      <div class="form-item">
+        <textarea class="form-textarea" placeholder="..." rows="4"></textarea>
+      </div>
+      <div class="form-wrap">
+        <input type="submit" value="Enquire" class="wpcf7-form-control wpcf7-submit">
+      </div>
     </div>
-    <div class="form-wrap">
-      <input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit">
-    </div>
+
   </form>
 </div>
             </div>

@@ -93,8 +93,11 @@ input[type='text'],
 .form-textarea {
   @extend %form-text;
   height: auto;
-  min-height: rem(200px);
-  padding: rem(15px 25px);
+  min-height: 188px;
+  border: 1px solid #e0b8b7;
+  box-shadow: 0 0 1px 1px #e0b8b7;
+  margin-top: 33px;
+  margin-bottom: 8px;
 }
 
 .form-item,
@@ -153,4 +156,13 @@ select {
   option {
     width: 100%;
   }
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }

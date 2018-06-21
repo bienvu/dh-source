@@ -83,8 +83,6 @@
               $(".screen").page().transition(page, trans);
 
         }
-
-
       });
     });
     // $(".screen").page().transition("home", "none");
@@ -99,7 +97,16 @@
     // Slider
     $('.js-slide').each(function() {
       $(this).slick({
-        infinite: false
+        infinite: false,
+        autoplay: true,
+      });
+    });
+
+    // Slider Circle
+    $('.js-slide-circle').each(function() {
+      $(this).slick({
+        infinite: true,
+        autoplay: true,
       });
     });
   });

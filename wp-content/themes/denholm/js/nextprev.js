@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function() {
     onEnter: function() {
       $.fn.multiscroll.destroy();
       $.fn.multiscroll.build();
-
     },
     onEnterCompleted: function() {
       $('.landing').multiscroll({
@@ -112,8 +111,96 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+  var denHolm = Barba.BaseView.extend({
+    namespace: 'denholm',
+    onEnter: function() {
+      // Slider
+      $('.js-slide').each(function() {
+        $(this).slick({
+          infinite: false
+        });
+      });
+
+      // Slider Circle
+      $('.js-slide-circle').each(function() {
+        $(this).slick({
+          infinite: true
+        });
+      });
+    },
+    onEnterCompleted: function() {
+      $('.js-change-page').each(function() {
+        var $this = $(this);
+        $this.click(function (ev) {
+          if (!$this.hasClass('is-active')) {
+            $('.js-change-page').removeClass('is-active');
+            $(this).addClass('is-active');
+            var page  = $(ev.target).attr("data-page-name");
+            var trans = $(ev.target).attr("data-page-trans");
+            if ($(".screen").page().fetch(page) === null)
+                $(".screen").page().shake();
+            else
+                $(".screen").page().transition(page, trans);
+
+          }
+        });
+      });
+    },
+    onLeave: function() {
+        // A new Transition toward a new page has just started.
+    },
+    onLeaveCompleted: function() {
+        // The Container has just been removed from the DOM.
+    }
+  });
+
+  var objectSpecific = Barba.BaseView.extend({
+    namespace: 'object-specific',
+    onEnter: function() {
+      // Slider
+      $('.js-slide').each(function() {
+        $(this).slick({
+          infinite: false
+        });
+      });
+
+      // Slider Circle
+      $('.js-slide-circle').each(function() {
+        $(this).slick({
+          infinite: true
+        });
+      });
+    },
+    onEnterCompleted: function() {
+      $('.js-change-page').each(function() {
+        var $this = $(this);
+        $this.click(function (ev) {
+          if (!$this.hasClass('is-active')) {
+            $('.js-change-page').removeClass('is-active');
+            $(this).addClass('is-active');
+            var page  = $(ev.target).attr("data-page-name");
+            var trans = $(ev.target).attr("data-page-trans");
+            if ($(".screen").page().fetch(page) === null)
+                $(".screen").page().shake();
+            else
+                $(".screen").page().transition(page, trans);
+
+          }
+        });
+      });
+    },
+    onLeave: function() {
+        // A new Transition toward a new page has just started.
+    },
+    onLeaveCompleted: function() {
+        // The Container has just been removed from the DOM.
+    }
+  });
+
   // Don't forget to init the view!
   Homepage.init();
+  denHolm.init();
+  objectSpecific.init();
   Barba.Pjax.getTransition = function() {
     return MovePage;
   };
