@@ -1,0 +1,20 @@
+{#<div class="date">{{ post.date }}</div>
+{% if post.get_field('summary') %}
+  <div class="sub-page-title">{{ post.get_field('summary') }}</div>
+{% endif %}#}
+<div class="body">{{ post.content|shortcodes }}</div>
+
+{#% if related('category') %}
+  <h3 class="related-title block-title">Related post</h3>
+  <ul class="post-related">
+    {% for post in function('related', 'category') %}
+      <li><a href="{{post.link}}">{{post.title}}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %#}
+
+{#% if function('comments_open') %}
+{% include 'comments.twig' %}
+{{ function('comment_form') }}
+{% endif %#}
+

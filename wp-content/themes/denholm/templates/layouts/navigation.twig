@@ -1,0 +1,9 @@
+<div id="header-navigation" class="header__navigation">
+  <nav class="nav main-menu hidden-on-mobile">
+    <ul>
+    	{#{ menu.main|print_r }#}
+      {% include 'menu.twig' with {'menu': menu.main} %}
+    </ul>
+  </nav>
+  {% include 'searchform.twig' %}
+</div>

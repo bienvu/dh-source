@@ -1,0 +1,58 @@
+{
+    "key": "group_583ce02a18e98",
+    "title": "Group Component",
+    "fields": [
+        {
+            "key": "field_583ce60aa4ee2",
+            "label": "Group Component",
+            "name": "group_component",
+            "type": "flexible_content",
+            "value": null,
+            "instructions": "omponentgr",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5af49151034db": {
+                    "key": "5af49151034db",
+                    "name": "box_views_group",
+                    "label": "Box Views Group",
+                    "display": "row",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Component",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-templates\/page-lgs.php"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1529725463
+}

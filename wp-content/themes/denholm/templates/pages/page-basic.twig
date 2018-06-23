@@ -1,0 +1,5 @@
+{% extends 'layout-container.twig' %}
+
+{% block content %}
+	{{ post.get_fields('page_content')|shortcodes }}
+{% endblock %}
