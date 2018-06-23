@@ -44,6 +44,9 @@ if(!is_admin()) {
     wp_register_script('lib-pagetransitions', get_stylesheet_directory_uri() . '/js/lib/pagetransitions.js', array('jquery'), '1.0.0', TRUE);
     wp_enqueue_script('lib-pagetransitions');
 
+    wp_register_script('lib-morphext', get_stylesheet_directory_uri() . '/js/lib/morphext.js', array('jquery'), '1.0.0', TRUE);
+    wp_enqueue_script('lib-morphext');
+
     wp_register_script('lib-multiscroll', get_stylesheet_directory_uri() . '/js/lib/jquery.multiscroll.min.js', array('jquery'), '0.2.1', TRUE);
     wp_enqueue_script('lib-multiscroll');
 

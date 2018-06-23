@@ -1,0 +1,11 @@
+<div class="box-text">
+  {{ html_text }}
+	{% if box_info is not empty %}<hr>{% endif %}
+	<div class="box-info">
+	{% for item in box_info %}
+		<div class="box-info__item">
+			{{ item.box_info_item }}
+		</div>
+	{% endfor %}
+  </div>
+</div>

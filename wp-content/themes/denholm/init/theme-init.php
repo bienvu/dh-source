@@ -128,7 +128,7 @@ function acfwidget($name, $widgetid) {
       foreach ($acffield as $field) {
         //print_r($field);
         $layout = $field['acf_fc_layout'];
-        
+
         switch ($layout) {
           default:
             $field['index'] = $index;
@@ -376,6 +376,11 @@ function flexible_content($name) {
       switch ($layout) {
         case 'test':
           print_r($field);
+          try {
+            Timber::render($layout . '.twig', $field);
+          } catch (Exception $e) {
+            echo 'Could not find a twig file for layout type: ' . $layout . '<br>';
+          }
 
           break;
 
@@ -428,8 +433,8 @@ function get_id_embed($url) {
       "verify_peer"=>false,
       "verify_peer_name"=>false,
     ),
-  ); 
-  
+  );
+
   $video_url = preg_match_url($url);
   $parsed = parse_url($video_url);
 
@@ -521,7 +526,7 @@ function get_id_youtube($url) {
  */
 function array_unset($arr, $key) {
   unset($arr[$key]);
-  
+
   return $arr;
 }
 
@@ -534,23 +539,23 @@ function array_unset($arr, $key) {
  *
  */
 function color_luminance( $hex, $percent ) {
-  
+
   // validate hex string
-  
+
   $hex = preg_replace( '/[^0-9a-f]/i', '', $hex );
   $new_hex = '#';
-  
+
   if ( strlen( $hex ) < 6 ) {
     $hex = $hex[0] + $hex[0] + $hex[1] + $hex[1] + $hex[2] + $hex[2];
   }
-  
+
   // convert to decimal and change luminosity
   for ($i = 0; $i < 3; $i++) {
     $dec = hexdec( substr( $hex, $i*2, 2 ) );
-    $dec = min( max( 0, $dec + $dec * $percent ), 255 ); 
+    $dec = min( max( 0, $dec + $dec * $percent ), 255 );
     $new_hex .= str_pad( dechex( $dec ) , 2, 0, STR_PAD_LEFT );
-  }   
-  
+  }
+
   return $new_hex;
 }
 /**
@@ -567,7 +572,7 @@ function pdj_twig_data($data){
   $favicon = get_template_directory_uri().'/dist/images/favicon.ico';
 
   $data['site_favicon'] = new TimberImage($favicon);
-  
+
   if (has_custom_logo()) {
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $custom_logo_attachment = wp_get_attachment_image_src( $custom_logo_id , 'full' );

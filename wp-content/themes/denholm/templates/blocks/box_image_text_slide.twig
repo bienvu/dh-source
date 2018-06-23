@@ -1,0 +1,13 @@
+<div class="box-slide-content">
+  <div class="box-slide-content__iiner js-slide">
+		{% for item in image_text_slide_item %}
+			<div class="box-slide-content__item">
+				<img src="{{item.image_text_slide_image.url}}" title="{{item.image_text_slide_image.title}}" alt="{{item.image_text_slide_image.alt}}">
+				<div class="box-slide-content__body">
+					<h2>{{ item.image_text_title }}</h2>
+					{{item.image_text_body}}
+				</div>
+			</div>
+		{% endfor %}
+  </div>
+</div>
