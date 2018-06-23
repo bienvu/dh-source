@@ -13,7 +13,7 @@
 </li>#}
 
 {#{ item|print_r }#}
-<li class="{{ item.title|replace({' ': '-'})|lower }} nav {{item.classes | join(' ')}}"><span class="js-change-page" data-page-name="{{ item.title|replace({' ': '-'})|lower }}" data-page-trans="{{ item.data_page_trans }}">{{ item.title }}</span>
+<li class="{{ item.title|replace({' ': '-'})|lower }} nav {{item.classes | join(' ')}} {% if item.get_children %}expand{% endif %}"><span class="js-change-page" data-page-name="{{ item.title|replace({' ': '-'})|lower }}" data-page-trans="{{ item.data_page_trans }}">{{ item.title }}</span>
   {% if item.get_children %}
     {% include 'sub-menu.twig' with {'child': item.get_children} %}
   {% endif %}
