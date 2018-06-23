@@ -17,10 +17,10 @@
     <script src='https://www.google.com/recaptcha/api.js?render=explicit' async defer></script>
     {{ wp_head }}
   </head>
-  <body class="{{ body_class }} {{ subsite_base_color }}" data-template="base.twig">
-    <div class="page-wrapper">
-      {% block landing_page %}
-        {% include 'header.twig' %}
+  <body class="{{ body_class }}" data-template="base.twig">
+    <div class="page-transition">
+      {% block page_transition %}
+        {% include 'page-transition.twig' %}
       {% endblock %}
 
       <main role="main">

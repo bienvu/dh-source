@@ -1,0 +1,11 @@
+{% block page_transition %}
+  <div class="page-transition__wrap">
+
+    <div class="page-transition__logo"><a href="#" class="js-change-page denholm-logo is-active" data-page-name="denholm" data-page-trans="slide-in-from-bottom">denHolm</a></div>
+
+    {% block navigation %}
+    {% include 'navigation.twig' %}
+    {% endblock %}
+    
+  </div>
+{% endblock %}
