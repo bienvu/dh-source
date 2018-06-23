@@ -82,26 +82,31 @@ document.addEventListener("DOMContentLoaded", function() {
       $.fn.multiscroll.build();
     },
     onEnterCompleted: function() {
-      $('.landing').multiscroll({
-        verticalCentered: true,
-        scrollingSpeed: 400,
-        easing: 'easeInQuart',
-        menu: false,
-        navigation: false,
-        loopBottom: false,
-        loopTop: false,
-        css3: true,
-        paddingTop: 0,
-        paddingBottom: 0,
-        normalScrollElements: null,
-        keyboardScrolling: true,
-        touchSensitivity: 5,
+      if($('.landing').length) {
+        $('.landing').multiscroll({
+          verticalCentered: true,
+          scrollingSpeed: 400,
+          easing: 'easeInQuart',
+          menu: false,
+          navigation: false,
+          loopBottom: false,
+          loopTop: true,
+          css3: true,
+          paddingTop: 0,
+          paddingBottom: 0,
+          normalScrollElements: null,
+          keyboardScrolling: true,
+          touchSensitivity: 5
+        });
+      }
 
-        // Custom selectors
-        sectionSelector: '.ms-section',
-        leftSelector: '.ms-left',
-        rightSelector: '.ms-right',
-      });
+      // Rotate text.
+      if($(".js-rotating").length) {
+        $(".js-rotating").Morphext({
+          animation: "bounceInDown", // Overrides default "bounceIn"
+          speed: 2000, // Overrides default 2000
+        });
+      }
     },
     onLeave: function() {
         // A new Transition toward a new page has just started.
@@ -116,15 +121,17 @@ document.addEventListener("DOMContentLoaded", function() {
     onEnter: function() {
       // Slider
       $('.js-slide').each(function() {
-        $(this).slick({
-          infinite: false
+        $(this).not('.slick-initialized').slick({
+          infinite: true,
+          autoplay: true,
         });
       });
 
       // Slider Circle
       $('.js-slide-circle').each(function() {
-        $(this).slick({
-          infinite: true
+        $(this).not('.slick-initialized').slick({
+          infinite: true,
+          autoplay: true,
         });
       });
     },
@@ -137,20 +144,10 @@ document.addEventListener("DOMContentLoaded", function() {
             $(this).addClass('is-active');
             var page  = $(ev.target).attr("data-page-name");
             var trans = $(ev.target).attr("data-page-trans");
-            if ($(".screen").page().fetch(page) === null)
-                $(".screen").page().shake();
-            else
-                $(".screen").page().transition(page, trans);
-
+            $(".screen").page().transition(page, trans);
           }
         });
       });
-    },
-    onLeave: function() {
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
     }
   });
 
@@ -159,15 +156,17 @@ document.addEventListener("DOMContentLoaded", function() {
     onEnter: function() {
       // Slider
       $('.js-slide').each(function() {
-        $(this).slick({
-          infinite: false
+        $(this).not('.slick-initialized').slick({
+          infinite: true,
+          autoplay: true,
         });
       });
 
       // Slider Circle
       $('.js-slide-circle').each(function() {
-        $(this).slick({
-          infinite: true
+        $(this).not('.slick-initialized').slick({
+          infinite: true,
+          autoplay: true,
         });
       });
     },
@@ -184,16 +183,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 $(".screen").page().shake();
             else
                 $(".screen").page().transition(page, trans);
-
           }
         });
       });
-    },
-    onLeave: function() {
-        // A new Transition toward a new page has just started.
-    },
-    onLeaveCompleted: function() {
-        // The Container has just been removed from the DOM.
     }
   });
 
