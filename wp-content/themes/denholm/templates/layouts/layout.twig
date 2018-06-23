@@ -17,17 +17,21 @@
     <script src='https://www.google.com/recaptcha/api.js?render=explicit' async defer></script>
     {{ wp_head }}
   </head>
-  <body class="{{ body_class }}" data-template="base.twig">
+  <body class="{{ body_class }} {% if function('is_front_page') %}landing-page{% else %}denholm{% endif %}" data-template="base.twig">
     <div class="page-transition">
-      {% block page_transition %}
-        {% include 'page-transition.twig' %}
-      {% endblock %}
-
-      <main role="main">
-        {% block content %}
+      {% if function('is_front_page') %}
+        {% block landing %}
           {{context}}
         {% endblock %}
-      </main>
+      {% else %}
+        {% block page_transition %}
+          {% include 'page-transition.twig' %}
+        {% endblock %}
+
+        {% block transition_content %}
+          {{context}}
+        {% endblock %}
+      {% endif %}
 
       {% block footer %}
         {{ wp_footer }}

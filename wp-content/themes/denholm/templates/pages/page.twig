@@ -1,13 +1,7 @@
 {% extends 'layout.twig' %}
 
-{% block content %}
+{% block transition_content %}
   {% for post in posts %}
     {{ function('flexible_content', 'group_component') }}
   {% endfor %}
-
-  {#% if function('comments_open') %}
-  {% include 'comments.twig' %}
-  {{ function('comment_form') }}
-  {% endif %#}
-
 {% endblock %}

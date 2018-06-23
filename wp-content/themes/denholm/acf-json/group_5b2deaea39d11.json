@@ -1,13 +1,13 @@
 {
-    "key": "group_583ce02a18e98",
-    "title": "Group Pages Component",
+    "key": "group_5b2deaea39d11",
+    "title": "Group Landing Page Components",
     "fields": [
         {
-            "key": "field_583ce60aa4ee2",
-            "label": "Group Component",
-            "name": "group_component",
+            "key": "field_5b2deb10c1aa4",
+            "label": "Group Components",
+            "name": "group_components",
             "type": "flexible_content",
-            "instructions": "omponentgr",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,16 +16,16 @@
                 "id": ""
             },
             "layouts": {
-                "5af49151034db": {
-                    "key": "5af49151034db",
-                    "name": "test_not_front",
-                    "label": "Test not front",
-                    "display": "row",
+                "5b2deb21bcb96": {
+                    "key": "5b2deb21bcb96",
+                    "name": "test_components",
+                    "label": "Test Components",
+                    "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5b2ded50b6d0d",
-                            "label": "Title not front",
-                            "name": "title_not_front",
+                            "key": "field_5b2deb25c1aa5",
+                            "label": "Title",
+                            "name": "title",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -46,7 +46,7 @@
                     "max": ""
                 }
             },
-            "button_label": "Add Component",
+            "button_label": "Add Components",
             "min": "",
             "max": ""
         }
@@ -54,18 +54,13 @@
     "location": [
         [
             {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            },
-            {
                 "param": "page_type",
-                "operator": "!=",
+                "operator": "==",
                 "value": "front_page"
             }
         ]
     ],
-    "menu_order": 5,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -73,5 +68,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529736553
+    "modified": 1529736001
 }

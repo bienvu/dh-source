@@ -23,20 +23,32 @@ require_once('init/options/option.php');
 if(!is_admin()) {
   // Add scripts
   function ct_libs_scripts() {
+    wp_register_script('lib-modernizr', get_stylesheet_directory_uri() . '/js/lib/modernizr.custom.js', array('jquery'), '2.8.3', TRUE);
+    wp_enqueue_script('lib-modernizr');
+
+    wp_register_script('lib-dlmenu', get_stylesheet_directory_uri() . '/js/lib/jquery.dlmenu.js', array('jquery'), '1.0.1', TRUE);
+    wp_enqueue_script('lib-dlmenu');
+
     wp_register_script('lib-TweenMax', get_stylesheet_directory_uri() . '/js/lib/TweenMax.min.js', array('jquery'), '1.18.1', TRUE);
     wp_enqueue_script('lib-TweenMax');
+
     wp_register_script('lib-slick', get_stylesheet_directory_uri() . '/js/lib/slick.min.js', array('jquery'), '1.0.0', TRUE);
     wp_enqueue_script('lib-slick');
+
     wp_register_script('lib-page', get_stylesheet_directory_uri() . '/js/lib/jquery.page.min.js', array('jquery'), '1.0.0', TRUE);
     wp_enqueue_script('lib-page');
+
     wp_register_script('lib-easings', get_stylesheet_directory_uri() . '/js/lib/jquery.easings.min.js', array('jquery'), '1.0.0', TRUE);
     wp_enqueue_script('lib-easings');
+
     wp_register_script('lib-pagetransitions', get_stylesheet_directory_uri() . '/js/lib/pagetransitions.js', array('jquery'), '1.0.0', TRUE);
     wp_enqueue_script('lib-pagetransitions');
+
     wp_register_script('lib-multiscroll', get_stylesheet_directory_uri() . '/js/lib/jquery.multiscroll.min.js', array('jquery'), '0.2.1', TRUE);
     wp_enqueue_script('lib-multiscroll');
-    wp_register_script('lib-nextprev', get_stylesheet_directory_uri() . '/js/nextprev.js', array('jquery'), '1.0.0', TRUE);
-    wp_enqueue_script('lib-nextprev');
+
+    /*wp_register_script('lib-nextprev', get_stylesheet_directory_uri() . '/js/nextprev.js', array('jquery'), '1.0.0', TRUE);
+    wp_enqueue_script('lib-nextprev');*/
 
     /*wp_register_script('lib-google-build-map', get_stylesheet_directory_uri() . '/dist/js/libs/jquery.google-build-map.js', array('jquery'), '1.0.0', TRUE);
     wp_enqueue_script('lib-google-build-map');*/
@@ -50,11 +62,11 @@ if(!is_admin()) {
 
   // Add stylesheet
   function ct_styles() {
-    $styles = get_stylesheet_directory_uri() . '/dist/css/styles.css';
+    $styles = get_stylesheet_directory_uri() . '/css/styles.css';
     wp_register_style('theme-style', $styles, array(), '1.0', 'all');
     wp_enqueue_style('theme-style');
   }
-  //add_action('wp_enqueue_scripts', 'ct_styles');
+  add_action('wp_enqueue_scripts', 'ct_styles');
 }
 
 // Add admin script

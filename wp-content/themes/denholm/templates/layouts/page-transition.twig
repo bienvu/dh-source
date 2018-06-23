@@ -4,8 +4,20 @@
     <div class="page-transition__logo"><a href="#" class="js-change-page denholm-logo is-active" data-page-name="denholm" data-page-trans="slide-in-from-bottom">denHolm</a></div>
 
     {% block navigation %}
-    {% include 'navigation.twig' %}
+    <div class="page-transition__nav">
+      <ul>
+        {% include 'navigation.twig' with {'menu': menu.main} %}
+      </ul>
+    </div>
     {% endblock %}
+
+    <div class="page-transition__footer">
+      <div class="container">
+        <ul class="page-transition__footer__inner">
+          {% include 'navigation.twig' with {'menu': menu.footer} %}
+        </ul>
+      </div>
+    </div>
     
   </div>
 {% endblock %}
