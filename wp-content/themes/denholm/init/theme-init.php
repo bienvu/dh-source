@@ -584,7 +584,8 @@ function pdj_twig_data($data){
   }
 
   // menu
-  $data['menu']['main'] = new TimberMenu('main');
+  $data['menu']['denholm'] = new TimberMenu('denholm');
+  $data['menu']['sjc'] = new TimberMenu('sjc');
   $data['menu']['footer'] = new TimberMenu('footer');
 
   // Dynamic Sidebar

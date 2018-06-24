@@ -4,7 +4,7 @@
       {% set site_logo  = 'denHolm' %}
       {% set site_class = 'denholm-logo' %}
       {% set site_data  = 'denholm' %}
-      {% set site_menu  = 'deholm' %}
+      {% set site_menu  = 'denholm' %}
     {% else %}
       {% set site_logo  = 'Steven<br> John<br> Clark' %}
       {% set site_class = 'sjc-logo' %}
@@ -13,8 +13,6 @@
     {% endif %}
 
     <div class="page-transition__logo"><a href="#" class="js-change-page is-active {{ site_class }}" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom">{{ site_logo }}</a></div>
-
-    {{ menu.sjcmenu|print_r }}
 
     {% block navigation %}
     <div class="page-transition__nav">
