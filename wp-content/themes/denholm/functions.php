@@ -139,9 +139,9 @@ function pdj_create_custom_taxonomy() {
  *
  */
 // Remove Editor Field for Landing page
-function pdj_remove_editor() {
+/*function pdj_remove_editor() {
   remove_post_type_support('page', 'editor');
-}
+}*/
 //add_action('admin_init', 'pdj_remove_editor');
 
 // Add google API Key
