@@ -1,12 +1,25 @@
 {% block page_transition %}
   <div class="page-transition__wrap">
+    {% if post.get_field('page_type').value == 'denholm' %}
+      {% set site_logo  = 'denHolm' %}
+      {% set site_class = 'denholm-logo' %}
+      {% set site_data  = 'denholm' %}
+      {% set site_menu  = 'deholm' %}
+    {% else %}
+      {% set site_logo  = 'Steven<br> John<br> Clark' %}
+      {% set site_class = 'sjc-logo' %}
+      {% set site_data  = 'sjc' %}
+      {% set site_menu  = 'sjc' %}
+    {% endif %}
 
-    <div class="page-transition__logo"><a href="#" class="js-change-page denholm-logo is-active" data-page-name="denholm" data-page-trans="slide-in-from-bottom">denHolm</a></div>
+    <div class="page-transition__logo"><a href="#" class="js-change-page is-active {{ site_class }}" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom">{{ site_logo }}</a></div>
+
+    {{ menu.sjcmenu|print_r }}
 
     {% block navigation %}
     <div class="page-transition__nav">
       <ul>
-        {% include 'navigation.twig' with {'menu': menu.main} %}
+        {% include 'navigation.twig' with {'menu': menu[site_menu]} %}
       </ul>
     </div>
     {% endblock %}

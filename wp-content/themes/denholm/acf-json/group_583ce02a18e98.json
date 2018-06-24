@@ -6,7 +6,7 @@
             "key": "field_5b2f0b15f42ce",
             "label": "Page Type",
             "name": "page_type",
-            "type": "radio",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,15 +16,16 @@
                 "id": ""
             },
             "choices": {
-                "denholm: Denholm": "denholm: Denholm",
-                "Sjc: Steven John Clark": "Sjc: Steven John Clark"
+                "denholm": "Denholm",
+                "sjc": "Steven John Clark"
             },
+            "default_value": [],
             "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "denholm: Denholm",
-            "layout": "vertical",
-            "return_format": "value"
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "array",
+            "placeholder": ""
         },
         {
             "key": "field_583ce60aa4ee2",
@@ -362,7 +363,7 @@
                             "key": "field_5b2e5d06439d6",
                             "label": "Video",
                             "name": "video",
-                            "type": "audioVideo",
+                            "type": "file",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -371,12 +372,11 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "return_format": "array",
                             "library": "all",
-                            "general_type": "both",
-                            "allowed_types": "",
                             "min_size": "",
                             "max_size": "",
-                            "return_format": "html"
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -461,5 +461,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529827787
+    "modified": 1529831226
 }

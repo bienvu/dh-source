@@ -1,8 +1,7 @@
 <div class="page-transition__item {{name|replace({' ': '-'})|lower}}" data-jquery-page-name="{{name|replace({' ': '-'})|lower}}">
   <div class="content-inner">
     <div class="box-video">
-      {{ video }}
-      {# {{ function('do_shortcode', video) }} #}
+      <video width="1280" height="720" muted="muted" loop="loop" autoplay="" preload="auto" id="theVideo" playsinline=""> <source src="{{ video.url }}" type="{{ video.mime_type }}"> </video>
     </div>
   </div>
 </div>

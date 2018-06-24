@@ -140,7 +140,7 @@
                                     "key": "field_5b2e02504fd69",
                                     "label": "Landing Link",
                                     "name": "landing_link",
-                                    "type": "url",
+                                    "type": "page_link",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -149,8 +149,13 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": ""
+                                    "post_type": [
+                                        "page"
+                                    ],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "allow_archives": 1,
+                                    "multiple": 0
                                 }
                             ]
                         },
@@ -272,7 +277,7 @@
                                     "key": "field_5b2e05360d11a",
                                     "label": "Landing Link",
                                     "name": "landing_link",
-                                    "type": "url",
+                                    "type": "page_link",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -281,8 +286,13 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": ""
+                                    "post_type": [
+                                        "page"
+                                    ],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "allow_archives": 1,
+                                    "multiple": 0
                                 }
                             ]
                         },
@@ -345,5 +355,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529743458
+    "modified": 1529830499
 }

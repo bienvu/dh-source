@@ -47,13 +47,24 @@ function getzipcode_callback() {
 
 // menu
 add_theme_support( 'menus' );
-add_action('init', 'rhm_menu');
-function rhm_menu() {
+//add_action('init', 'rhm_menu');
+/*function rhm_menu() {
   register_nav_menus(array (
+    'denholm' => 'Denholm Menu',
+    'sjc' => 'SJC Menu',
     'main' => 'Main Menu',
     'footer' => 'Footer Menu'
   ));
-}
+}*/
+
+add_action('after_setup_theme', function(){
+  register_nav_menus( array(
+    'denholmmenu' => 'Denholm Menu',
+    'sjcmenu' => 'SJC Menu',
+    'main' => 'Main Menu',
+    'footer' => 'Footer Menu'
+  ) );
+});
 
 // Theme support custom logo
 add_action( 'after_setup_theme', 'pdj_setup' );
