@@ -97,6 +97,15 @@
         speed: 2000, // Overrides default 2000
       });
     }
+
+    //
+    // $(".landing__left .ms-section").each(function() {
+    //   var $thisIndex = $(this).index();
+    //   console.log($thisIndex);
+    //   $('.landing__right .ms-section').eq($thisIndex).insertAfter($(this));
+    //   // $(this).eq($thisIndex).addClass("demo-" + $thisIndex);
+    // })
+
   });
 
 }(this, this.document, this.jQuery));

@@ -190,9 +190,9 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Don't forget to init the view!
-  Homepage.init();
-  denHolm.init();
-  objectSpecific.init();
+  // Homepage.init();
+  // denHolm.init();
+  // objectSpecific.init();
   Barba.Pjax.getTransition = function() {
     return MovePage;
   };

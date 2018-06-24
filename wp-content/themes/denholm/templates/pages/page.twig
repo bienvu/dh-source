@@ -1,9 +1,15 @@
 {% extends 'layout.twig' %}
 
 {% block transition_content %}
-  {% for post in posts %}
-    {{ function('flexible_content', 'group_component') }}
-  {% endfor %}
+  <div class="page-transition__content">
+    <div class="screen">
+      <div>
+      {% for post in posts %}
+        {{ function('flexible_content', 'group_component') }}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block landing %}

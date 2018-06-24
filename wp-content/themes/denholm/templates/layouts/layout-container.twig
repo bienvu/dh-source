@@ -18,32 +18,30 @@
     {{ wp_head }}
   </head>
   <body class="{{ body_class }} {{ subsite_base_color }}" data-template="base.twig">
-    <div class="page-wrapper">
-      {% block header %}
-        {% include 'header.twig' %}
-      {% endblock %}
+    <div class="page-transition">
+      {% if function('is_front_page') %}
+        {% block landing %}
+          {{context}}
+        {% endblock %}
+      {% else %}
+        {% block page_transition %}
+          {% include 'page-transition.twig' %}
+        {% endblock %}
 
-      {% block feature %}
-       {% include 'feature.twig' %}
-      {% endblock %}
+        {% block transition_content %}
 
-      <main role="main">
-        <div class="container">
-          {% block content %}
-            {{context}}
-          {% endblock %}
-        </div>
-      </main>
+        {% endblock %}
+
+        {{context}}
+      {% endif %}
 
       {% block footer %}
-        {% include 'footer.twig' %}
         {{ wp_footer }}
       {% endblock %}
 
       {% block footer_scripts %}
       {% endblock %}
     </div>
-
     <div id="fb-root"></div>
     <script>
     (function(d, s, id) {

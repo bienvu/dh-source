@@ -1,0 +1,20 @@
+<div class="page-transition__item {{name|replace({' ': '-'})|lower}}" data-jquery-page-name="{{name|replace({' ': '-'})|lower}}">
+  <div class="content-inner">
+<div class="box-slide {% if html_code is not empty %}has-info{% endif %}">
+      <div class="box-slide__inner js-slide ">
+        {% for item in image_slide_item %}
+          <div class="box-slide__item">
+            <img src="{{item.image_slide.url}}" title="{{item.image_slide.title}}" alt="{{item.image_slide.alt}}">
+          </div>
+        {% endfor %}
+      </div>
+      {% if html_code is not empty %}
+        <div class="box-info">
+          <div class="box-info__item">
+            {{ html_code }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

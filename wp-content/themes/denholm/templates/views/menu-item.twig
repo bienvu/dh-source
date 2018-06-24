@@ -12,9 +12,15 @@
   {% endif %}
 </li>#}
 
-{#{ item|print_r }#}
-<li class="{{ item.title|replace({' ': '-'})|lower }} nav {{item.classes | join(' ')}} {% if item.get_children %}expand{% endif %}"><span class="js-change-page" data-page-name="{{ item.title|replace({' ': '-'})|lower }}" data-page-trans="{{ item.data_page_trans }}">{{ item.title }}</span>
-  {% if item.get_children %}
-    {% include 'sub-menu.twig' with {'child': item.get_children} %}
-  {% endif %}
-</li>
+{# {{ item|print_r }} #}
+{% if item.url != '#' %}
+  <li class="{{ item.title|replace({' ': '-'})|lower }} {% if item.get_children %}expand{% endif %}">
+    <a href="{{item.url}}" target="{{ item.target }}">{{ item.title }}</a>
+  </li>
+{% else %}
+  <li class="{{ item.title|replace({' ': '-'})|lower }} nav {{item.classes | join(' ')}} {% if item.get_children %}expand{% endif %}"><span class="js-change-page" data-page-name="{{ item.title|replace({' ': '-'})|lower }}" data-page-trans="{{ item.data_page_trans }}">{{ item.title }}</span>
+    {% if item.get_children %}
+      {% include 'sub-menu.twig' with {'child': item.get_children} %}
+    {% endif %}
+  </li>
+{% endif %}

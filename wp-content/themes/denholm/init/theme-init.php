@@ -374,7 +374,7 @@ function flexible_content($name) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
-        case 'test':
+        case 'TEST':
           print_r($field);
           try {
             Timber::render($layout . '.twig', $field);

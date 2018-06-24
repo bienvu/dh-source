@@ -9,6 +9,28 @@
 // }
 
 .landing {
+  display: flex;
+
+  &__left {
+    width: 50%;
+  }
+
+  &__right {
+    width: 50%;
+  }
+
+  .ms-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.ms-table {
+      display: table;
+    }
+  }
+
   h1 {
     line-height: 1;
     // @include susy-media(desktopSuperwide) {
