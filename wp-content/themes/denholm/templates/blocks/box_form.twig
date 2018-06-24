@@ -1,5 +1,5 @@
 <div class="page-transition__item {{name|replace({' ': '-'})|lower}}" data-jquery-page-name="{{name|replace({' ': '-'})|lower}}">
   <div class="content-inner">
-    {{ box_form }}
+    {{ function('do_shortcode', '[contact-form-7 id="' ~ contact_form_export.ID ~ '" title="' ~ contact_form_export.post_title ~ '"]') }}
   </div>
 </div>
