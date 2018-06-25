@@ -9,22 +9,34 @@
 // }
 
 .landing {
-  display: flex;
+  @include susy-media(tablet) {
+    display: flex;
+  }
 
   &__left {
-    width: 50%;
+    @include susy-media(tablet) {
+      width: 50%;
+    }
   }
 
   &__right {
     width: 50%;
+
+    @include susy-media(mobileOnly) {
+      display: none;
+    }
   }
 
   .ms-section {
     position: relative;
-    height: 100vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include susy-media(tablet) {
+      height: 100vh;
+    }
 
     &.ms-table {
       display: table;

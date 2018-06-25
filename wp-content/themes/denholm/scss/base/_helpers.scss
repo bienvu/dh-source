@@ -130,6 +130,9 @@
   left: 127px;
   z-index: 99;
 
+  &.bg-active {
+    background: none;
+  }
   // @include susy-media(desktopSuperwide) {
   //   font-size: 86px;
   //   top: 50px;
@@ -177,6 +180,10 @@
   line-height: 1.05;
   left: 175px;
   z-index: 99;
+
+  &.bg-active {
+    background: none;
+  }
 
   // @include susy-media(desktopSuperwide) {
   //   font-size: 86px;
