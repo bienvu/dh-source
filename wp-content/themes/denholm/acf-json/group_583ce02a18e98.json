@@ -6,7 +6,7 @@
             "key": "field_5b2f0b15f42ce",
             "label": "Page Type",
             "name": "page_type",
-            "type": "select",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,16 +16,15 @@
                 "id": ""
             },
             "choices": {
-                "denholm": "Denholm",
-                "sjc": "Steven John Clark"
+                "denholm: Denholm": "denholm: Denholm",
+                "Sjc: Steven John Clark": "Sjc: Steven John Clark"
             },
-            "default_value": [],
             "allow_null": 0,
-            "multiple": 0,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "array",
-            "placeholder": ""
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "denholm: Denholm",
+            "layout": "vertical",
+            "return_format": "value"
         },
         {
             "key": "field_583ce60aa4ee2",
@@ -461,5 +460,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529831226
+    "modified": 1529892681
 }
