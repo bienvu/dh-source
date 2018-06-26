@@ -432,6 +432,121 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5b3051fdeb096": {
+                    "key": "5b3051fdeb096",
+                    "name": "box_products_list",
+                    "label": "Box Products List",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b30581283803",
+                            "label": "Name",
+                            "name": "name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b305209eb097",
+                            "label": "Filter By",
+                            "name": "filter_by",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "latest": "Latest Products",
+                                "custom": "Custom Products"
+                            },
+                            "default_value": [
+                                "latest"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5b305265eb098",
+                            "label": "Post per page",
+                            "name": "post_per_page",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b305209eb097",
+                                        "operator": "==",
+                                        "value": "latest"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": -1,
+                            "placeholder": "Set -1 value for return all products",
+                            "prepend": "",
+                            "append": "",
+                            "min": -1,
+                            "max": "",
+                            "step": 1
+                        },
+                        {
+                            "key": "field_5b3052c6eb099",
+                            "label": "Include Products",
+                            "name": "include_products",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b305209eb097",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": [],
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "return_format": "id",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Component",
@@ -461,5 +576,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529831226
+    "modified": 1529894952
 }

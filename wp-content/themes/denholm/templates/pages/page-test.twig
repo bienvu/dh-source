@@ -1,0 +1,27 @@
+{% extends 'layout.twig' %}
+
+{% block transition_content %}
+  <div class="page-transition__content">
+    <div class="screen">
+      <div>
+      {% for post in posts %}
+        {{ function('flexible_content', 'group_component') }}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+  {{ post.content|shortcodes }}
+  </div>
+{% endblock %}
+
+{% block landing %}
+  {% for post in posts %}
+    {{ function('flexible_content', 'group_components') }}
+  {% endfor %}
+
+  <div class="next-page">
+    <div class="arrow-btn arrow-left">Prev</div>
+    <div class="arrow-btn arrow-right">Next</div>
+  </div>
+{% endblock %}

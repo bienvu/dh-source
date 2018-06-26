@@ -374,8 +374,27 @@ function flexible_content($name) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
-        case 'TEST':
-          print_r($field);
+        case 'box_products_list':
+          //print_r($field);
+          global $woocommerce;
+          global $WOOCS;
+
+          $products_args = array(
+            'post_type'       => 'product',
+            'post_status'     => 'publish',
+          );
+
+          if ( $field['filter_by'] == 'custom' ) {
+            $products_args['post__in']  = $field['include_products'];
+            $products_args['orderby']   = 'post__in';
+          } else {
+            $products_args['posts_per_page'] = $field['post_per_page'];
+          }
+
+          $posts          = Timber::get_posts($products_args);
+          $field['posts']  = $posts;
+          $field['woocs']  = $WOOCS;
+
           try {
             Timber::render($layout . '.twig', $field);
           } catch (Exception $e) {
