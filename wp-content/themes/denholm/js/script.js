@@ -8,23 +8,23 @@
   // Add  functionality here.
 
   $(document).ready(function() {
-    if($('.landing').length) {
-      $('.landing').multiscroll({
-        verticalCentered: true,
-        scrollingSpeed: 400,
-        easing: 'easeInQuart',
-        menu: false,
-        navigation: false,
-        loopBottom: false,
-        loopTop: true,
-        css3: true,
-        paddingTop: 0,
-        paddingBottom: 0,
-        normalScrollElements: null,
-        keyboardScrolling: true,
-        touchSensitivity: 5
-      });
-    }
+    // if($('.landing').length) {
+    //   $('.landing').multiscroll({
+    //     verticalCentered: true,
+    //     scrollingSpeed: 400,
+    //     easing: 'easeInQuart',
+    //     menu: false,
+    //     navigation: false,
+    //     loopBottom: false,
+    //     loopTop: true,
+    //     css3: true,
+    //     paddingTop: 0,
+    //     paddingBottom: 0,
+    //     normalScrollElements: null,
+    //     keyboardScrolling: true,
+    //     touchSensitivity: 5
+    //   });
+    // }
 
      //Rote title
      var strings = [],
@@ -105,6 +105,10 @@
     //   $('.landing__right .ms-section').eq($thisIndex).insertAfter($(this));
     //   // $(this).eq($thisIndex).addClass("demo-" + $thisIndex);
     // })
+
+    $('.landing__right .ms-section').eq(0).clone().insertAfter($(".landing__left .ms-section").eq(0)).addClass("cloned");
+    $('.landing__right .ms-section').eq(1).clone().insertAfter($(".landing__left .ms-section").eq(2)).addClass("cloned");
+    $('.landing__right .ms-section').eq(2).clone().insertAfter($(".landing__left .ms-section").eq(4)).addClass("cloned");
 
   });
 
