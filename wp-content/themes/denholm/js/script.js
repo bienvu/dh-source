@@ -5,9 +5,72 @@
     mobileOnly = "screen and (max-width:47.9375em)", // 767px.
     mobileLandscape = "(min-width:30em)", // 480px.
     tablet = "(min-width:48em)"; // 768px.
-  // Add  functionality here.
+
+    // Show hidden function.
+    var showHiddenFunction = function (btn, flag, clickOutside, hasGrandParent, dropDown, childSelector) {
+      var $btn = btn,
+          $parent = $btn.parent(),
+          $grandParent = $parent.parents('body'),
+          $childSelector = childSelector,
+      dropDown = dropDown === true ? true : false;
+      clickOutside = clickOutside === false ? false : true;
+      hasGrandParent = hasGrandParent === true ? true : false;
+      $btn.on('click', function (e) {
+        e.preventDefault();
+        if (!$parent.hasClass(flag)) {
+          $parent.addClass(flag);
+
+          if (dropDown === true) {
+            // $childSelector.slideDown("slow");
+            $childSelector.addClass(flag);
+          }
+
+          if (hasGrandParent === true) {
+            $grandParent.addClass(flag);
+            $btn.addClass(flag);
+          }
+        }
+        else {
+          $parent.removeClass(flag);
+          if (dropDown === true) {
+            // $childSelector.slideUp("slow");
+            $childSelector.removeClass(flag);
+          }
+
+          if (hasGrandParent === true) {
+            $grandParent.removeClass(flag);
+            $btn.removeClass(flag);
+          }
+        }
+      });
+      if (clickOutside === true) {
+        $(document).on('touchstart click', function (e) {
+          if ($parent.has(e.target).length === 0 && $parent.hasClass(flag)) {
+            $parent.removeClass(flag);
+
+            if (hasGrandParent === true) {
+              $grandParent.removeClass(flag);
+              $btn.removeClass(flag);
+            }
+
+            if (dropDown === true) {
+              // $childSelector.slideUp("slow");
+              $childSelector.removeClass(flag);
+            }
+          }
+        });
+      }
+    };
+
 
   $(document).ready(function() {
+    // Menu mobile
+    var $menuResponsive = $('.js-toggle-menu'),
+        showMainMenuFlag = 'is-show',
+        $parent = $menuResponsive.closest('.page-transition__wrap'),
+        $childMenu = $parent.find('.page-transition__menu');
+    showHiddenFunction($menuResponsive, showMainMenuFlag, false, true, true, $childMenu);
+
     // if($('.landing').length) {
     //   $('.landing').multiscroll({
     //     verticalCentered: true,
@@ -70,6 +133,8 @@
           //   });
           // });
         }
+
+        $("body, .page-transition__menu-mobile, .js-toggle-menu, .page-transition__menu").removeClass('is-show');
         return false;
       });
     });
