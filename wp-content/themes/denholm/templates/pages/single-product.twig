@@ -34,7 +34,7 @@
       </div>
       <div class="object-specific__group">
         <h2 class="object-specific__title">{{ post.title }}</h2>
-        <div class="price">{{ fn('get_woocommerce_currency_symbol') }} {{ fn('apply_filters', 'woocs_exchange_value', product.get_price)|number_format(2, '.', ',') }}</div>
+        <div class="price">{{ fn('get_woocommerce_currency_symbol') }} {{ fn('apply_filters', 'woocs_exchange_value', product.get_price)|number_format(2, '.', ',') }} {{ fn('get_woocommerce_currency') }}</div>
       </div>
     </div>
   </div>
