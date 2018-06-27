@@ -27,7 +27,7 @@ function timber_set_product( $post ) {
 }
 
 
-// Pagination action.
+// Product ajax action.
 add_action( 'wp_ajax_productdetail', 'productdetail_callback' );
 add_action( 'wp_ajax_nopriv_productdetail', 'productdetail_callback' );
 function productdetail_callback() {
@@ -42,6 +42,29 @@ function productdetail_callback() {
   $context['current_path']  = $values['currentPath'];
 
   Timber::render( 'single-product.twig', $context );
+
+  $content = ob_get_contents();
+  ob_end_clean();
+
+  $result = json_encode($content);
+  echo $result;
+  wp_die();
+}
+
+// Page ajax action.
+add_action( 'wp_ajax_pageloadajax', 'pageloadajax_callback' );
+add_action( 'wp_ajax_nopriv_pageloadajax', 'pageloadajax_callback' );
+function pageloadajax_callback() {
+  $values = $_REQUEST;
+
+  ob_start();
+  global $product;
+
+  $context                  = Timber::get_context();
+  $post                     = new TimberPost($values['pageID']);
+  $context['post']          = $post;
+
+  Timber::render( 'page-ajaxload.twig', $context );
 
   $content = ob_get_contents();
   ob_end_clean();

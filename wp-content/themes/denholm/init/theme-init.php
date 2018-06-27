@@ -361,12 +361,17 @@ function acf_return_item($field, $type = 0, $post_obj, $post_type, $taxonomy = '
  * @return Array all sub_fields in flexible_content field.
  *
  */
-function flexible_content($name) {
+function flexible_content($name, $postid) {
   $fc_type = array();
 
   global $post;
-  $fc = get_field( $name, $post->ID );
-  $fc_ob = get_field_object( $name, $post->ID );
+  if ($postid) {
+    $fc = get_field( $name, $postid );
+    $fc_ob = get_field_object( $name, $postid );
+  } else {
+    $fc = get_field( $name, $post->ID );
+    $fc_ob = get_field_object( $name, $post->ID );
+  }
 
   if ( !empty( $fc ) ) {
     foreach ($fc as $key=>$field) {

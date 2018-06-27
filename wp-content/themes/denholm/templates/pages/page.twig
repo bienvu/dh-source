@@ -5,7 +5,7 @@
     <div class="screen">
       <div>
         {% for post in posts %}
-          {{ function('flexible_content', 'group_component') }}
+          {{ function('flexible_content', 'group_component', post.ID) }}
         {% endfor %}
         <div class="page-transition__item object-specific" data-jquery-page-name="object-specific"></div>
       </div>
@@ -18,7 +18,7 @@
 
 {% block landing %}
   {% for post in posts %}
-    {{ function('flexible_content', 'group_components') }}
+    {{ function('flexible_content', 'group_components', post.ID) }}
   {% endfor %}
 
   <div class="next-page">
