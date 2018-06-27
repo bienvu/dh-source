@@ -1,7 +1,7 @@
 <div class="page-transition__item {{name|replace({' ': '-'})|lower}}" data-jquery-page-name="{{name|replace({' ': '-'})|lower}}">
   <div class="content-inner">
     <div class="box-product">
-      {{ fn('do_shortcode', '[woocs]') }}
+      {#{ fn('do_shortcode', '[woocs]') }#}
 
       {#{ fn('do_shortcode', '[products]') }#}
       <div class="woocommerce">
@@ -10,7 +10,7 @@
           {% set product = fn('wc_get_product', post.ID) %}
           <div class="box-product__item {{ post.class }}">
             <div class="box-product__image">
-              <img src="{{ function('get_post_thumbnail_id', post.ID) }}">
+              <img src="{{ post.thumbnail.src('shop_single') }}">
             </div>
             <h3 class="box-product__title">{{ post.title }}</h3>
             <div class="box-product__price">
@@ -18,7 +18,7 @@
                 {{ fn('get_woocommerce_currency_symbol') }}
                 {{ fn('apply_filters', 'woocs_exchange_value', product.get_price)|number_format(2, '.', ',') }}
               </span>
-              <a class="next" href="{{ function('get_permalink', post.ID) }}">Read More</a>
+              <a class="next js-change-page load-product" href="#" data-product-id={{ post.ID }} data-current-path="{{ fn('get_permalink') }}" data-page-name="object-specific" data-page-trans="slide-in-from-bottom">Read More</a>
             </div>
           </div>
         {% endfor %}

@@ -4,9 +4,10 @@
   <div class="page-transition__content">
     <div class="screen">
       <div>
-      {% for post in posts %}
-        {{ function('flexible_content', 'group_component') }}
-      {% endfor %}
+        {% for post in posts %}
+          {{ function('flexible_content', 'group_component') }}
+        {% endfor %}
+        <div class="page-transition__item object-specific" data-jquery-page-name="object-specific"></div>
       </div>
     </div>
   </div>

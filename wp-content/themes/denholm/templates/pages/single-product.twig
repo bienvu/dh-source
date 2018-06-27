@@ -1,0 +1,40 @@
+<div class="content-inner">
+  {% set product = fn('wc_get_product', post.ID) %}
+
+  <div class="object-specific">
+    <div class="object-specific__content">
+      <a class="back-link prev" href="{{ current_path }}">Back</a>
+      <div class="object-specific__body">
+        {{ post.content|shortcodes }}
+      </div>
+      <div class="object-specific__quantity">
+        <form>
+          <div class="form-item">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" min="1" max="{{ product.get_stock_quantity }}" value="1">
+          </div>
+          <div class="form-wrapper">
+            <input type="submit" value="Purchase">
+            {#{ fn('do_shortcode', '[add_to_cart id="' ~ post.ID ~ '" sku="' ~  ~ '"]') }#}
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="object-specific__gallery">
+      <div class="object-specific__slide js-slide">
+        <div class="object-specific__item">
+          <img src="{{ post.thumbnail.src('shop_single') }}">
+        </div>
+        {% for image in product.get_gallery_attachment_ids %}
+          <div class="object-specific__item">
+            <img src="{{ fn('wp_get_attachment_url', image) }}">
+          </div>
+        {% endfor %}
+      </div>
+      <div class="object-specific__group">
+        <h2 class="object-specific__title">{{ post.title }}</h2>
+        <div class="price">{{ fn('get_woocommerce_currency_symbol') }} {{ fn('apply_filters', 'woocs_exchange_value', product.get_price)|number_format(2, '.', ',') }}</div>
+      </div>
+    </div>
+  </div>
+</div>
