@@ -1,14 +1,30 @@
 .box-product {
+  .products {
+    margin-bottom: 0;
+  }
   &__item {
-    float: left;
-    width: calc((100% - 60px) / 3);
-    margin-right: 109px;
-    margin-bottom: 37px;
+    margin-bottom: 37px !important;
     text-align: center;
-    max-width: 190px;
+
+    @include susy-media(tablet) {
+      float: left;
+      width: calc((100% - 60px) / 3);
+      margin-right: 109px;
+      max-width: 190px;
+    }
 
     &:nth-child(3n) {
       margin-right: 0;
+    }
+
+    &:nth-child(3n + 1) {
+      clear: both;
+    }
+
+    @include susy-media(mobileOnly) {
+      &:last-child {
+        margin-bottom: 0!important;
+      }
     }
   }
 
@@ -42,6 +58,16 @@
       display: inline-block;
       margin-left: 8px;
       cursor: pointer;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        content: '';
+      }
 
       // @include susy-media(desktopSuperwide) {
       //   width: 20px;

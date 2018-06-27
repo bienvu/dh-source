@@ -1,16 +1,40 @@
 .object-specific {
   display: flex;
-  
+  flex-wrap: wrap;
+
   &__content {
-    width: 46%;
-    margin-right: 57px;
+    @include susy-media(mobileOnly) {
+      width: 100%;
+      order: 2;
+
+      .back-link  {
+        display: none;
+      }
+    }
+
+    @include susy-media(tablet) {
+      width: 46%;
+      margin-right: 57px;
+    }
   }
 
   &__gallery {
-    width: 41%;
+    @include susy-media(mobileOnly) {
+      width: 100%;
+      order: 1;
+      margin-bottom: 30px;
+    }
 
-    img {
-      max-width: 323px;
+    @include susy-media(tablet) {
+      width: 41%;
+
+      img {
+        max-width: 323px;
+      }
+
+      .back-link  {
+        display: none;
+      }
     }
   }
 
@@ -47,8 +71,12 @@
   }
 
   &__body {
-    margin-bottom: 115px;
+    margin-bottom: 40px;
     clear: both;
+
+    @include susy-media(tablet) {
+      margin-bottom: 115px;
+    }
   }
 
   &__title {

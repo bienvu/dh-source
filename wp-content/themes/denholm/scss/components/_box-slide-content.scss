@@ -12,6 +12,7 @@
     @include susy-media(tablet) {
       display: flex !important;
       align-items: center;
+      min-width: 600px;
     }
 
     h2 {
@@ -38,7 +39,7 @@
 
   &__image {
     line-height: 0;
-    
+
     @include susy-media(mobileOnly) {
       margin-top: 25px;
       margin-bottom: 30px;

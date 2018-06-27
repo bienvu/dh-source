@@ -12,21 +12,37 @@
       {% set site_menu  = 'sjc' %}
     {% endif %}
 
-    <div class="page-transition__logo"><a href="#" class="js-change-page is-active {{ site_class }}" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom">{{ site_logo }}</a></div>
-
-    {% block navigation %}
-    <div class="page-transition__nav">
-      <ul>
-        {% include 'navigation.twig' with {'menu': menu[site_menu]} %}
-      </ul>
+    <div class="page-transition__logo"><a href="#" class="js-change-page js-logo is-active {{ site_class }}" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom">{{ site_logo }}</a></div>
+    <div class="red-button back-to-home">
+      <a href="/"></a>
     </div>
-    {% endblock %}
+    <div class="page-transition__menu-mobile">
+      <span class="js-change-page js-logo back-home is-active" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom"></span>
+      <span class="menu js-toggle-menu">Menu</span>
+    </div>
+    <div class="page-transition__menu">
+      <div class="page-transition__inner">
+        {% block navigation %}
+        <div class="page-transition__nav">
+          <ul>
+            {% include 'navigation.twig' with {'menu': menu[site_menu]} %}
+          </ul>
+        </div>
+        {% endblock %}
 
-    <div class="page-transition__footer">
-      <div class="container">
-        <ul class="page-transition__footer__inner">
-          {% include 'navigation.twig' with {'menu': menu.footer} %}
-        </ul>
+        <div class="page-transition__footer">
+          <div class="container">
+            <ul class="page-transition__footer__inner">
+              {% include 'navigation.twig' with {'menu': menu.footer} %}
+            </ul>
+          </div>
+        </div>
+        <div class="page-transition__link">
+          <div class="red-button">
+            <a href="/"></a>
+          </div>
+          <span>denHolm Sttudios</span>
+        </div>
       </div>
     </div>
 

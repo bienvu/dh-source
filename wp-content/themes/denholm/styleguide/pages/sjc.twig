@@ -12,13 +12,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?{{ cacheBuster }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
   </head>
-  <body class="sjc">
+  <body class="is-home">
     <div id="barba-wrapper" class="wrapper">
-      <div class="barba-container page-transition" data-namespace="denholm">
+      <div class="barba-container page-transition" data-namespace="sjc">
         <div class="page-transition__wrap">
-          <div class="page-transition__logo"><a href="#" class="js-change-page sjc-logo is-active" data-page-name="home" data-page-trans="slide-in-from-bottom">Steven<br> John<br> Clark</a></div>
-          <div class="red-button back-to-home"><a href="landing.html"></a></div>
+          <div class="page-transition__logo"><a href="#" class="js-change-page js-logo sjc-logo is-active" data-page-name="home" data-page-trans="slide-in-from-bottom">Steven<br> John<br> Clark</a></div>
+          <div class="red-button back-to-home"><a href="../styleguide/landing.html"></a></div>
           <div class="page-transition__menu-mobile">
+            <span  class="js-change-page js-logo back-home is-active" data-page-name="home" data-page-trans="slide-in-from-bottom"></span>
             <span class="menu js-toggle-menu">Menu</span>
           </div>
           <div class="page-transition__menu">
@@ -109,6 +110,7 @@
     <script src="../js/lib/pagetransitions.js?{{ cacheBuster }}"></script>
     <script src="../js/lib/jquery.easings.min.js?{{ cacheBuster }}"></script>
     <script src="../js/lib/jquery.multiscroll.min.js?{{ cacheBuster }}"></script>
+    <script src="../js/functions.js?{{ cacheBuster }}"></script>
     <script src="../js/nextprev.js?{{ cacheBuster }}"></script>
     <script src="../js/script.js?{{ cacheBuster }}"></script>
   </body>

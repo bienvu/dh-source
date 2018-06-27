@@ -14,16 +14,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
 </head>
 
-<body class="denholm">
+<body class="is-home">
   <div id="barba-wrapper" class="wrapper">
     <div class="barba-container page-transition" data-namespace="denholm">
       <div class="page-transition__wrap">
-        <div class="page-transition__logo"><a href="#" class="js-change-page denholm-logo is-active" data-page-name="denholm" data-page-trans="slide-in-from-bottom">denHolm</a>
+        <div class="page-transition__logo"><a href="#" class="js-change-page js-logo denholm-logo is-active" data-page-name="home" data-page-trans="slide-in-from-bottom">denHolm</a>
         </div>
         <div class="red-button back-to-home">
-          <a href="landing.html"></a>
+          <a href="../styleguide/landing.html"></a>
         </div>
         <div class="page-transition__menu-mobile">
+          <span class="js-change-page js-logo back-home is-active" data-page-name="home" data-page-trans="slide-in-from-bottom"></span>
           <span class="menu js-toggle-menu">Menu</span>
         </div>
         <div class="page-transition__menu">
@@ -62,7 +63,7 @@
       <div class="page-transition__content">
         <div class="screen">
           <div>
-            <div class="page-transition__item denholm home" data-jquery-page-name="denholm">
+            <div class="page-transition__item denholm home" data-jquery-page-name="home">
               <div class="content-inner">
                 <div class="box-slide">
                   <div class="box-slide__inner js-slide ">
@@ -259,6 +260,7 @@
   <script src="../js/lib/pagetransitions.js?"></script>
   <script src="../js/lib/jquery.easings.min.js?"></script>
   <script src="../js/lib/jquery.multiscroll.min.js?"></script>
+  <script src="../js/functions.js?"></script>
   <script src="../js/nextprev.js?"></script>
   <script src="../js/script.js?"></script>
 </body>

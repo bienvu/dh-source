@@ -16,16 +16,20 @@
         padding: 4px 8px;
         line-height: .7;
         display: inline-block;
+        position: relative;
+        z-index: 4;
+
+        &:before {
+          content: '>';
+          position: absolute;
+          color: red;
+          font-size: 24px;
+          left: 50%;
+          transform: rotate(270deg);
+        }
       }
 
-      &:before {
-        content: '>';
-        position: absolute;
-        color: red;
-        font-size: 24px;
-        left: 50%;
-        transform: rotate(270deg);
-      }
+
 
       &.objects,
       &.top,
@@ -36,7 +40,7 @@
         left: 50%;
         transform: translate(-50%, 0);
 
-        &:before {
+        span:before {
           top: -30px;
           margin-left: -2px;
         }
@@ -47,7 +51,7 @@
         left: 28px;
         transform: rotate(-90deg);
 
-        &:before {
+        span:before {
           top: -32px;
           margin-left: -8px;
         }
@@ -57,7 +61,7 @@
         left: 57px;
         transform: rotate(-90deg);
 
-        &:before {
+        span:before {
           top: -32px;
           margin-left: -8px;
         }
@@ -68,7 +72,7 @@
         right: -15px;
         transform: rotate(-90deg);
 
-        &:before {
+        span:before {
           top: 38px;
           transform: rotate(-270deg);
           margin-left: -8px;
@@ -79,7 +83,7 @@
         right: 30px;
         transform: rotate(-90deg);
 
-        &:before {
+        span:before {
           top: 38px;
           transform: rotate(-270deg);
           margin-left: -8px;
@@ -143,10 +147,20 @@
     }
 
     .expand {
+      &:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        content: '';
+        height: 100px;
+        z-index: 2;
+      }
+
       &:hover {
         ul {
           @include susy-media(tablet) {
-            transition: .5s;
+            transition: .3s;
             top: -94px;
             opacity: 1;
             visibility: visible;
@@ -155,7 +169,7 @@
       }
       ul {
         font-size: 22px;
-        color: red;
+        color: $pink;
         text-transform: capitalize;
 
         @include susy-media(mobileOnly) {
@@ -169,22 +183,21 @@
           transform: rotate(90deg);
           font-size: 12px;
           line-height: 1.4;
-
           color: #e1bbba;
           margin: 0;
           z-index: 1;
-          transition: .5s;
+          transition: .3s;
           visibility: hidden;
           opacity: 0;
 
           &:before {
             position: absolute;
             content: '';
-            left: -50px;
-            top: -50px;
+            left: 0px;
+            top: -20px;
             display: inline-block;
-            width: 136px;
-            height: 200px;
+            width: 90px;
+            height: 120px;
           }
         }
 
@@ -201,7 +214,7 @@
             &:before {
               content: '';
               position: absolute;
-              right: -24px;
+              right: -16px;
               width: 4px;
               height: 4px;
               background-color: #ed2024;
@@ -213,10 +226,15 @@
           span {
             display: inline-block;
             padding: 0 5px;
+            cursor: pointer;
 
             @include susy-media(tablet) {
               width: 100%;
               padding: 5px 10px;
+            }
+
+            &:before {
+              display: none;
             }
           }
         }
@@ -310,7 +328,7 @@
         font-size: 19px;
       }
 
-      &:before {
+      span:before {
         display: none;
       }
     }
@@ -322,6 +340,7 @@
     justify-content: center;
     height: 100vh;
     background-color: #fff;
+    position: relative;
 
     &.home {
       background-color: transparent;
@@ -335,7 +354,7 @@
       right: 0;
       bottom: 0;
       top: 0;
-      background: #ccc;
+      background: #fff;
       width: 100%;
       height: 100%;
       display: flex;
@@ -360,6 +379,17 @@
   &__menu-mobile {
     @include susy-media(tablet) {
       display: none;
+    }
+
+    .back-home {
+      position: absolute;
+      top: 33px;
+      left: 40px;
+      width: 100px;
+      height: 10px;
+      background-color: $yellow;
+      z-index: 9;
+      cursor: pointer;
     }
 
     .menu {
@@ -424,7 +454,6 @@
   max-width: 788px;
   width: 100%;
   max-height: calc(100% - 240px);
-  // overflow-y: auto;
 
   @include susy-media(mobileOnly) {
     padding: 0 45px;
@@ -439,6 +468,32 @@
   }
 }
 
+.objects,
+.object-specific {
+  .content-inner {
+    @include susy-media(mobileOnly) {
+      overflow-y: auto;
+      max-height: calc(100% - 110px);
+      margin-top: 60px;
+    }
+  }
+}
+
 .bg-active {
   background: #f9f1f1;
+}
+
+.is-home {
+  .back-home {
+    display: none;
+  }
+
+  .back-to-home {
+    display: block;
+    z-index: 8;
+  }
+}
+
+.back-to-home {
+  display: none;
 }
