@@ -1,0 +1,9 @@
+{% include 'page-transition.twig' %}
+<div class="page-transition__content">
+  <div class="screen">
+    <div>
+      {{ function('flexible_content', 'group_component', post.ID) }}
+      <div class="page-transition__item object-specific" data-jquery-page-name="object-specific"></div>
+    </div>
+  </div>
+</div>
