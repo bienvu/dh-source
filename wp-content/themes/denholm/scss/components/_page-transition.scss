@@ -155,7 +155,7 @@
       }
       ul {
         font-size: 22px;
-        color: red;
+        color: $pink;
         text-transform: capitalize;
 
         @include susy-media(mobileOnly) {
@@ -213,6 +213,7 @@
           span {
             display: inline-block;
             padding: 0 5px;
+            cursor: pointer;
 
             @include susy-media(tablet) {
               width: 100%;
@@ -335,7 +336,7 @@
       right: 0;
       bottom: 0;
       top: 0;
-      background: #ccc;
+      background: #fff;
       width: 100%;
       height: 100%;
       display: flex;
@@ -360,6 +361,17 @@
   &__menu-mobile {
     @include susy-media(tablet) {
       display: none;
+    }
+
+    .back-home {
+      position: absolute;
+      top: 33px;
+      left: 40px;
+      width: 100px;
+      height: 10px;
+      background-color: $yellow;
+      z-index: 9;
+      cursor: pointer;
     }
 
     .menu {
@@ -424,7 +436,6 @@
   max-width: 788px;
   width: 100%;
   max-height: calc(100% - 240px);
-  // overflow-y: auto;
 
   @include susy-media(mobileOnly) {
     padding: 0 45px;
@@ -441,4 +452,19 @@
 
 .bg-active {
   background: #f9f1f1;
+}
+
+.is-home {
+  .back-home {
+    display: none;
+  }
+
+  .back-to-home {
+    display: block;
+    z-index: 99;
+  }
+}
+
+.back-to-home {
+  display: none;
 }

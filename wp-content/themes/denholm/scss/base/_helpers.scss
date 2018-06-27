@@ -230,7 +230,11 @@
 .red-button {
   position: absolute;
   left: 40px;
-  top: 50px;
+  top: 25px;
+
+  @include susy-media(tablet) {
+    top: 50px;
+  }
 
   a {
     background: $red;
