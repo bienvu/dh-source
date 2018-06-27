@@ -89,7 +89,7 @@
   $(document).ready(function() {
     $('window').showHideFunction();
     $('window').scrollPagge();
-    //$('window').pagesTransition();
+    $('window').pagesTransition();
     $('window').rotateText();
     $('window').sliderFunction();
 
