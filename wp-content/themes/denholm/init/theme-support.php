@@ -5,15 +5,48 @@
 **
 */
 
+function pdj_add_woocommerce_support() {
+  add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'pdj_add_woocommerce_support' );
+
+/**
+ *
+ * Woocommerce support theme
+ * @param type $post String slug of Post.
+ *
+ * @return type $product Object for Product.
+ *
+ */
+function timber_set_product( $post ) {
+  global $product;
+  
+  if ( is_woocommerce() ) {
+    $product = wc_get_product( $post->ID );
+  }
+}
+
 
 // Pagination action.
-add_action( 'wp_ajax_pagination', 'pagination_callback' );
-add_action( 'wp_ajax_nopriv_pagination', 'pagination_callback' );
-function pagination_callback() {
+add_action( 'wp_ajax_productdetail', 'productdetail_callback' );
+add_action( 'wp_ajax_nopriv_productdetail', 'productdetail_callback' );
+function productdetail_callback() {
   $values = $_REQUEST;
-  //$content = do_shortcode ('[view_list name="'.$values['name'].'" post_type="news" per_page="2" custom_fields=""]');
-  $content = do_shortcode ('[view_list name="'.$values['name'].'" post_type="'.$values['post_type'].'" per_page="'.$values['per_page'].'" cat_id="'.$values['cat_id'].'" custom_fields="'.$values['custom_fields'].'" current_paged="'.$values['paged_index'].'" use_pagination="'.$values['use_pagination'].'" filter_select="0" ]');
-  $result = json_encode(array('markup' => $content));
+
+  ob_start();
+  global $product;
+
+  $context                  = Timber::get_context();
+  $post                     = new TimberPost($values['productID']);
+  $context['post']          = $post;
+  $context['current_path']  = $values['currentPath'];
+
+  Timber::render( 'single-product.twig', $context );
+
+  $content = ob_get_contents();
+  ob_end_clean();
+
+  $result = json_encode($content);
   echo $result;
   wp_die();
 }
@@ -115,7 +148,7 @@ function pdj_theme_support_files_type($mime_types){
 
 
 /* Add Dynamic Siderbar */
-/*if (function_exists('register_sidebar')) {
+if (function_exists('register_sidebar')) {
   // Define Sidebar
   register_sidebar(array(
     'name' => __('Sidebar'),
@@ -146,7 +179,7 @@ function pdj_theme_support_files_type($mime_types){
     'before_title' => '<h3>',
     'after_title' => '</h3>'
   ));
-}*/
+}
 
 // Theme support get widget ID
 function pdj_get_widget_id($widget_instance) {

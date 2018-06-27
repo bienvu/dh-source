@@ -22,7 +22,7 @@ function ct_options_admin_scripts() {
   wp_localize_script( 'options-script', 'fieldsAjax', array( 'ajaxurl' => admin_url('admin-ajax.php' )));
   wp_enqueue_script('options-script');
 }
-add_action('admin_init', 'ct_options_admin_scripts');
+add_action('admin_enqueue_scripts', 'ct_options_admin_scripts');
 
 // Add admin script
 function ct_options_admin_styles() {

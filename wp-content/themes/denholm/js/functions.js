@@ -44,6 +44,7 @@
            var trans = $(ev.target).attr("data-page-trans");
            $(".screen").page().transition(page, trans);
          }
+         $(".js-slide").slick("refresh");
 
          $("body, .page-transition__menu-mobile, .js-toggle-menu, .page-transition__menu").removeClass('is-show');
 

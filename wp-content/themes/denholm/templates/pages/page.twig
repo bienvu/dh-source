@@ -4,19 +4,16 @@
   <div class="page-transition__content">
     <div class="screen">
       <div>
-      {% for post in posts %}
-        {{ function('flexible_content', 'group_component') }}
-      {% endfor %}
-
-        <div class="page-transition__item home">
-          <div class="content-inner">
-            {{ post.content|shortcodes }}
-          </div>
-        </div>
+        {% for post in posts %}
+          {{ function('flexible_content', 'group_component') }}
+        {% endfor %}
+        <div class="page-transition__item object-specific" data-jquery-page-name="object-specific"></div>
       </div>
     </div>
   </div>
-
+  <div class="main-content">
+  {{ post.content|shortcodes }}
+  </div>
 {% endblock %}
 
 {% block landing %}

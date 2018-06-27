@@ -18,19 +18,44 @@
   <div id="barba-wrapper" class="wrapper">
     <div class="barba-container page-transition" data-namespace="object-specific">
       <div class="page-transition__wrap">
-        <div class="page-transition__logo"><a href="/styleguide/denholm.html" class="denholm-logo">denHolm</a>
+        <div class="page-transition__logo"><a href="#" class="js-change-page js-logo denholm-logo is-active" data-page-name="home" data-page-trans="slide-in-from-bottom">denHolm</a>
         </div>
-        <div class="page-transition__nav">
-          <div class="js-change-page what nav" data-page-name="what" data-page-trans="slide-in-from-right">What?</div>
-          <div class="js-change-page objects nav" data-page-name="objects" data-page-trans="slide-in-from-bottom">Objects</div>
-          <div class="js-change-page commissions nav" data-page-name="commissions" data-page-trans="slide-in-from-left">Commissions</div>
+        <div class="red-button back-to-home">
+          <a href="../styleguide/landing.html"></a>
         </div>
-        <div class="page-transition__footer">
-          <div class="container">
-            <div class="page-transition__footer__inner">
-              <div class="js-change-page nav" data-page-name="enquiries" data-page-trans="slide-in-from-top">Enquiries</div>
-              <div class="instagram"><a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <div class="page-transition__menu-mobile">
+          <span class="js-change-page js-logo back-home is-active" data-page-name="home" data-page-trans="slide-in-from-bottom"></span>
+          <span class="menu js-toggle-menu">Menu</span>
+        </div>
+        <div class="page-transition__menu">
+          <div class="page-transition__inner">
+            <div class="page-transition__nav">
+              <ul>
+                <li class="left nav">
+                  <span class="js-change-page" data-page-name="what" data-page-trans="slide-in-from-right">What?</span>
+                </li>
+                <li class="top nav">
+                  <span class="js-change-page" data-page-name="objects" data-page-trans="slide-in-from-bottom">Objects</span>
+                </li>
+                <li class="right nav"><span class="js-change-page" data-page-name="commissions" data-page-trans="slide-in-from-left">Commissions</span>
+                </li>
+              </ul>
+            </div>
+            <div class="page-transition__footer">
+              <div class="container">
+                <ul class="page-transition__footer__inner">
+                  <li><span class="js-change-page nav" data-page-name="enquiries" data-page-trans="slide-in-from-top">Enquiries</span>
+                  </li>
+                  <li class="instagram"><a href="https://www.instagram.com/" target="_blank">Instagram</a>
+                  </li>
+                </ul>
               </div>
+            </div>
+            <div class="page-transition__link">
+              <div class="red-button">
+                <a href="landing.html"></a>
+              </div>
+              <span>denHolm Sttudios</span>
             </div>
           </div>
         </div>
@@ -63,6 +88,7 @@
                     </div>
                   </div>
                   <div class="object-specific__gallery">
+                    <a class="back-link prev" href="../styleguide/denholm.html">Back</a>
                     <div class="object-specific__slide js-slide">
                       <div class="object-specific__item">
                         <img src="images/produc-detail.png">
@@ -262,6 +288,7 @@
   <script src="../js/lib/pagetransitions.js?"></script>
   <script src="../js/lib/jquery.easings.min.js?"></script>
   <script src="../js/lib/jquery.multiscroll.min.js?"></script>
+  <script src="../js/functions.js?"></script>
   <script src="../js/nextprev.js?"></script>
   <script src="../js/script.js?"></script>
 </body>
