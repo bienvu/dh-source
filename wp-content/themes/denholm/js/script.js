@@ -82,6 +82,7 @@
           $('window').pagesTransition();
           $('window').sliderFunction();
           $('.page-transition').addClass(page_name);
+          $('.box-product__item .load-product').on('click', ajaxProductDetail);
         },
         error: function(response) {
         }

@@ -1,18 +1,13 @@
 {% extends 'layout.twig' %}
 
-{% block content %}
-  {% if function('has_custom_logo') %}
-    {% set logo_url = custom_logo %}
-  {% else %}
-    {% set logo_url = site_logo_scroll %}
-  {% endif %}
+{% block page_transition %}
+  {% set site_logo  = 'denHolm' %}
+  {% set site_class = 'denholm-logo' %}
+  {% set site_data  = 'denholm' %}
 
-  <div class="block-404">
-    <div class="block-404__content">
-      <a href="{{ site.url }}" class="block-404__logo" style="background-image: url({{ logo_url }});"></a>
-      <h2 class="block-404__title">{{ __('Page not found', 'pdj_theme') }}</h2>
-      <div class="block-404__text">{{ __("The page you are looking for doesn't exist or has been moved.
-      ", 'pdj_theme' ) }}</div>
-    </div>
-  </div>
+  <div class="page-transition__logo"><a href="#" class="js-change-page js-logo is-active {{ site_class }}" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom">{{ site_logo }}</a></div>
+{% endblock %}
+
+{% block transition_content %}
+  {{context}}
 {% endblock %}
