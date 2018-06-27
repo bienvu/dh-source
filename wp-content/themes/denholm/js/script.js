@@ -51,12 +51,10 @@
         data : {action: "productdetail", productID: product_id, currentPath: current_path},
         beforeSend: function() {
           $('.object-specific .content-inner').remove();
-          // console.log('ok1');
         },
         success: function(response) {
           $('.object-specific').append(response);
           $('window').sliderFunction();
-          // console.log('ok');
         },
         error: function(response) {
         }
@@ -82,6 +80,7 @@
           $('window').pagesTransition();
           $('window').sliderFunction();
           $('.page-transition').addClass(page_name);
+          $('.box-product__item .load-product').on('click', ajaxProductDetail);
         },
         error: function(response) {
         }

@@ -1,15 +1,15 @@
 {% block page_transition %}
   <div class="page-transition__wrap">
-    {% if post.get_field('page_type').value == 'denholm' %}
-      {% set site_logo  = 'denHolm' %}
-      {% set site_class = 'denholm-logo' %}
-      {% set site_data  = 'denholm' %}
-      {% set site_menu  = 'denholm' %}
-    {% else %}
+    {% if post.get_field('page_type').value == 'sjc' %}
       {% set site_logo  = 'Steven<br> John<br> Clark' %}
       {% set site_class = 'sjc-logo' %}
       {% set site_data  = 'sjc' %}
       {% set site_menu  = 'sjc' %}
+    {% else %}
+      {% set site_logo  = 'denHolm' %}
+      {% set site_class = 'denholm-logo' %}
+      {% set site_data  = 'denholm' %}
+      {% set site_menu  = 'denholm' %}
     {% endif %}
 
     <div class="page-transition__logo"><a href="#" class="js-change-page js-logo is-active {{ site_class }}" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom">{{ site_logo }}</a></div>
