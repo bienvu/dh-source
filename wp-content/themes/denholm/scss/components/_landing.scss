@@ -371,6 +371,7 @@
 .landing {
   position: relative;
   transition: .5s;
+  z-index: 2;
 }
 .page-ajaxload {
   transition: .5s;
@@ -378,6 +379,7 @@
   top: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 .sjc-start {
@@ -427,5 +429,12 @@
   .page-ajaxload {
     right: 0;
     transition: .5s;
+  }
+}
+
+.denholm-loaded,
+.sjc-loaded {
+  .next-page {
+    display: none;
   }
 }

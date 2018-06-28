@@ -55,6 +55,10 @@
         success: function(response) {
           $('.object-specific').append(response);
           $('window').sliderFunction();
+          $('window').pagesTransition();
+          $('.js-logo').click(function() {
+            $("body").addClass('is-home');
+          });
         },
         error: function(response) {
         }
@@ -75,16 +79,24 @@
         url : customAjax.ajaxurl,
         data : {action: "pageloadajax", pageID: page_id},
         beforeSend: function() {
+          $('.page-ajaxload .page-transition__wrap').remove();
+          $('.page-ajaxload .page-transition__content').remove();
+          $(".page-transition").removeClass('denholm-start sjc-start');
           $('.page-transition').addClass(start_load);
         },
         success: function(response) {
           $('.page-ajaxload').append(response);
           $('window').pagesTransition();
           $('window').sliderFunction();
-          $('.page-transition').addClass(page_name);
+          $('.page-transition').addClass(page_name).removeClass(start_load);
           $('body').addClass('is-home');
           $('.js-logo').click(function() {
             $("body").addClass('is-home');
+          });
+          $('.back-to-home').click(function() {
+            $(".page-transition").removeClass('denholm-start sjc-start');
+            $(".page-transition").removeClass(page_name).addClass(start_load);
+            return false;
           });
           $('.box-product__item .load-product').on('click', ajaxProductDetail);
         },
@@ -106,10 +118,15 @@
     $('.js-logo').click(function() {
       $("body").addClass('is-home');
     });
+
+    $('.js-back-overview').on('click', function() {
+      alert("ok");
+      $('.objects .js-change-page').trigger('click');
+    });
     //alert('ok');
     // Products Detail
     $('.box-product__item .load-product').on('click', ajaxProductDetail);
-    $('.landing .link-more').on('click', ajaxPageLoad);
+    $('.js-load-page').on('click', ajaxPageLoad);
 
   });
 

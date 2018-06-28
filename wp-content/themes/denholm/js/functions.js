@@ -138,6 +138,12 @@
      });
    }
 
+   // Back to overview
+   // $.fn.backToOverview = function() {
+   //   $('.js-back-overview').on('click', function() {
+   //     $('.objects .js-change-page').trigger('click');
+   //   });
+   // }
    // Back to home
    // $.fn.backToHome = function() {
    //   $('.back-to-home').on('click', function (e) {
