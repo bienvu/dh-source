@@ -67,6 +67,7 @@
     function ajaxPageLoad() {
       var page_id = $(this).data('page-id');
       var page_name = $(this).data('page-name');
+      var start_load = $(this).data('start-load');
 
       $.ajax({
         type : "post",
@@ -74,12 +75,17 @@
         url : customAjax.ajaxurl,
         data : {action: "pageloadajax", pageID: page_id},
         beforeSend: function() {
+          $('.page-transition').addClass(start_load);
         },
         success: function(response) {
           $('.page-ajaxload').append(response);
           $('window').pagesTransition();
           $('window').sliderFunction();
           $('.page-transition').addClass(page_name);
+          $('body').addClass('is-home');
+          $('.js-logo').click(function() {
+            $("body").addClass('is-home');
+          });
           $('.box-product__item .load-product').on('click', ajaxProductDetail);
         },
         error: function(response) {
@@ -95,6 +101,7 @@
     $('window').pagesTransition();
     $('window').rotateText();
     $('window').sliderFunction();
+    // $('window').backToHome();
 
     $('.js-logo').click(function() {
       $("body").addClass('is-home');

@@ -9,10 +9,6 @@
 // }
 
 .landing {
-  position: relative;
-  transition: .5s;
-  left: 0;
-
   @include susy-media(tablet) {
     display: flex;
   }
@@ -371,9 +367,32 @@
   }
 }
 
-.denholm-loaded {
-  // display: none;
+// Page Transitions.
+.landing {
+  position: relative;
+  transition: .5s;
+}
+.page-ajaxload {
+  transition: .5s;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 
+.sjc-start {
+  .landing {
+    transition: .5s;
+    left: 0;
+  }
+
+  .page-ajaxload {
+    left: 100%;
+    transition: .5s;
+  }
+}
+
+.sjc-loaded {
   .landing {
     transition: .5s;
     left: -100%;
@@ -386,11 +405,27 @@
 }
 
 
-.page-ajaxload {
-  transition: .5s;
-  position: relative;
-  left: 100%;
-  top: 0;
-  width: 100%;
-  height: 100%;
+
+.denholm-start {
+  .landing {
+    transition: .5s;
+    right: 0;
+  }
+
+  .page-ajaxload {
+    right: 100%;
+    transition: .5s;
+  }
+}
+
+.denholm-loaded {
+  .landing {
+    transition: .5s;
+    right: -100%;
+  }
+
+  .page-ajaxload {
+    right: 0;
+    transition: .5s;
+  }
 }

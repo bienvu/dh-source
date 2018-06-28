@@ -137,4 +137,12 @@
        });
      });
    }
+
+   // Back to home
+   // $.fn.backToHome = function() {
+   //   $('.back-to-home').on('click', function (e) {
+   //     alert('ok');
+   //     $('.page-transition').removeClass('denholm-loaded');
+   //   });
+   // }
 })( jQuery );
