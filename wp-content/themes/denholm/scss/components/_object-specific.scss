@@ -29,8 +29,9 @@
     @include susy-media(mobileOnly) {
       width: 100%;
       order: 1;
-      max-width: 300px;
-      margin: 0 auto 30px;
+      // max-width: 300px;
+      // margin: 0 auto 30px;
+      margin-bottom: 30px;
 
       img {
         width: 100%;

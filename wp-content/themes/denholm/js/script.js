@@ -59,6 +59,7 @@
           $('window').sliderFunction();
           $('window').pagesTransition();
           $('window').showHideFunction();
+          $('body').addClass('overflow-hidden');
           $('.js-logo').click(function() {
             $("body").addClass('is-home');
           });
