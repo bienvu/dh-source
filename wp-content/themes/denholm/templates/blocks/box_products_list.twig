@@ -7,18 +7,24 @@
       <div class="woocommerce">
         <ul class="products">
         {% for post in posts %}
-          {# {{ post|print_r }} #}
           {% set product = fn('wc_get_product', post.ID) %}
           <div class="box-product__item {{ post.class }}">
+            {% set geo_country      = geoip.country %}
+            {% set currency         = currency_data[geo_country] %}
+            {% set currency_symbol  = woocs.get_currencies[currency].symbol %}
+            {% set currency_rate    = woocs.get_currencies[currency].rate %}
+            {% set currency_price   = product.get_price * currency_rate %}
+
             <div class="box-product__image">
               <img src="{{ post.thumbnail.src('shop_single') }}">
             </div>
             <h3 class="box-product__title">{{ post.title }}</h3>
             <div class="box-product__price">
               <span>
-                {{ fn('get_woocommerce_currency_symbol') }}
+                {#{ fn('get_woocommerce_currency_symbol') }}
                 {{ fn('apply_filters', 'woocs_exchange_value', product.get_price)|number_format(2, '.', ',') }}
-                {{ fn('get_woocommerce_currency') }}
+                {{ fn('get_woocommerce_currency') }#}
+                {{ currency_symbol ~ ' ' ~ currency_price|number_format(2, '.', ',') ~ ' ' ~ currency }}
               </span>
               <a class="next js-change-page load-product" href="/product/{{ post.slug }}" data-product-id={{ post.ID }} data-current-path="{{ fn('get_permalink') }}" data-page-name="object-specific" data-page-trans="slide-in-from-bottom">Read More</a>
             </div>
