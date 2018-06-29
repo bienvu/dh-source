@@ -2,7 +2,7 @@
   //  Scroll page function.
   $.fn.scrollPagge = function() {
      var $widthWd = $( window ).width();
-     if($widthWd > 768) {
+     if($widthWd > 767) {
        if($('.landing').length) {
          $('.landing').multiscroll({
            verticalCentered: true,
@@ -20,7 +20,6 @@
            touchSensitivity: 5
          });
        }
-
        $('.js-cloned').remove();
      } else {
        // $.fn.multiscroll.destroy();

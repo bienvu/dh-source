@@ -2,6 +2,13 @@
   display: flex;
   flex-wrap: wrap;
 
+  @include susy-media(tablet) {
+    align-items: center;
+  }
+  @include susy-media(desktop) {
+    align-items: flex-start;
+  }
+
   &__content {
     @include susy-media(mobileOnly) {
       width: 100%;
@@ -22,7 +29,13 @@
     @include susy-media(mobileOnly) {
       width: 100%;
       order: 1;
-      margin-bottom: 30px;
+      max-width: 300px;
+      margin: 0 auto 30px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
     @include susy-media(tablet) {
@@ -81,7 +94,7 @@
     margin-bottom: 40px;
     clear: both;
 
-    @include susy-media(tablet) {
+    @include susy-media(desktop) {
       margin-bottom: 60px;
     }
 

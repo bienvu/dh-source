@@ -18,8 +18,12 @@
       width: 33.33%;
       // margin-right: 108px;
       // max-width: 190px;
-      padding: 0 35px;
+      padding: 0 15px;
       margin-bottom: 20px !important;
+    }
+
+    @include susy-media(desktop) {
+      padding: 0 35px;
     }
 
     @include susy-media(desktopSuperwide) {

@@ -105,6 +105,11 @@ $susy-media: (
     max-width: em($tablet - 1) * 1em,
   ),
 
+  mobilePortraitOnly: (
+    media: screen,
+    max-width: em($mobile-landscape - 1) * 1em,
+  ),
+
   // max-width: 1023px
   mobileTabletOnly: (
     media: screen,

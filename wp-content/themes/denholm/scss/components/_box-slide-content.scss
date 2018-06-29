@@ -2,8 +2,16 @@
   max-width: 600px;
   margin: 0 auto;
 
-  @include susy-media(mobileOnly) {
-    margin: 0 10px;
+  @include susy-media(mobileLanscape) {
+    padding: 0 10px;
+  }
+
+  @include susy-media(tablet) {
+    padding: 0 30px;
+  }
+
+  @include susy-media(desktop) {
+    padding: 0;
   }
 
   &__item {
@@ -12,6 +20,9 @@
     @include susy-media(tablet) {
       display: flex !important;
       align-items: center;
+    }
+
+    @include susy-media(desktop) {
       min-width: 600px;
     }
 
@@ -19,8 +30,9 @@
       @include susy-media(mobileOnly) {
         position: absolute;
         top: 0;
-        left: 60px;
+        left: 50%;
         font-size: 40px;
+        transform: translate(-50%, 0);
       }
 
       @include susy-media(tablet) {
@@ -32,8 +44,12 @@
   &__body {
     @include susy-media(tablet) {
       width: 30%;
-      margin-left: 67px;
+      margin-left: 30px;
       max-width: 150px;
+    }
+
+    @include susy-media(desktop) {
+      margin-left: 67px;
     }
   }
 
@@ -52,7 +68,7 @@
     }
 
     @include susy-media(desktopSuperwide) {
-      // max-width: 395px;
+      max-width: 395px;
     }
   }
 }

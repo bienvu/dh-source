@@ -123,12 +123,17 @@
   display: inline-block;
   text-align: left;
   color: $text-color;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   position: absolute;
   top: 40px;
-  left: 127px;
+  left: 110px;
   z-index: 99;
+
+  @include susy-media(desktop) {
+    font-size: 40px;
+    left: 127px;
+  }
 
   &.bg-active {
     background: none;
@@ -252,4 +257,8 @@
       transition: .5s;
     }
   }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

@@ -63,6 +63,10 @@ hr {
   @include susy-media(mobileOnly) {
     padding: 0 17px;
   }
+
+  @include susy-media(mobilePortraitOnly) {
+    padding: 0;
+  }
 }
 
 .box-info {

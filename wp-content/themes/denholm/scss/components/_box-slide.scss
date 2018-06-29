@@ -19,28 +19,39 @@
 }
 
 .slick-next {
-  right: -35px;
+  right: -25px;
   background: url('../images/arrow-right.png') no-repeat scroll 0 0 transparent;
   background-size: 100% auto;
 
-  @include susy-media(tablet) {
+  @include susy-media(mobileLanscape) {
+    right: -35px;
+  }
+
+  @include susy-media(desktop) {
     right: -75px;
   }
 }
 
 .slick-prev {
-  left: -35px;
+  left: -25px;
   background: url('../images/arrow-left.png') no-repeat scroll 0 0 transparent;
   background-size: 100% auto;
 
-  @include susy-media(tablet) {
+  @include susy-media(mobileLanscape) {
+    left: -35px;
+  }
+
+  @include susy-media(desktop) {
     left: -75px;
   }
 }
 
 .box-slide {
   position: relative;
-  padding: 0 10px;
+
+  @include susy-media(mobileLanscape) {
+    padding: 0 10px;
+  }
 
   @include susy-media(tablet) {
     padding: 0 23px;
@@ -95,8 +106,12 @@
       @include susy-media(tablet) {
         position: absolute;
         bottom: 0;
-        left: -50px;
+        left: 0;
         margin-top: 0;
+      }
+
+      @include susy-media(desktop) {
+        left: -50px;
       }
 
       @include susy-media(desktopSuperwide) {

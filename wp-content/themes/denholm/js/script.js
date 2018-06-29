@@ -58,6 +58,7 @@
           history.pushState({}, null, slug);
           $('window').sliderFunction();
           $('window').pagesTransition();
+          $('window').showHideFunction();
           $('.js-logo').click(function() {
             $("body").addClass('is-home');
           });
@@ -95,8 +96,9 @@
           history.pushState({}, null, page_url);
           $('window').pagesTransition();
           $('window').sliderFunction();
+          $('window').showHideFunction();
           $('.page-transition').addClass(page_name).removeClass(start_load);
-          $('body').addClass('is-home');
+          $('body').addClass('is-home overflow-hidden');
           $('.js-logo').click(function() {
             $("body").addClass('is-home');
           });
@@ -104,6 +106,7 @@
             history.pushState({}, null, "/");
             $(".page-transition").removeClass('denholm-start sjc-start');
             $(".page-transition").removeClass(page_name).addClass(start_load);
+            $('body').removeClass('overflow-hidden');
             return false;
           });
           $('.box-product__item .load-product').on('click', ajaxProductDetail);
