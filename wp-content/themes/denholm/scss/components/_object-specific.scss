@@ -5,9 +5,6 @@
   @include susy-media(tablet) {
     align-items: center;
   }
-  @include susy-media(desktop) {
-    align-items: flex-start;
-  }
 
   &__content {
     @include susy-media(mobileOnly) {

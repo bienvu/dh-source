@@ -115,7 +115,8 @@
     .title--bottom {
       position: absolute;
       top: 0;
-      left: 20px;
+      transform: translate(-50%, 0);
+      left: 50%;
       line-height: 1.5;
       z-index: 1;
 
@@ -128,16 +129,21 @@
         font-size: 40px;
       }
 
+      @include susy-media(desktop) {
+        font-size: 62px;
+      }
+
       &:before {
         bottom: 8px;
+        width: 70px;
 
         @include susy-media(mobileOnly) {
           border-color: $pink;
         }
-      }
 
-      @include susy-media(desktopSuperwide) {
-        left: 60px;
+        @include susy-media(desktop) {
+          width: 103px;
+        }
       }
     }
 
@@ -151,7 +157,7 @@
       font-size: 48px;
 
       @include susy-media(tablet) {
-        top: 46%;
+        top: 48%;
         left: 18px;
       }
 
@@ -316,7 +322,7 @@
       background-size: auto 100%;
       background-position: 0 center;
       position: absolute;
-      right: -77px;
+      right: -68px;
       top: 0;
       bottom: 0;
       width: 232px;
@@ -326,6 +332,10 @@
       @include susy-media(mobileOnly) {
         display: none;
       }
+
+      @include susy-media(desktopSuperwide) {
+        right: -75px;
+      }
     }
 
     &:nth-child(1) {
@@ -334,7 +344,7 @@
         padding-top: 0;
 
         @include susy-media(tablet) {
-          padding-top: 30px;
+          padding-top: 45px;
         }
       }
 
@@ -355,13 +365,17 @@
         and (min-resolution: 192dpi) {
           right: -189px;
         }
+
+        @include susy-media(desktopSuperwide) {
+          right: -184px;
+        }
       }
     }
 
     &:nth-child(3) {
       &:before {
-        background: url('../images/line3.png') no-repeat scroll 0 0 transparent;
-        right: -79px;
+        background: url('../images/line3.png') no-repeat scroll 0 46% transparent;
+        right: -89px;
 
         @media screen
         and (min-device-width: 1200px)
@@ -369,6 +383,10 @@
         and (-webkit-min-device-pixel-ratio: 2)
         and (min-resolution: 192dpi) {
           right: -113px;
+        }
+
+        @include susy-media(desktopSuperwide) {
+          right: -79px;
         }
       }
     }
@@ -399,6 +417,7 @@
     top: 50%;
     transform: translate(0, -50%);
     z-index: 9999;
+    margin-top: -10px;
 
     @include susy-media(mobileOnly) {
       position: absolute;
