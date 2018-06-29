@@ -21,6 +21,10 @@
       margin-bottom: 20px !important;
     }
 
+    @include susy-media(desktopSuperwide) {
+      margin-bottom: 37px !important;
+    }
+
     &:nth-child(3n) {
       margin-right: 0;
     }
