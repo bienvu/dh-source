@@ -43,6 +43,7 @@
     function ajaxProductDetail() {
       var current_path = $(this).data('current-path');
       var product_id = $(this).data('product-id');
+      var slug = $(this).attr('href');
 
       $.ajax({
         type : "post",
@@ -51,12 +52,18 @@
         data : {action: "productdetail", productID: product_id, currentPath: current_path},
         beforeSend: function() {
           $('.object-specific .content-inner').remove();
-          // console.log('ok1');
         },
         success: function(response) {
           $('.object-specific').append(response);
+          history.pushState({}, null, slug);
           $('window').sliderFunction();
-          // console.log('ok');
+          $('window').pagesTransition();
+          $('.js-logo').click(function() {
+            $("body").addClass('is-home');
+          });
+          $('.js-logo.denholm-logo, .denholm-loaded .js-change-page').click(function() {
+            history.pushState({}, null, "/denholm");
+          });
         },
         error: function(response) {
         }
@@ -69,6 +76,8 @@
     function ajaxPageLoad() {
       var page_id = $(this).data('page-id');
       var page_name = $(this).data('page-name');
+      var page_url = $(this).data('page-url');
+      var start_load = $(this).data('start-load');
 
       $.ajax({
         type : "post",
@@ -76,12 +85,27 @@
         url : customAjax.ajaxurl,
         data : {action: "pageloadajax", pageID: page_id},
         beforeSend: function() {
+          $('.page-ajaxload .page-transition__wrap').remove();
+          $('.page-ajaxload .page-transition__content').remove();
+          $(".page-transition").removeClass('denholm-start sjc-start');
+          $('.page-transition').addClass(start_load);
         },
         success: function(response) {
           $('.page-ajaxload').append(response);
+          history.pushState({}, null, page_url);
           $('window').pagesTransition();
           $('window').sliderFunction();
-          $('.page-transition').addClass(page_name);
+          $('.page-transition').addClass(page_name).removeClass(start_load);
+          $('body').addClass('is-home');
+          $('.js-logo').click(function() {
+            $("body").addClass('is-home');
+          });
+          $('.back-to-home').click(function() {
+            history.pushState({}, null, "/");
+            $(".page-transition").removeClass('denholm-start sjc-start');
+            $(".page-transition").removeClass(page_name).addClass(start_load);
+            return false;
+          });
           $('.box-product__item .load-product').on('click', ajaxProductDetail);
         },
         error: function(response) {
@@ -97,14 +121,20 @@
     $('window').pagesTransition();
     $('window').rotateText();
     $('window').sliderFunction();
+    // $('window').backToHome();
 
     $('.js-logo').click(function() {
       $("body").addClass('is-home');
     });
+
+    $('.js-back-overview').on('click', function() {
+      alert("ok");
+      $('.objects .js-change-page').trigger('click');
+    });
     //alert('ok');
     // Products Detail
     $('.box-product__item .load-product').on('click', ajaxProductDetail);
-    $('.landing .link-more').on('click', ajaxPageLoad);
+    $('.js-load-page').on('click', ajaxPageLoad);
 
   });
 

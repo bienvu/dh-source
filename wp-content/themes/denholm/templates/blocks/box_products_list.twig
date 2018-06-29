@@ -5,7 +5,7 @@
 
       {#{ fn('do_shortcode', '[products]') }#}
       <div class="woocommerce">
-        <ul class="products">
+        <ul class="box-product">
         {% for post in posts %}
           {% set product = fn('wc_get_product', post.ID) %}
           <div class="box-product__item {{ post.class }}">

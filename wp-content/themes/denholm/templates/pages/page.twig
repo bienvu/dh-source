@@ -20,9 +20,4 @@
   {% for post in posts %}
     {{ function('flexible_content', 'group_components', post.ID) }}
   {% endfor %}
-
-  <div class="next-page">
-  	<div class="arrow-btn arrow-left">Prev</div>
-  	<div class="arrow-btn arrow-right">Next</div>
-  </div>
 {% endblock %}

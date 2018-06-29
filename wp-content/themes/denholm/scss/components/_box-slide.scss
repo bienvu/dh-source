@@ -60,9 +60,9 @@
       opacity: 1;
     }
 
-    @include susy-media(tablet) {
-      min-width: 742px;
-    }
+    // @include susy-media(desktopSuperwide) {
+    //   min-width: 742px;
+    // }
 
     img {
       display: inline-block;
@@ -80,6 +80,11 @@
 
     img {
       @include susy-media(tablet) {
+        max-height: 380px;
+      }
+
+      @include susy-media(desktopSuperwide) {
+        max-height: inherit;
         max-width: 322px;
       }
     }
@@ -90,8 +95,12 @@
       @include susy-media(tablet) {
         position: absolute;
         bottom: 0;
-        left: -150px;
+        left: -50px;
         margin-top: 0;
+      }
+
+      @include susy-media(desktopSuperwide) {
+        left: -150px;
       }
 
       &__item {
