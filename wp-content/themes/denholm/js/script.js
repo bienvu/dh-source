@@ -43,6 +43,7 @@
     function ajaxProductDetail() {
       var current_path = $(this).data('current-path');
       var product_id = $(this).data('product-id');
+      var slug = $(this).attr('href');
 
       $.ajax({
         type : "post",
@@ -54,10 +55,14 @@
         },
         success: function(response) {
           $('.object-specific').append(response);
+          history.pushState({}, null, slug);
           $('window').sliderFunction();
           $('window').pagesTransition();
           $('.js-logo').click(function() {
             $("body").addClass('is-home');
+          });
+          $('.js-logo.denholm-logo, .denholm-loaded .js-change-page').click(function() {
+            history.pushState({}, null, "/denholm");
           });
         },
         error: function(response) {
@@ -71,6 +76,7 @@
     function ajaxPageLoad() {
       var page_id = $(this).data('page-id');
       var page_name = $(this).data('page-name');
+      var page_url = $(this).data('page-url');
       var start_load = $(this).data('start-load');
 
       $.ajax({
@@ -86,6 +92,7 @@
         },
         success: function(response) {
           $('.page-ajaxload').append(response);
+          history.pushState({}, null, page_url);
           $('window').pagesTransition();
           $('window').sliderFunction();
           $('.page-transition').addClass(page_name).removeClass(start_load);
@@ -94,6 +101,7 @@
             $("body").addClass('is-home');
           });
           $('.back-to-home').click(function() {
+            history.pushState({}, null, "/");
             $(".page-transition").removeClass('denholm-start sjc-start');
             $(".page-transition").removeClass(page_name).addClass(start_load);
             return false;

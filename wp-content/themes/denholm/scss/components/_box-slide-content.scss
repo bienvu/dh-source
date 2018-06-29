@@ -48,7 +48,11 @@
 
   img {
     @include susy-media(tablet) {
-      max-width: 395px;
+      max-width: 340px;
+    }
+
+    @include susy-media(desktopSuperwide) {
+      // max-width: 395px;
     }
   }
 }

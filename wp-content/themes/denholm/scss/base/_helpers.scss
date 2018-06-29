@@ -176,15 +176,19 @@
   font-size: 34px;
   font-weight: 700;
   position: absolute;
-  top: 30px;
+  top: 15px;
   line-height: 1.05;
-  left: 175px;
+  left: 150px;
   z-index: 99;
 
   &.bg-active {
     background: none;
   }
 
+  @include susy-media(desktopSuperwide) {
+    left: 175px;
+    top: 30px;
+  }
   // @include susy-media(desktopSuperwide) {
   //   font-size: 86px;
   //   top: 50px;

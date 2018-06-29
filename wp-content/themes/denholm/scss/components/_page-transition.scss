@@ -264,10 +264,14 @@
 
     @include susy-media(tablet) {
       position: fixed;
-      bottom: 40px;
+      bottom: 25px;
       right: 0;
       left: 0;
       z-index: 99;
+    }
+
+    @include susy-media(desktopSuperwide) {
+      bottom: 40px;
     }
 
     &__inner {
@@ -451,13 +455,18 @@
 }
 
 .content-inner {
-  max-width: 788px;
+  max-width: 750px;
   width: 100%;
-  max-height: calc(100% - 240px);
+  max-height: calc(100% - 200px);
 
   @include susy-media(mobileOnly) {
     padding: 0 45px;
     max-height: calc(100% - 160px);
+  }
+
+  @include susy-media(desktopSuperwide) {
+    max-width: 788px;
+    max-height: calc(100% - 240px);
   }
 }
 

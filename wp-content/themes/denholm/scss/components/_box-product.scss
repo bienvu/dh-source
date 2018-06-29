@@ -1,16 +1,24 @@
 .box-product {
+  @include susy-media(tablet) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
   .products {
     margin-bottom: 0;
   }
+
   &__item {
     margin-bottom: 37px !important;
     text-align: center;
 
     @include susy-media(tablet) {
       float: left;
-      width: calc((100% - 60px) / 3);
-      margin-right: 109px;
+      width: 33.33%;
+      // margin-right: 108px;
       max-width: 190px;
+      margin-bottom: 20px !important;
     }
 
     &:nth-child(3n) {
