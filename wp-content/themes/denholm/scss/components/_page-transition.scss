@@ -282,6 +282,7 @@
     @include susy-media(mobileOnly) {
       .nav {
         text-align: center;
+        font-size: 28px;
 
         span {
           padding: 0 10px;
@@ -292,11 +293,11 @@
         margin-bottom: 36px;
       }
     }
+  }
 
-    @include susy-media(mobilePortraitOnly) {
-      .nav {
-        font-size: 28px;
-      }
+  &__inner {
+    @include susy-media(mobileLandscapeOnly) {
+      height: 100%;
     }
   }
 

@@ -174,13 +174,13 @@
         margin-top: -15px;
 
         @include susy-media(desktop) {
-          left: -75px;
+          left: -70px;
           width: 112px;
         }
 
-        @include susy-media(mobilePortraitOnly) {
+        @include susy-media(mobileOnly) {
           width: 70px;
-          left: -40px;
+          left: -35px;
         }
       }
     }
@@ -207,17 +207,11 @@
     min-width: 274px;
 
     @include susy-media(mobileOnly) {
-      font-size: 20px;
       z-index: 4;
       position: relative;
       right: 0;
       bottom: 0;
       width: 245px;
-      margin: 0 auto;
-      margin-top: 167px;
-    }
-
-    @include susy-media(mobilePortraitOnly) {
       font-size: 15px;
       margin-left: 108px;
       margin-top: 130px;
@@ -270,7 +264,6 @@
       &:nth-child(3),
       &:nth-child(5) {
         position: relative;
-        // background: red;
 
         &:after {
           content: '';
@@ -291,7 +284,7 @@
 
       &:nth-child(1),
       &:nth-child(2) {
-        background-color: #ccc !important;
+        background-color: #fff !important;
       }
 
       &:nth-child(3) {
@@ -342,16 +335,18 @@
         display: none;
       }
 
-      @include susy-media(desktopSuperwide) {
+      @include susy-media(tablet) {
         right: -75px;
       }
     }
 
     &:nth-child(1) {
-      padding: 35px 0 10px;
+      @include susy-media(mobileOnly) {
+        padding: 35px 0 10px;
 
-      .group-content {
-        padding-top: 0;
+        .group-content {
+          padding-top: 0;
+        }
       }
 
       &:before {
@@ -384,6 +379,14 @@
       &:before {
         background: url('../images/line3.png') no-repeat scroll 0 46% transparent;
         right: -89px;
+
+        @include susy-media(tablet) {
+          right: -71px;
+        }
+
+        @include susy-media(desktop) {
+          right: -107px;
+        }
 
         @include susy-media(desktopSuperwide) {
           right: -79px;
@@ -459,13 +462,13 @@
     right: 15px;
 
     @include susy-media(mobileOnly) {
-      top: 513px;
+      top: 615px;
       right: 20px;
     }
-    //
-    // @include susy-media(mobilePortraitOnly) {
-    //   top: 500px;
-    // }
+
+    @include susy-media(mobilePortraitOnly) {
+      top: 513px;
+    }
   }
 }
 
@@ -507,8 +510,6 @@
     transition: .5s;
   }
 }
-
-
 
 .denholm-start {
   .landing {
