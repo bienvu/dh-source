@@ -13,9 +13,10 @@
   }
 
   .screen-reader-response {
-    width: 100%;
-    height: auto;
-    position: relative;
-    text-align: center;
+    width: 100%!important;
+    height: auto!important;
+    position: relative!important;
+    text-align: center!important;
+    margin-bottom: 30px !important;
   }
 }
