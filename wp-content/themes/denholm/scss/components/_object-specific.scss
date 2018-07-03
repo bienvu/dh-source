@@ -94,13 +94,27 @@
 
     a.button {
       @extend %btn;
+      padding: 8px 15px;
 
       & + a {
-        margin-left: 10px;
-        position: absolute;
-        right: -60px;
-        top: 50%;
-        margin-top: -12px;
+        @include susy-media(tablet) {
+          margin-left: 10px;
+          position: absolute;
+          right: -60px;
+          top: 50%;
+          margin-top: -12px;
+        }
+
+        @include susy-media(mobileOnly) {
+          margin-left: 0;
+          position: absolute;
+          left: 50%;
+          bottom: -20px;
+          margin-top: 0;
+          width: 100%;
+          transform: translate(-50%, 0);
+
+        }
       }
     }
 

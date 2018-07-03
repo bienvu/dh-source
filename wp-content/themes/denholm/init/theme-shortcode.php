@@ -47,6 +47,12 @@ function create_time_by_locate($attrs) {
     // Get JSON object
     $jsondata = file_get_contents("http://timezoneapi.io/api/ip/?");
 
+    // // Get IP address
+    // $ip_address = getenv('HTTP_CLIENT_IP') ?: getenv('HTTP_X_FORWARDED_FOR') ?: getenv('HTTP_X_FORWARDED') ?: getenv('HTTP_FORWARDED_FOR') ?: getenv('HTTP_FORWARDED') ?: getenv('REMOTE_ADDR');
+    //
+    // // Get JSON object
+    // $jsondata = file_get_contents("http://timezoneapi.io/api/ip/"? . $ip_address);
+
     // Decode
     $data = json_decode($jsondata, true);
     //print_r($data);
