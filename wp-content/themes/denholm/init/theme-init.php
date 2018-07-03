@@ -386,8 +386,10 @@ function flexible_content($name, $postid) {
         case 'box_products_list':
           //print_r($field);
           global $woocommerce;
+          $pd = WC_Geolocation::geolocate_ip();
           global $WOOCS;
 
+          //print_r($pd);
           $products_args = array(
             'post_type'       => 'product',
             'post_status'     => 'publish',
@@ -403,6 +405,12 @@ function flexible_content($name, $postid) {
           $posts          = Timber::get_posts($products_args);
           $field['posts']  = $posts;
           $field['woocs']  = $WOOCS;
+          $field['geoip']  = $pd;
+
+          $currency_json = file_get_contents('http://country.io/currency.json');
+          $currency_data = json_decode($currency_json, true);
+          
+          $field['currency_data']  = $currency_data;
 
           try {
             Timber::render($layout . '.twig', $field);
