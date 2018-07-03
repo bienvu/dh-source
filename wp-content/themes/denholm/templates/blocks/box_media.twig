@@ -1,0 +1,16 @@
+<div class="page-transition__item {{name|replace({' ': '-'})|lower}}" data-jquery-page-name="{{name|replace({' ': '-'})|lower}}">
+  <div class="content-inner">
+    <div class="box-media {% if media_file.type == "image"%}with-image{% else %}with-video{% endif %}">
+  <h2 class="box-media__title {% if media_file.type == "image"%}denholm-logo{% else %}sjc-logo{% endif %}">{{media_title}}</h2>
+      {% if media_file.type == "image"%}
+        <div class="box-media__image">
+          <img src="{{media_file.url}}" title="{{media_file.title}}" alt="{{media_file.alt}}">
+        </div>
+      {% else %}
+        <div class="box-media__video">
+          <video width="1280" height="720" muted="muted" loop="loop" autoplay="" preload="auto" playsinline=""> <source src="{{ media_file.url }}" type="{{ media_file.mime_type }}"> </video>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

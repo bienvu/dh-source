@@ -14,8 +14,8 @@
             <input type="number" id="quantity" min="1" max="{{ product.get_stock_quantity }}" value="1">
           </div>
           <div class="form-wrapper">
-            <input type="submit" value="Purchase">
-            {# {{ fn('do_shortcode', '[add_to_cart id="' ~ post.ID ~ '"]') }} #}
+            {# <input type="submit" value="Purchase"> #}
+            {{ fn('do_shortcode', '[add_to_cart id="' ~ post.ID ~ '"]') }}
           </div>
         </form>
       </div>

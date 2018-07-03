@@ -19,12 +19,14 @@
                 "denholm": "Denholm",
                 "sjc": "Steven John Clark"
             },
-            "default_value": [],
+            "default_value": [
+                "denholm"
+            ],
             "allow_null": 0,
             "multiple": 0,
-            "ui": 1,
+            "ui": 0,
             "ajax": 0,
-            "return_format": "array",
+            "return_format": "value",
             "placeholder": ""
         },
         {
@@ -433,6 +435,73 @@
                     "min": "",
                     "max": ""
                 },
+                "5b37465590adc": {
+                    "key": "5b37465590adc",
+                    "name": "box_media",
+                    "label": "Box Media",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b37465d90add",
+                            "label": "Name",
+                            "name": "name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b37466290ade",
+                            "label": "Media Title",
+                            "name": "media_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b37467090adf",
+                            "label": "Media File",
+                            "name": "media_file",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "5b3051fdeb096": {
                     "key": "5b3051fdeb096",
                     "name": "box_products_list",
@@ -576,5 +645,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529831226
+    "modified": 1530349298
 }

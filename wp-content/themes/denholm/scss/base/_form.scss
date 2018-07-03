@@ -14,16 +14,11 @@ input[type='submit'] {
   box-sizing: border-box;
   color: $text-color;
   font-weight: 400;
-  padding: 13px 11px;
-  font-size: 14px;
+  font-size: 12px;
+  padding: 8px;
   text-transform: capitalize;
   transition: all .3s ease-in-out;
   width: 100%;
-
-  @include susy-media(tablet) {
-    font-size: 12px;
-    padding: 8px;
-  }
 
   &::-ms-clear {
     display: none;
@@ -88,6 +83,7 @@ input[type='submit'] {
 input[type='tel'],
 input[type='number'],
 input[type='text'],
+input[type='email'],
 .form-url,
 .form-search,
 .form-email,
@@ -95,17 +91,35 @@ input[type='text'],
   @extend %form-text;
 }
 
-.form-textarea {
+.form-textarea,
+textarea {
   @extend %form-text;
   height: auto;
-  min-height: 245px;
+  min-height: 190px;
   border: 1px solid #e0b8b7;
   box-shadow: 0 0 1px 1px #e0b8b7;
-  margin-top: 45px;
-  margin-bottom: 8px;
+  margin-top: 30px;
+  margin-bottom: 28px;
+
+  &::-webkit-input-placeholder {
+    color: $pink;
+  }
+
+  &::-moz-placeholder {
+    color: $pink;
+  }
+
+  &:-ms-input-placeholder {
+    color: $pink;
+  }
+
+  &:-moz-placeholder {
+    color: $pink;
+  }
 
   @include susy-media(tablet) {
     margin-top: 33px;
+    margin-bottom: 8px;
     min-height: 188px;
   }
 }
@@ -181,4 +195,22 @@ input[type='number'] {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+textarea {
+  &::-webkit-input-placeholder {
+    color: $pink;
+  }
+
+  &::-moz-placeholder {
+    color: $pink;
+  }
+
+  &:-ms-input-placeholder {
+    color: $pink;
+  }
+
+  &:-moz-placeholder {
+    color: $pink;
+  }
 }

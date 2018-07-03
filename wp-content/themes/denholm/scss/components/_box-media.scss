@@ -1,0 +1,76 @@
+.box-media {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  overflow: hidden;
+
+  @include susy-media(tablet) {
+    display: none;
+  }
+
+  &__title {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &.sjc-logo {
+      font-size: 60px;
+      top: 47%;
+
+      &:before {
+        left: -59px;
+        height: 7px;
+        width: 106px;
+      }
+    }
+
+    &.denholm-logo {
+      font-size: 62px;
+
+      &:before {
+        width: 99px;
+        bottom: -7px;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+  }
+
+  &__video {
+    video {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+
+    @include susy-media(mobileOnly) {
+      height: 100%;
+      width: auto;
+      max-width: inherit;
+    }
+  }
+
+  &.with-video {
+    .box-media__title {
+      color: $white;
+    }
+  }
+}

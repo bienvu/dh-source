@@ -93,6 +93,11 @@
           $('.page-transition').addClass(start_load);
         },
         success: function(response) {
+          var $widthWd = $( window ).width();
+          if($widthWd > 767) {
+            $.fn.multiscroll.moveTo(1);
+          }
+          $('.landing').scrollTop(0);
           $('.page-ajaxload').append(response);
           history.pushState({}, null, page_url);
           $('window').pagesTransition();

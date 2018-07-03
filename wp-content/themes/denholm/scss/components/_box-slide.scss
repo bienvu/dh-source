@@ -3,8 +3,8 @@
   top: 50%;
   transform: translate(0, -50%);
   z-index: 8;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   text-indent: 0;
   border: 0;
   min-width: inherit;
@@ -13,13 +13,18 @@
   font-size: 0;
   color: transparent;
 
+  @include susy-media(tablet) {
+    width: 20px;
+    height: 20px;
+  }
+
   &:hover {
     background-color: transparent;
   }
 }
 
 .slick-next {
-  right: -25px;
+  right: -28px;
   background: url('../images/arrow-right.png') no-repeat scroll 0 0 transparent;
   background-size: 100% auto;
 
@@ -33,7 +38,7 @@
 }
 
 .slick-prev {
-  left: -25px;
+  left: -28px;
   background: url('../images/arrow-left.png') no-repeat scroll 0 0 transparent;
   background-size: 100% auto;
 
@@ -77,6 +82,11 @@
 
     img {
       display: inline-block;
+
+      @include susy-media(mobileOnly) {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 

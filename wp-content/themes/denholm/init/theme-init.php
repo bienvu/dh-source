@@ -379,6 +379,10 @@ function flexible_content($name, $postid) {
       $fc_type[$layout] = array();
 
       switch ($layout) {
+        // case 'box_media':
+        //   print_r($field);
+        //   break;
+
         case 'box_products_list':
           //print_r($field);
           global $woocommerce;

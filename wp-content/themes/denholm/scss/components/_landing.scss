@@ -24,11 +24,6 @@
     justify-content: center;
     text-align: center;
 
-    @include susy-media(mobileOnly) {
-      padding: 46px 0;
-      min-height: 200px;
-    }
-
     @include susy-media(tablet) {
       height: 100vh;
     }
@@ -57,13 +52,13 @@
 
   h3 {
     line-height: 1.3;
-    font-size: 21px;
+    font-size: 24px;
 
     @include susy-media(mobileLanscape) {
       font-size: 30px;
     }
 
-    @include susy-media(desktop) {
+    @include susy-media(desktopWide) {
       font-size: 35px;
     }
   }
@@ -84,10 +79,12 @@
 
     @include susy-media(tablet) {
       padding-top: 55px;
+      margin-top: -32px;
     }
 
     @include susy-media(desktop) {
       padding-top: 85px;
+      margin-top: -40px;
     }
 
     @include susy-media(mobilePortraitOnly) {
@@ -149,16 +146,17 @@
 
     .title--center {
       position: absolute;
-      top: 47%;
-      left: 23px;
+      top: 48%;
+      left: 15px;
       transform: translate(0, -50%);
       line-height: 1;
       z-index: 1;
       font-size: 48px;
 
       @include susy-media(tablet) {
-        top: 48%;
+        top: 52%;
         left: 18px;
+        margin-bottom: 0;
       }
 
       @include susy-media(desktop) {
@@ -171,9 +169,14 @@
       }
 
       &:before {
-        left: -75px;
-        width: 112px;
+        left: -45px;
+        width: 90px;
         margin-top: -15px;
+
+        @include susy-media(desktop) {
+          left: -75px;
+          width: 112px;
+        }
 
         @include susy-media(mobilePortraitOnly) {
           width: 70px;
@@ -196,8 +199,8 @@
 
   .box-info {
     position: absolute;
-    bottom: -193px;
-    right: -83px;
+    bottom: -120px;
+    right: -60px;
     text-align: left;
     font-size: 14px;
     font-weight: 700;
@@ -215,9 +218,15 @@
     }
 
     @include susy-media(mobilePortraitOnly) {
-      font-size: 16px;
-      margin-left: 50px;
-      margin-top: 100px;
+      font-size: 15px;
+      margin-left: 108px;
+      margin-top: 130px;
+      margin-bottom: 91px;
+    }
+
+    @include susy-media(desktopWide) {
+      bottom: -193px;
+      right: -83px;
     }
 
     &:before {
@@ -261,7 +270,7 @@
       &:nth-child(3),
       &:nth-child(5) {
         position: relative;
-        background: red;
+        // background: red;
 
         &:after {
           content: '';
@@ -282,21 +291,21 @@
 
       &:nth-child(1),
       &:nth-child(2) {
-        background-color: $white !important;
+        background-color: #ccc !important;
       }
 
       &:nth-child(3) {
-        padding-top: 118px;
-        padding-bottom: 100px;
+        padding-top: 92px;
+        padding-bottom: 110px;
 
         &:after {
           background-position: top center;
-          bottom: -30px;
+          bottom: -5px;
         }
       }
 
       &:nth-child(4) {
-        padding-bottom: 102px;
+        padding-bottom: 75px;
       }
 
       &:nth-child(5) {
@@ -305,16 +314,16 @@
 
         &:after {
           background-position: 140% 0;
-          bottom: 70px;
+          bottom: 95px;
 
           @include susy-media(mobilePortraitOnly) {
-            background-position: 115% 0;
+            background-position: 124% 0;
           }
         }
       }
 
       &:nth-child(6) {
-        padding-bottom: 180px;
+        padding-bottom: 140px;
       }
     }
 
@@ -339,13 +348,10 @@
     }
 
     &:nth-child(1) {
+      padding: 35px 0 10px;
 
       .group-content {
         padding-top: 0;
-
-        @include susy-media(tablet) {
-          padding-top: 45px;
-        }
       }
 
       &:before {
@@ -354,20 +360,22 @@
     }
 
     &:nth-child(2) {
+      padding-bottom: 43px;
+
       &:before {
         background: url('../images/line2.png') no-repeat scroll 0 0 transparent;
         right: -185px;
+
+        @include susy-media(desktopSuperwide) {
+          right: -184px;
+        }
 
         @media screen
         and (min-device-width: 1200px)
         and (max-device-width: 1600px)
         and (-webkit-min-device-pixel-ratio: 2)
         and (min-resolution: 192dpi) {
-          right: -189px;
-        }
-
-        @include susy-media(desktopSuperwide) {
-          right: -184px;
+          right: -187px;
         }
       }
     }
@@ -377,16 +385,16 @@
         background: url('../images/line3.png') no-repeat scroll 0 46% transparent;
         right: -89px;
 
+        @include susy-media(desktopSuperwide) {
+          right: -79px;
+        }
+
         @media screen
         and (min-device-width: 1200px)
         and (max-device-width: 1600px)
         and (-webkit-min-device-pixel-ratio: 2)
         and (min-resolution: 192dpi) {
           right: -113px;
-        }
-
-        @include susy-media(desktopSuperwide) {
-          right: -79px;
         }
       }
     }
@@ -441,7 +449,7 @@
     }
 
     @include susy-media(mobilePortraitOnly) {
-      top: 167px;
+      top: 169px;
     }
   }
 
@@ -451,13 +459,13 @@
     right: 15px;
 
     @include susy-media(mobileOnly) {
-      top: 700px;
+      top: 513px;
       right: 20px;
     }
-
-    @include susy-media(mobilePortraitOnly) {
-      top: 583px;
-    }
+    //
+    // @include susy-media(mobilePortraitOnly) {
+    //   top: 500px;
+    // }
   }
 }
 

@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
 
+  @include susy-media(mobileOnly) {
+    margin-bottom: 30px;
+  }
+
   @include susy-media(tablet) {
     align-items: center;
   }
@@ -80,6 +84,24 @@
     .form-wrapper {
       margin-left: 30px;
     }
+
+    .add_to_cart_inline {
+      border: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    a.button {
+      @extend %btn;
+
+      & + a {
+        margin-left: 10px;
+      }
+    }
+
+    .woocs_price_code {
+      display: none;
+    }
   }
 
   &__group {
@@ -89,7 +111,7 @@
   }
 
   &__body {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     clear: both;
 
     @include susy-media(desktop) {
@@ -102,12 +124,21 @@
   }
 
   &__title {
-    margin-bottom: 14px;
-    font-size: 42px;
+    font-size: 38px;
+    margin-bottom: 20px;
+
+    @include susy-media(tablet) {
+      margin-bottom: 14px;
+      font-size: 42px;
+    }
   }
 
   .price {
-    font-size: 18px;
+    font-size: 17px;
+
+    @include susy-media(tablet) {
+      font-size: 18px;
+    }
   }
 
   .slick-prev {

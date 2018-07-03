@@ -21,12 +21,11 @@
 
 .time-local {
   text-align: center;
-  // font-size: 12px;
-  margin-bottom: 30px;
   font-weight: 700;
 
-  @include susy-media(mobileLanscape) {
-    margin-bottom: 50px;
+  @include susy-media(mobileOnly) {
+    margin-bottom: 30px;
+    padding: 0 30px;
   }
 
   @include susy-media(tablet) {

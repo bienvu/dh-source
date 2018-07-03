@@ -132,7 +132,14 @@
      $('.js-slide').each(function() {
        $(this).not('.slick-initialized').slick({
          infinite: true,
-         autoplay: false,
+         autoplay: false
+       });
+     });
+
+     $('.js-slide-auto').each(function() {
+       $(this).not('.slick-initialized').slick({
+         infinite: true,
+         autoplay: true,
        });
      });
    }

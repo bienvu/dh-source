@@ -24,9 +24,9 @@
           {{context}}
         {% endblock %}
       {% else %}
-        {% block page_transition %}
-          {% include 'page-transition.twig' %}
-        {% endblock %}
+        <div class="page-transition__wrap">
+          <div class="page-transition__logo"><a href="/" class="denholm-logo">denHolm</a></div>
+        </div>
 
         {% block transition_content %}
           {{context}}

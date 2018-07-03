@@ -1,14 +1,17 @@
 {% block page_transition %}
   <div class="page-transition__wrap">
-    {% if post.get_field('page_type').value == 'sjc' %}
+    {# {{ post.get_field('page_type')|print_r }} #}
+    {% if post.get_field('page_type') == 'sjc' %}
       {% set site_logo  = 'Steven<br> John<br> Clark' %}
       {% set site_class = 'sjc-logo' %}
       {% set site_data  = 'sjc' %}
+      {% set site_data_mobile  = 'sjc-mobile' %}
       {% set site_menu  = 'sjc' %}
     {% else %}
       {% set site_logo  = 'denHolm' %}
       {% set site_class = 'denholm-logo' %}
       {% set site_data  = 'denholm' %}
+      {% set site_data_mobile  = 'denholm-mobile' %}
       {% set site_menu  = 'denholm' %}
     {% endif %}
 
@@ -17,7 +20,7 @@
       <a href="/"></a>
     </div>
     <div class="page-transition__menu-mobile">
-      <span class="js-change-page js-logo back-home is-active" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom"></span>
+      <span class="js-change-page js-logo back-home is-active" data-page-name="{{ site_data_mobile }}" data-page-trans="slide-in-from-bottom"></span>
       <span class="menu js-toggle-menu">Menu</span>
     </div>
     <div class="page-transition__menu">
@@ -31,7 +34,7 @@
         {% endblock %}
 
         <div class="page-transition__footer">
-          <div class="container">
+          <div class="content-inner">
             <ul class="page-transition__footer__inner">
               {% include 'navigation.twig' with {'menu': menu.footer} %}
             </ul>
@@ -41,7 +44,7 @@
           <div class="red-button">
             <a href="/"></a>
           </div>
-          <span>denHolm Sttudios</span>
+          <span>denHolm Studios</span>
         </div>
       </div>
     </div>

@@ -34,3 +34,19 @@ th {
     margin-bottom: 0;
   }
 }
+
+.woocommerce table.shop_table {
+  th,
+  td {
+    min-width: inherit;
+  }
+
+  button.button {
+    border-radius: 0;
+    padding: 8px;
+  }
+
+  input.input-text {
+    width: 90px !important;
+  }
+}

@@ -7,6 +7,8 @@
   }
 
   .nav {
+    background: none;
+
     @include susy-media(tablet) {
       list-style: none;
       position: fixed;
@@ -23,6 +25,8 @@
         display: inline-block;
         position: relative;
         z-index: 4;
+        min-width: 105px;
+        text-align: center;
 
         &:before {
           content: '>';
@@ -50,8 +54,9 @@
 
       &.what,
       &.left {
-        left: 28px;
+        left: 18px;
         transform: rotate(-90deg);
+        background: none;
 
         span:before {
           top: -32px;
@@ -60,7 +65,7 @@
       }
 
       &.bio {
-        left: 57px;
+        left: 35px;
         transform: rotate(-90deg);
 
         @include susy-media(tablet) {
@@ -68,12 +73,16 @@
         }
 
         @include susy-media(desktop) {
-          left: 57px;
+          left: 35px;
         }
 
-        span:before {
-          top: -32px;
-          margin-left: -8px;
+        span {
+          min-width: 70px;
+
+          &:before {
+            top: -32px;
+            margin-left: -8px;
+          }
         }
       }
 
@@ -90,7 +99,7 @@
       }
 
       &.exhibit {
-        right: 30px;
+        right: 20px;
         transform: rotate(-90deg);
 
         @include susy-media(tablet) {
@@ -98,7 +107,7 @@
         }
 
         @include susy-media(desktop) {
-          right: 30px;
+          right: 18px;
         }
 
         span:before {
@@ -152,7 +161,7 @@
     text-transform: uppercase;
     @include susy-media(mobileOnly) {
       width: 100%;
-      margin-bottom: 87px;
+      margin-bottom: 50px;
     }
 
     ul {
@@ -166,13 +175,15 @@
 
     .expand {
       &:after {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        content: '';
-        height: 100px;
-        z-index: 2;
+        @include susy-media(tablet) {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100%;
+          content: '';
+          height: 100px;
+          z-index: 2;
+        }
       }
 
       &:hover {
@@ -196,7 +207,7 @@
 
         @include susy-media(tablet) {
           position: absolute;
-          left: 65px;
+          left: 42px;
           top: 0;
           transform: rotate(90deg);
           font-size: 12px;
@@ -226,6 +237,10 @@
           min-width: 60px;
           text-align: center;
 
+          @include susy-media(mobileOnly) {
+            margin-bottom: 4px;
+          }
+
           @include susy-media(tablet) {
             margin-bottom: 5px;
 
@@ -245,6 +260,11 @@
             display: inline-block;
             padding: 0 5px;
             cursor: pointer;
+            min-width: inherit;
+
+            @include susy-media(mobileOnly) {
+              font-size: 17px;
+            }
 
             @include susy-media(tablet) {
               width: 100%;
@@ -262,7 +282,6 @@
     @include susy-media(mobileOnly) {
       .nav {
         text-align: center;
-        font-size: 36px;
 
         span {
           padding: 0 10px;
@@ -270,7 +289,7 @@
       }
 
       li {
-        margin-bottom: 48px;
+        margin-bottom: 36px;
       }
     }
 
@@ -317,9 +336,11 @@
       margin-left: 20px;
       padding: 4px 13px;
       position: relative;
+      font-weight: 500;
+      margin-right: 10px;
 
       @include susy-media(mobileOnly) {
-        font-size: 19px;
+        font-size: 15px;
         margin-left: 40px;
       }
 
@@ -346,6 +367,14 @@
       }
     }
 
+    .content-inner {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      margin: 0 auto;
+    }
+
     .nav {
       margin-top: 0;
       position: relative;
@@ -353,14 +382,19 @@
       transform: translate(0, 0);
       font-size: 12px;
       padding: 4px 13px;
+      font-weight: 500;
       // display: none;
 
       @include susy-media(mobileOnly) {
-        font-size: 19px;
+        font-size: 15px;
       }
 
-      span:before {
-        display: none;
+      span {
+        min-width: inherit;
+
+        &:before {
+          display: none;
+        }
       }
     }
   }
@@ -375,6 +409,13 @@
 
     &.home {
       background-color: transparent;
+    }
+
+    &.denholm,
+    &.sjc {
+      @include susy-media(mobileOnly) {
+        display: none;
+      }
     }
   }
 
@@ -393,7 +434,7 @@
       justify-content: center;
       flex-wrap: wrap;
       z-index: 9;
-      padding-top: 72px;
+      padding-top: 30px;
       overflow: auto;
       opacity: 0;
       visibility: hidden;
@@ -414,24 +455,32 @@
 
     .back-home {
       position: absolute;
-      top: 33px;
-      left: 40px;
-      width: 100px;
-      height: 10px;
-      background-color: $yellow;
+      top: 32px;
+      left: 30px;
+      width: 80px;
+      height: 7px;
+      background-color: #e8d4a2;
       z-index: 9;
       cursor: pointer;
+
+      &.span[data-page-name='denholm-mobile'] {
+        background-color: $pink;
+      }
     }
 
     .menu {
       position: absolute;
       top: 22px;
-      right: 24px;
-      font-size: 19px;
+      right: 18px;
+      font-size: 15px;
       z-index: 10;
-      padding: 5px 39px;
+      padding: 4px 30px;
       text-transform: uppercase;
       background: #edd6d6;
+
+      @include susy-media(tablet) {
+        right: 24px;
+      }
 
       &:before {
         content: "";
@@ -447,8 +496,8 @@
       }
 
       &.is-show {
-        width: 34px;
-        height: 38px;
+        width: 29px;
+        height: 30px;
         font-size: 0;
         padding: 10px;
 
@@ -461,7 +510,8 @@
 
   &__link {
     text-align: center;
-    margin-top: 65px;
+    margin-top: 50px;
+    padding-bottom: 30px;
 
     @include susy-media(tablet) {
       display: none;
@@ -471,12 +521,12 @@
       position: relative;
       top: 0;
       left: 0;
-      margin-bottom: 24px;
+      margin-bottom: 15px;
     }
 
     span {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 14px;
     }
   }
 }
@@ -484,51 +534,48 @@
 .content-inner {
   max-width: 750px;
   width: 100%;
-  max-height: calc(100% - 200px);
+  max-height: calc(100% - 60px);
+
+  @include susy-media(tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 560px;
+  }
 
   @include susy-media(mobileOnly) {
     padding: 0 45px;
-    max-height: calc(100% - 100px);
-    margin-top: 55px;
+    max-height: calc(100% - 85px);
+    margin-top: 50px;
     overflow-y: auto;
   }
 
   @include susy-media(mobilePortraitOnly) {
-    padding: 0 30px;
-  }
-
-  @include susy-media(tablet) {
-    max-width: 560px;
+    padding: 0 35px;
   }
 
   @include susy-media(desktop) {
     padding: 0;
+    max-width: 660px;
+  }
+
+  @include susy-media(desktopWide) {
     max-width: 750px;
   }
 
   @include susy-media(desktopSuperwide) {
     max-width: 788px;
-    max-height: calc(100% - 240px);
+    max-height: calc(100% - 100px);
   }
 }
 
-// .denholm,
-// .object-specific {
-//   .content-inner {
-//     overflow: inherit;
-//   }
-// }
-
-// .objects,
-// .object-specific {
-//   .content-inner {
-//     @include susy-media(mobileOnly) {
-//       overflow-y: auto;
-//       max-height: calc(100% - 110px);
-//       margin-top: 60px;
-//     }
-//   }
-// }
+.main-content {
+  .content-inner {
+    overflow: auto;
+    max-height: calc(100% - 60px);
+  }
+}
 
 .bg-active {
   background: #f9f1f1;
@@ -547,4 +594,10 @@
 
 .back-to-home {
   display: none;
+}
+
+.denholm-loaded {
+  .back-home {
+    background-color: $pink;
+  }
 }
