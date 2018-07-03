@@ -52,7 +52,7 @@
 
   h3 {
     line-height: 1.3;
-    font-size: 24px;
+    font-size: 21px;
 
     @include susy-media(mobileLanscape) {
       font-size: 30px;
@@ -288,7 +288,7 @@
       }
 
       &:nth-child(3) {
-        padding-top: 92px;
+        padding-top: 100px;
         padding-bottom: 110px;
 
         &:after {
@@ -336,7 +336,20 @@
       }
 
       @include susy-media(tablet) {
-        right: -75px;
+        right: -82px;
+      }
+
+      @include susy-media(desktop) {
+        right: -120px;
+      }
+
+      @include susy-media(desktopSuperwide) {
+        right: -90px;
+      }
+
+      @include susy-media(2000px) {
+        width: 330px;
+        right: -95px;
       }
     }
 
@@ -351,6 +364,7 @@
 
       &:before {
         background: url('../images/line1.png') no-repeat scroll 0 0 transparent;
+        background-size: auto 100%;
       }
     }
 
@@ -359,10 +373,19 @@
 
       &:before {
         background: url('../images/line2.png') no-repeat scroll 0 0 transparent;
-        right: -185px;
+        background-size: auto 100%;
+        right: -181px;
+
+        @include susy-media(desktop) {
+          right: -195px;
+        }
 
         @include susy-media(desktopSuperwide) {
           right: -184px;
+        }
+
+        @include susy-media(2000px) {
+          right: -255px;
         }
 
         @media screen
@@ -378,6 +401,7 @@
     &:nth-child(3) {
       &:before {
         background: url('../images/line3.png') no-repeat scroll 0 46% transparent;
+        background-size: auto 100%;
         right: -89px;
 
         @include susy-media(tablet) {
@@ -385,11 +409,15 @@
         }
 
         @include susy-media(desktop) {
-          right: -107px;
+          right: -115px;
         }
 
         @include susy-media(desktopSuperwide) {
-          right: -79px;
+          right: -82px;
+        }
+
+        @include susy-media(2000px) {
+          right: -85px;
         }
 
         @media screen

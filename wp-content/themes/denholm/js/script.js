@@ -8,35 +8,35 @@
 
 
     // Contact form 7.
-    /*function getZipCode() {
-      var this_element = $(this);
-
-      $.getJSON("http://jsonip.com/?callback=?", function (data_ip) {
-        var your_ip = data_ip.ip;
-
-        $.getJSON('https://ipapi.co/' + your_ip + '/json', function(data){
-          var your_lat = data.latitude;
-          var your_lon = data.longitude;
-
-          $.ajax({
-            type : "post",
-            dataType : "json",
-            url : customAjax.ajaxurl,
-            data : {action: "getzipcode", lat: your_lat, lon: your_lon},
-            beforeSend: function() {
-              this_element.append('<span class="zipcode-ajax"></span>');
-            },
-            success: function(response) {
-              $('.zipcode-ajax').remove();
-              $('.your-zipcode input[name="your-zipcode"]').val(response.markup);
-            },
-            error: function(response) {
-
-            }
-          });
-        });
-      });
-    }*/
+    // function getZipCode() {
+    //   var this_element = $(this);
+    //
+    //   $.getJSON("http://jsonip.com/?callback=?", function (data_ip) {
+    //     var your_ip = data_ip.ip;
+    //
+    //     $.getJSON('https://ipapi.co/' + your_ip + '/json', function(data){
+    //       var your_lat = data.latitude;
+    //       var your_lon = data.longitude;
+    //
+    //       $.ajax({
+    //         type : "post",
+    //         dataType : "json",
+    //         url : customAjax.ajaxurl,
+    //         data : {action: "getzipcode", lat: your_lat, lon: your_lon},
+    //         beforeSend: function() {
+    //           this_element.append('<span class="zipcode-ajax"></span>');
+    //         },
+    //         success: function(response) {
+    //           $('.zipcode-ajax').remove();
+    //           $('.your-zipcode input[name="your-zipcode"]').val(response.markup);
+    //         },
+    //         error: function(response) {
+    //
+    //         }
+    //       });
+    //     });
+    //   });
+    // }
 
 
     // Ajax Load products Detail
@@ -67,8 +67,11 @@
             history.pushState({}, null, "/denholm");
           });
           $('.back-link').click(function() {
-            $('page-transition__item').removeClass('jquery-page-active');
-            $('.objects .js-change-page').trigger('click');
+            // $('.page-transition__item.object-specific').removeClass('jquery-page-active').addClass('jquery-page-disabled');
+            // $('.page-transition__item.objects').removeClass('jquery-page-disabled').addClass('jquery-page-active');
+            // $('.objects .js-change-page').addClass('is-active');
+            history.pushState({}, null, "/denholm");
+            return false;
           });
         },
         error: function(response) {
@@ -100,8 +103,8 @@
           var $widthWd = $( window ).width();
           if($widthWd > 767) {
             $.fn.multiscroll.moveTo(1);
-          }
-          $('.landing').scrollTop(0);
+          } 
+          $(window).scrollTop(0);
           $('.page-ajaxload').append(response);
           history.pushState({}, null, page_url);
           $('window').pagesTransition();

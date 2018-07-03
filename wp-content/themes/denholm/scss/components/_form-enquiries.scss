@@ -25,7 +25,6 @@
 
   @include susy-media(mobileOnly) {
     margin-bottom: 30px;
-    padding: 0 30px;
   }
 
   @include susy-media(tablet) {

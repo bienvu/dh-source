@@ -44,6 +44,7 @@
            $(".screen").page().transition(page, trans);
          }
          $(".js-slide").slick("refresh");
+         $(".js-slide-auto").slick("refresh");
 
          $("body, .page-transition__menu-mobile, .js-toggle-menu, .page-transition__menu").removeClass('is-show');
 

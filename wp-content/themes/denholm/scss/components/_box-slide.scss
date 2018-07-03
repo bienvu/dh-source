@@ -32,7 +32,7 @@
     right: -35px;
   }
 
-  @include susy-media(desktop) {
+  @include susy-media(desktopWide) {
     right: -75px;
   }
 }
@@ -46,7 +46,7 @@
     left: -35px;
   }
 
-  @include susy-media(desktop) {
+  @include susy-media(desktopWide) {
     left: -75px;
   }
 }

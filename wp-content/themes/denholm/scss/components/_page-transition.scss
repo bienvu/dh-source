@@ -477,7 +477,7 @@
       z-index: 10;
       padding: 4px 30px;
       text-transform: uppercase;
-      background: #edd6d6;
+      background: rgba(#edd6d6, .7);
 
       @include susy-media(tablet) {
         right: 24px;

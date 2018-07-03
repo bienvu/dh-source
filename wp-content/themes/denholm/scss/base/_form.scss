@@ -148,6 +148,7 @@ textarea {
 }
 
 select {
+  @include aperto;
   -moz-appearance: none;
   -webkit-appearance:none;
   background-color: $white;
@@ -156,22 +157,16 @@ select {
   background-repeat: no-repeat;
   border: 0;
   border-bottom: 2px solid $text-color;
-  padding: 13px 12px;
-  font-size: 14px;
+  font-size: 12px;
+  padding: 8px;
+  height: 33px;
   text-transform: capitalize;
   margin-bottom: rem(10px);
   padding: rem(5px 25px 5px 10px);
   background-color: $white;
   border-radius: 0;
   width: 100%;
-  margin: 0;
-  height: 45px;
-
-  @include susy-media(tablet) {
-    font-size: 12px;
-    padding: 8px;
-    height: 33px;
-  }
+  margin: 0;  
 
   &:focus,
   &:hover,

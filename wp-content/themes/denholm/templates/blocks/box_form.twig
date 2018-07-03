@@ -1,7 +1,7 @@
 <div class="page-transition__item jquery-page-disabled {{name|replace({' ': '-'})|lower}}" data-jquery-page-name="{{name|replace({' ': '-'})|lower}}">
   <div class="content-inner">
     <div class="box-form">
-      <div class="time-local">{{ fn('do_shortcode', '[time_by_locate]') }}</div>
+      {{ fn('do_shortcode', '[time_by_locate]') }}
       {{ function('do_shortcode', '[contact-form-7 id="' ~ contact_form_export.ID ~ '" title="' ~ contact_form_export.post_title ~ '"]') }}
     </div>
   </div>
