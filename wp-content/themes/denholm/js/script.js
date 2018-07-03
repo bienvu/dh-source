@@ -66,6 +66,10 @@
           $('.js-logo.denholm-logo, .denholm-loaded .js-change-page').click(function() {
             history.pushState({}, null, "/denholm");
           });
+          $('.back-link').click(function() {
+            $('page-transition__item').removeClass('jquery-page-active');
+            $('.objects .js-change-page').trigger('click');
+          });
         },
         error: function(response) {
         }
