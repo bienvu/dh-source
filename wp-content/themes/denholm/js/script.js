@@ -54,12 +54,16 @@
           $('.object-specific .content-inner').remove();
         },
         success: function(response) {
+          $('.object-specific .content-inner').remove();
           $('.object-specific').append(response);
           history.pushState({}, null, slug);
           $('window').sliderFunction();
           $('window').pagesTransition();
           $('window').showHideFunction();
           $('body').addClass('overflow-hidden');
+          $('.objects .js-change-page').removeClass('bg-active is-active');
+          $('.page-transition__item.object-specific').addClass('jquery-page-active').removeClass('jquery-page-disabled');
+          $('.page-transition__item.objects').addClass('jquery-page-disabled').removeClass('jquery-page-active');
           $('.js-logo').click(function() {
             $("body").addClass('is-home');
           });
@@ -67,9 +71,9 @@
             history.pushState({}, null, "/denholm");
           });
           $('.back-link').click(function() {
-            // $('.page-transition__item.object-specific').removeClass('jquery-page-active').addClass('jquery-page-disabled');
-            // $('.page-transition__item.objects').removeClass('jquery-page-disabled').addClass('jquery-page-active');
-            // $('.objects .js-change-page').addClass('is-active');
+            $('.page-transition__item.object-specific').addClass('jquery-page-disabled').removeClass('jquery-page-active');
+            $('.page-transition__item.objects').addClass('jquery-page-active').removeClass('jquery-page-disabled');
+            $('.objects .js-change-page').addClass('bg-active is-active');
             history.pushState({}, null, "/denholm");
             return false;
           });
@@ -103,7 +107,7 @@
           var $widthWd = $( window ).width();
           if($widthWd > 767) {
             $.fn.multiscroll.moveTo(1);
-          } 
+          }
           $(window).scrollTop(0);
           $('.page-ajaxload').append(response);
           history.pushState({}, null, page_url);

@@ -602,3 +602,30 @@
     background-color: $pink;
   }
 }
+// 
+// .jquery-page {
+//   .showed {
+//     display: flex !important;
+//     top: -200%;
+//     transition: .5s;
+//     position: absolute;
+//     z-index: 9;
+//
+//     &.show-in {
+//       top: 0;
+//       transition: .5s;
+//       position: relative;
+//     }
+//   }
+//
+//   .object-specific {
+//     // top: 0;
+//     // transition: .5s;
+//     // position: absolute;
+//
+//     &.show-out {
+//       // top: 100%;
+//       // transition: .5s;
+//     }
+//   }
+// }
