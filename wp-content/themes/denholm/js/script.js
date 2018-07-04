@@ -54,17 +54,17 @@
           $('.object-specific .content-inner').remove();
         },
         success: function(response) {
-          $('.object-specific .content-inner').remove();
           $('.object-specific').append(response);
           history.pushState({}, null, slug);
           $('window').sliderFunction();
+          $(".js-slide").slick("refresh");
           $('window').pagesTransition();
           $('window').showHideFunction();
           $('body').addClass('overflow-hidden');
           $('.objects .js-change-page').removeClass('bg-active is-active');
           $('.page-transition__item.object-specific').addClass('jquery-page-active').removeClass('jquery-page-disabled');
           $('.page-transition__item.objects').addClass('jquery-page-disabled').removeClass('jquery-page-active');
-          $('.js-logo').click(function() {
+          $('.js-logo, .js-change-page').click(function() {
             $("body").addClass('is-home');
           });
           $('.js-logo.denholm-logo, .denholm-loaded .js-change-page').click(function() {

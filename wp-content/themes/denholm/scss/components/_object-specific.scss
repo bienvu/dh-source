@@ -27,6 +27,10 @@
   }
 
   &__gallery {
+    img {
+      margin-left: 1px;
+    }
+    
     @include susy-media(mobileOnly) {
       width: 100%;
       order: 1;
