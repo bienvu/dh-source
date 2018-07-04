@@ -1,4 +1,8 @@
 .box-form {
+  @include susy-media(mobileOnly) {
+    margin-top: 44px;
+  }
+
   form {
     position: relative;
   }

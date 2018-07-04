@@ -5,7 +5,7 @@
   {% set currency_symbol  = woocs.get_currencies[currency].symbol %}
   {% set currency_rate    = woocs.get_currencies[currency].rate %}
   {% set currency_price   = product.get_price * currency_rate %}
-  {# {{product|print_r}} #}
+  {{product|print_r}}
   <div class="object-specific">
     <div class="object-specific__content">
       <a class="back-link prev js-back-overview" href="#" data-page-name="objects" data-page-trans="slide-in-from-bottom">Back</a>
