@@ -452,15 +452,15 @@
   }
 
   &__menu-mobile {
-    overflow: hidden;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 99;
+    // overflow: hidden;
+    // background: #fff;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // width: 100%;
+    // height: 70px;
+    // z-index: 99;
 
     @include susy-media(tablet) {
       display: none;
@@ -561,7 +561,7 @@
   @include susy-media(mobileOnly) {
     padding: 35px 45px 40px;
     max-height: calc(100% - 100px);
-    margin-top: 50px;
+    // margin-top: 50px;
     height: calc(100% - 100px);
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
