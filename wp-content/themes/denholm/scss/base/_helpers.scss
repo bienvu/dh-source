@@ -251,7 +251,7 @@
 }
 
 .red-button {
-  position: absolute;
+  position: fixed;
   top: 23px;
   left: 23px;
 
@@ -281,7 +281,7 @@
 
 .overflow-hidden {
   overflow: hidden;
-  
+
   @include susy-media(mobileOnly) {
     position: relative;
     height: 100%;

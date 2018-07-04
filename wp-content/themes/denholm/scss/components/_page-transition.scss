@@ -455,7 +455,7 @@
     }
 
     .back-home {
-      position: absolute;
+      position: fixed;
       top: 32px;
       left: 30px;
       width: 80px;
@@ -470,7 +470,7 @@
     }
 
     .menu {
-      position: absolute;
+      position: fixed;
       top: 22px;
       right: 18px;
       font-size: 15px;
@@ -548,13 +548,14 @@
 
   @include susy-media(mobileOnly) {
     padding: 0 45px 40px;
-    max-height: calc(100% - 85px);
+    max-height: calc(100% - 50px);
     margin-top: 50px;
+    height: 100%;
     overflow-y: auto;
   }
 
   @include susy-media(mobilePortraitOnly) {
-    padding: 0 35px 40px;
+    padding: 0 35px 50px;
   }
 
   @include susy-media(desktop) {
