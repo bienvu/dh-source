@@ -60,7 +60,7 @@
           $(".js-slide").slick("refresh");
           $('window').pagesTransition();
           $('window').showHideFunction();
-          $('body').addClass('overflow-hidden');
+          $('body, html').addClass('overflow-hidden');
           $('.objects .js-change-page').removeClass('bg-active is-active');
           $('.page-transition__item.object-specific').addClass('jquery-page-active').removeClass('jquery-page-disabled');
           $('.page-transition__item.objects').addClass('jquery-page-disabled').removeClass('jquery-page-active');
@@ -116,6 +116,7 @@
           $('window').showHideFunction();
           $('.page-transition').addClass(page_name).removeClass(start_load);
           $('body').addClass('is-home overflow-hidden');
+          $('html').addClass('overflow-hidden');
           $('.js-logo').click(function() {
             $("body").addClass('is-home');
           });
@@ -123,7 +124,7 @@
             history.pushState({}, null, "/");
             $(".page-transition").removeClass('denholm-start sjc-start');
             $(".page-transition").removeClass(page_name).addClass(start_load);
-            $('body').removeClass('overflow-hidden');
+            $('body, html').removeClass('overflow-hidden');
             return false;
           });
           $('.box-product__item .load-product').on('click', ajaxProductDetail);
