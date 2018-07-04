@@ -82,8 +82,8 @@
 
       @include susy-media(tablet) {
         max-height: 495px;
-        height: auto;
-        width: 100%;
+        height: 100%;
+        width: auto;
       }
 
       @include susy-media(mobileOnly) {
