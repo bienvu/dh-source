@@ -59,7 +59,7 @@
           $('window').sliderFunction();
           $(".js-slide").slick("refresh");
           $('window').pagesTransition();
-          $('window').showHideFunction();
+          // $('window').showHideFunction();
           $('body, html').addClass('overflow-hidden');
           $('.objects .js-change-page').removeClass('bg-active is-active');
           $('.page-transition__item.object-specific').addClass('jquery-page-active').removeClass('jquery-page-disabled');

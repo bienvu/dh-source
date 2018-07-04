@@ -55,67 +55,95 @@
 
    // Page transition
    $.fn.showHideFunction = function() {
+
      // Show hidden function.
-     var showHiddenFunction = function (btn, flag, clickOutside, hasGrandParent, dropDown, childSelector) {
-       var $btn = btn,
-           $parent = $btn.parent(),
-           $grandParent = $parent.parents('body'),
-           $childSelector = childSelector,
-       dropDown = dropDown === true ? true : false;
-       clickOutside = clickOutside === false ? false : true;
-       hasGrandParent = hasGrandParent === true ? true : false;
-       $btn.on('click', function (e) {
-         e.preventDefault();
-         if (!$parent.hasClass(flag)) {
-           $parent.addClass(flag);
+     // var showHiddenFunction = function (btn, flag, clickOutside, hasGrandParent, dropDown, childSelector) {
+     //   var $btn = btn,
+     //       $parent = $btn.parent(),
+     //       $grandParent = $parent.parents('body'),
+     //       $childSelector = childSelector,
+     //   dropDown = dropDown === true ? true : false;
+     //   clickOutside = clickOutside === false ? false : true;
+     //   hasGrandParent = hasGrandParent === true ? true : false;
+     //   // console.log("ok");
+     //   $btn.on('click', function (e) {
+     //     e.preventDefault();
+     //     if (!$parent.hasClass(flag)) {
+     //       $parent.addClass(flag);
+     //
+     //       if (dropDown === true) {
+     //         // $childSelector.slideDown("slow");
+     //         $childSelector.addClass(flag);
+     //       }
+     //
+     //       if (hasGrandParent === true) {
+     //         $grandParent.addClass(flag);
+     //         $btn.addClass(flag);
+     //       }
+     //     }
+     //     else {
+     //       $parent.removeClass(flag);
+     //       if (dropDown === true) {
+     //         // $childSelector.slideUp("slow");
+     //         $childSelector.removeClass(flag);
+     //       }
+     //
+     //       if (hasGrandParent === true) {
+     //         $grandParent.removeClass(flag);
+     //         $btn.removeClass(flag);
+     //       }
+     //     }
+     //   });
+     //   if (clickOutside === true) {
+     //     $(document).on('touchstart click', function (e) {
+     //       if ($parent.has(e.target).length === 0 && $parent.hasClass(flag)) {
+     //         $parent.removeClass(flag);
+     //
+     //         if (hasGrandParent === true) {
+     //           $grandParent.removeClass(flag);
+     //           $btn.removeClass(flag);
+     //         }
+     //
+     //         if (dropDown === true) {
+     //           // $childSelector.slideUp("slow");
+     //           $childSelector.removeClass(flag);
+     //         }
+     //       }
+     //     });
+     //   }
+     // };
+     //
+     // $('.js-toggle-menu').each(function() {
+     //   var $this = $(this),
+     //       showMainMenuFlag = 'is-show',
+     //       $parent = $this.closest('.page-transition__wrap'),
+     //       $childMenu = $parent.find('.page-transition__menu');
+     //   showHiddenFunction($this, showMainMenuFlag, false, false, true, $childMenu);
+     // });
 
-           if (dropDown === true) {
-             // $childSelector.slideDown("slow");
-             $childSelector.addClass(flag);
-           }
+     $('.js-toggle-menu').each(function() {
+       var $this = $(this),
+         flag = 'is-show',
+         $parent = $this.closest('.page-transition__wrap'),
+         $childMenu = $parent.find('.page-transition__menu');
 
-           if (hasGrandParent === true) {
-             $grandParent.addClass(flag);
-             $btn.addClass(flag);
-           }
-         }
-         else {
-           $parent.removeClass(flag);
-           if (dropDown === true) {
-             // $childSelector.slideUp("slow");
-             $childSelector.removeClass(flag);
-           }
-
-           if (hasGrandParent === true) {
-             $grandParent.removeClass(flag);
-             $btn.removeClass(flag);
-           }
-         }
-       });
-       if (clickOutside === true) {
-         $(document).on('touchstart click', function (e) {
-           if ($parent.has(e.target).length === 0 && $parent.hasClass(flag)) {
+         $this.on('touchstart click', function (e) {
+           e.preventDefault();
+           if(!$('body').hasClass(flag)) {
+             // console.log("show");
+             $this.addClass(flag);
+             $parent.addClass(flag);
+             $childMenu.addClass(flag);
+             $('body').addClass(flag);
+           } else {
+             // console.log("hidden");
+             $this.removeClass(flag);
              $parent.removeClass(flag);
-
-             if (hasGrandParent === true) {
-               $grandParent.removeClass(flag);
-               $btn.removeClass(flag);
-             }
-
-             if (dropDown === true) {
-               // $childSelector.slideUp("slow");
-               $childSelector.removeClass(flag);
-             }
+             $childMenu.removeClass(flag);
+             $('body').removeClass(flag);
            }
          });
-       }
-     };
-
-     var $menuResponsive = $('.js-toggle-menu'),
-         showMainMenuFlag = 'is-show',
-         $parent = $menuResponsive.closest('.page-transition__wrap'),
-         $childMenu = $parent.find('.page-transition__menu');
-     showHiddenFunction($menuResponsive, showMainMenuFlag, false, true, true, $childMenu);
+     });
    }
 
    // Rotate text.
