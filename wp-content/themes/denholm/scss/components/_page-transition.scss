@@ -551,7 +551,7 @@
     padding: 35px 45px 40px;
     max-height: calc(100% - 50px);
     margin-top: 50px;
-    height: 100%;
+    height: calc(100% - 50px);
     overflow-y: auto;
   }
 
