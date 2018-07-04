@@ -100,13 +100,15 @@
 
     img {
       @include susy-media(tablet) {
-        max-height: 380px;
+        max-height: 495px;
+        height: 100%;
+        width: auto;
       }
 
-      @include susy-media(desktopSuperwide) {
-        max-height: inherit;
-        max-width: 322px;
-      }
+      // @include susy-media(desktopSuperwide) {
+      //   max-height: inherit;
+      //   max-width: 322px;
+      // }
     }
 
     .box-info {
