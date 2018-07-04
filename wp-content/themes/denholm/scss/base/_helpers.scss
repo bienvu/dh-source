@@ -284,5 +284,7 @@
 
   @include susy-media(mobileOnly) {
     position: relative;
+    height: 100vh;
+    width: 100vw;
   }
 }
