@@ -374,6 +374,7 @@
       left: 0;
       transform: none;
       margin: 0 auto;
+      padding: 0;
     }
 
     .nav {
@@ -547,7 +548,7 @@
   }
 
   @include susy-media(mobileOnly) {
-    padding: 0 45px 40px;
+    padding: 35px 45px 40px;
     max-height: calc(100% - 50px);
     margin-top: 50px;
     height: 100%;
@@ -555,7 +556,7 @@
   }
 
   @include susy-media(mobilePortraitOnly) {
-    padding: 0 35px 50px;
+    padding: 35px 35px 40px;
   }
 
   @include susy-media(desktop) {
