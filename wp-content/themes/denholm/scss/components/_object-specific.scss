@@ -50,21 +50,6 @@
       }
     }
 
-    // @include susy-media(desktopSuperwide) {
-    //   img {
-    //     max-height: inherit;
-    //     max-width: 325px;
-    //   }
-    // }
-    // .slick-slider {
-    //   overflow: hidden;
-    // }
-    //
-    // .slick-list {
-    //   position: relative;
-    //   left: -1px;
-    // }
-
     img {
       height: auto;
       width: calc(100% - 1px);
@@ -74,11 +59,7 @@
 
     .slick-slide { height: auto; }
   }
-
-  // &__slide {
-  //   width: calc(100% + 1px);
-  // }
-
+  
   &__quantity {
     input[type='number'] {
       background: none;
