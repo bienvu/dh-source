@@ -127,6 +127,7 @@
             return false;
           });
           $('.box-product__item .load-product').on('click', ajaxProductDetail);
+          wpcf7.initForm( $('.wpcf7') );
         },
         error: function(response) {
         }
