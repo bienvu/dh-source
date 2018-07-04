@@ -70,18 +70,21 @@
     float: left;
     text-align: center;
     opacity: 0;
+    text-align: center;
 
     &:first-child,
     &.slick-slide {
       opacity: 1;
     }
 
-    // @include susy-media(desktopSuperwide) {
-    //   min-width: 742px;
-    // }
-
     img {
-      display: inline-block;
+      display: inline-block !important;
+
+      @include susy-media(tablet) {
+        max-height: 495px;
+        height: auto;
+        width: 100%;
+      }
 
       @include susy-media(mobileOnly) {
         width: 100%;
@@ -93,10 +96,6 @@
   &.has-info {
     .box-slide {
       padding: 0 85px;
-    }
-
-    .box-slide__item {
-      // min-width: inherit;
     }
 
     img {
