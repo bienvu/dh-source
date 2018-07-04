@@ -77,6 +77,7 @@
             history.pushState({}, null, "/denholm");
             return false;
           });
+          wpcf7.initForm( $('.wpcf7') );
         },
         error: function(response) {
         }
