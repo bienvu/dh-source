@@ -547,14 +547,14 @@
   }
 
   @include susy-media(mobileOnly) {
-    padding: 0 45px;
+    padding: 35px 45px;
     max-height: calc(100% - 85px);
     margin-top: 50px;
     overflow-y: auto;
   }
 
   @include susy-media(mobilePortraitOnly) {
-    padding: 0 35px;
+    padding: 40px 35px;
   }
 
   @include susy-media(desktop) {
