@@ -1,4 +1,4 @@
-# Add any directories, files, or patterns you don't want to be tracked by version 
+# Add any directories, files, or patterns you don't want to be tracked by version
 .well-known
 /.htaccess
 __MACOSX
@@ -10,3 +10,4 @@ cache
 /robots.txt
 backups
 /wp-content/updraft
+/wp-content/uploads
