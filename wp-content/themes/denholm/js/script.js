@@ -77,7 +77,6 @@
             history.pushState({}, null, "/denholm");
             return false;
           });
-          wpcf7.initForm( $('.wpcf7') );
         },
         error: function(response) {
         }
@@ -128,7 +127,17 @@
             return false;
           });
           $('.box-product__item .load-product').on('click', ajaxProductDetail);
-          wpcf7.initForm( $('.wpcf7') );
+          function initContactForm() {
+           $( 'div.wpcf7 > form' ).each( function() {
+            var $form = $( this );
+            wpcf7.initForm( $form );
+            if ( wpcf7.cached ) {
+             wpcf7.refill( $form );
+            }
+           });
+          }
+
+          initContactForm();
         },
         error: function(response) {
         }
