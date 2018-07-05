@@ -74,10 +74,14 @@
       position: absolute;
       border-bottom: 7px solid $white;
       left: 0;
-      bottom: -2px;
+      bottom: 0;
       height: 10px;
       width: 60px;
       content: '';
+
+      @include susy-media(mobilePortraitOnly) {
+        bottom: -2px;
+      }
 
       @include susy-media(desktop) {
         width: 83px;

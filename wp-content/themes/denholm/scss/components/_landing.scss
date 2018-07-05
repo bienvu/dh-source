@@ -131,11 +131,23 @@
       }
 
       &:before {
-        bottom: 4px;
+        bottom: 8px;
         width: 67px;
 
         @include susy-media(mobileOnly) {
           border-color: $pink;
+        }
+
+        @include susy-media(mobilePortraitOnly) {
+          bottom: 4px;
+        }
+
+        @include susy-media(480px) {
+          width: 83px;
+        }
+
+        @include susy-media(tablet) {
+          width: 70px;
         }
 
         @include susy-media(desktop) {
