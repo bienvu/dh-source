@@ -527,10 +527,13 @@
   }
 }
 
-.landing-wrap {
-  @include susy-media(mobileOnly) {
-    overflow-x: hidden;
-    position: relative;
-    width: 100%;
+.denholm-start,
+.sjc-start {
+  .landing-wrap {
+    @include susy-media(mobileOnly) {
+      overflow-x: hidden;
+      position: relative;
+      width: 100%;
+    }
   }
 }
