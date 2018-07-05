@@ -592,7 +592,8 @@
 
 .main-content {
   .content-inner {
-    overflow: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     max-height: calc(100% - 60px);
   }
 }
@@ -619,5 +620,26 @@
 .denholm-loaded {
   .back-home {
     background-color: $pink;
+  }
+}
+
+.woocommerce-cart {
+  .page-transition__logo {
+    @include susy-media(mobileOnly) {
+      display: block;
+    }
+
+    a {
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      position: fixed;
+    }
+  }
+
+  .main-content .content-inner {
+    @include susy-media(mobileOnly) {
+      margin-top: 60px;
+    }
   }
 }
