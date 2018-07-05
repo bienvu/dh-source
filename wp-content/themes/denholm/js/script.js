@@ -125,6 +125,8 @@
             $(".page-transition").removeClass('denholm-start sjc-start');
             $(".page-transition").removeClass(page_name).addClass(start_load);
             $('body, html').removeClass('overflow-hidden');
+            $('.page-ajaxload .page-transition__wrap').remove();
+            $('.page-ajaxload .page-transition__content').remove();
             return false;
           });
           $('.box-product__item .load-product').on('click', ajaxProductDetail);
