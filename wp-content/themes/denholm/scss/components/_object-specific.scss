@@ -4,6 +4,9 @@
 
   @include susy-media(mobileOnly) {
     margin-bottom: 30px;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
   @include susy-media(tablet) {
