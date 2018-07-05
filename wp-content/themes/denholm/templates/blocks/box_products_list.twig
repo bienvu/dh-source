@@ -7,13 +7,14 @@
       <div class="box-product">
       {% for post in posts %}
         {% set product = fn('wc_get_product', post.ID) %}
+        {# {{product|print_r}} #}
         <div class="box-product__item {{ post.class }}">
           {% set geo_country      = geoip.country %}
           {% set currency         = currency_data[geo_country] %}
           {% set currency_symbol  = woocs.get_currencies[currency].symbol %}
           {% set currency_rate    = woocs.get_currencies[currency].rate %}
           {% set currency_price   = product.get_price * currency_rate %}
-
+          {{post|print_r}}
           <div class="box-product__image">
             <img src="{{ post.thumbnail.src('shop_single') }}">
           </div>
