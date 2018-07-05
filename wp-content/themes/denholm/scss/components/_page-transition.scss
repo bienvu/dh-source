@@ -604,10 +604,11 @@
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     max-height: calc(100% - 60px);
+  }
 
-    @include susy-media(mobileOnly) {
-      max-height: calc(100vh - 60px);
-      height: 100vh;
+  .wc-proceed-to-checkout {
+    .checkout-button {
+      margin-bottom: 0 !important;
     }
   }
 }
@@ -654,9 +655,18 @@
     }
   }
 
-  .main-content .content-inner {
+  .main-content {
     @include susy-media(mobileOnly) {
-      margin-top: 60px;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .content-inner {
+      @include susy-media(mobileOnly) {
+        margin-top: 60px;
+        height: calc(100vh - 60px);
+        margin-top: 60px;
+      }
     }
   }
 }
