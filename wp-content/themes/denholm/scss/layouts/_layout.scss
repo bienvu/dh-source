@@ -31,6 +31,7 @@ body {
   text-size-adjust: none;
   // background: #ccc;
   font-size: 12px;
+  overflow-x: hidden;
 
   &.is-show {
     overflow: hidden;
