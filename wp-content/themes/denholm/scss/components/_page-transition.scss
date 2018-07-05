@@ -189,10 +189,8 @@
       &:hover {
         ul {
           @include susy-media(tablet) {
-            transition: .3s;
+            transition: top .3s;
             top: -94px;
-            opacity: 1;
-            visibility: visible;
           }
         }
       }
@@ -208,16 +206,14 @@
         @include susy-media(tablet) {
           position: absolute;
           left: 42px;
-          top: 0;
+          top: 100px;
           transform: rotate(90deg);
           font-size: 12px;
           line-height: 1.4;
           color: #e1bbba;
           margin: 0;
           z-index: 1;
-          transition: .3s;
-          visibility: hidden;
-          opacity: 0;
+          transition: top .3s;
 
           &:before {
             position: absolute;
