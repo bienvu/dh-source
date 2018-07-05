@@ -1,5 +1,5 @@
 <div class="content-inner">
-  {% set product = fn('wc_get_product', 152) %}
+  {% set product = fn('wc_get_product', post.ID) %}
   {% set geo_country      = geoip.country %}
   {% set currency         = currency_data[geo_country] %}
   {% set currency_symbol  = woocs.get_currencies[currency].symbol %}
@@ -28,9 +28,9 @@
     <div class="object-specific__gallery">
       <a class="back-link prev" href="{{ current_path }}">Back</a>
       <div class="object-specific__slide js-slide">
-        {# <div class="object-specific__item">
+        <div class="object-specific__item">
           <img src="{{ post.thumbnail.src('shop_single') }}">
-        </div> #}
+        </div>
         {% for image in product.get_gallery_attachment_ids %}
           <div class="object-specific__item">
             <img src="{{ fn('wp_get_attachment_url', image) }}">
@@ -41,7 +41,6 @@
         <h2 class="object-specific__title">{{ post.title }}</h2>
         <div class="price">
           {{ fn('get_woocommerce_currency_symbol') }}{{ product.get_price|number_format(2, '.', ',') }} {{ fn('get_woocommerce_currency') }}
-          {# {{ currency_symbol ~ ' ' ~ currency_price|number_format(2, '.', ',') ~ ' ' ~ currency }} #}
         </div>
       </div>
     </div>
