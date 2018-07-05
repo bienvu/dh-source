@@ -1,7 +1,5 @@
 .content-inner .object-specific {
   @extend %clearfix;
-  // display: flex;
-  // flex-wrap: wrap;
 
   @include susy-media(mobileOnly) {
     margin-bottom: 30px;
@@ -9,12 +7,13 @@
 
   @include susy-media(tablet) {
     align-items: center;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__content {
     @include susy-media(mobileOnly) {
       width: 100%;
-      order: 2;
 
       .back-link  {
         display: none;
@@ -24,13 +23,13 @@
     @include susy-media(tablet) {
       width: 46%;
       margin-right: 57px;
+      order: 1;
     }
   }
 
   &__gallery {
     @include susy-media(mobileOnly) {
       width: 100%;
-      order: 1;
       margin-bottom: 30px;
 
       img {
@@ -41,10 +40,7 @@
 
     @include susy-media(tablet) {
       width: 41%;
-
-      img {
-        // max-height: 380px;
-      }
+      order: 2;
 
       .back-link  {
         display: none;
