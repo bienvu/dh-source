@@ -88,7 +88,7 @@
     }
 
     @include susy-media(mobilePortraitOnly) {
-      padding-top: 52px;
+      padding-top: 55px;
     }
 
     &:hover {
@@ -131,8 +131,8 @@
       }
 
       &:before {
-        bottom: 8px;
-        width: 70px;
+        bottom: 4px;
+        width: 67px;
 
         @include susy-media(mobileOnly) {
           border-color: $pink;
