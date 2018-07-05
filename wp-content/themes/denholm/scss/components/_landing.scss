@@ -514,3 +514,11 @@
     display: none;
   }
 }
+
+.landing-wrap {
+  @include susy-media(mobileOnly) {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+}
