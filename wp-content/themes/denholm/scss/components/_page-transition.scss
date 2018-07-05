@@ -639,10 +639,12 @@
     }
 
     a {
-      top: 20px;
-      left: 20px;
-      font-size: 28px;
-      position: fixed;
+      @include susy-media(mobileOnly) {
+        top: 20px;
+        left: 20px;
+        font-size: 28px;
+        position: fixed;
+      }
     }
   }
 

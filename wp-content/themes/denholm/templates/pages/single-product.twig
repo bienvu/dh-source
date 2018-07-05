@@ -28,9 +28,9 @@
     <div class="object-specific__gallery">
       <a class="back-link prev" href="{{ current_path }}">Back</a>
       <div class="object-specific__slide js-slide">
-        <div class="object-specific__item">
+        {# <div class="object-specific__item">
           <img src="{{ post.thumbnail.src('shop_single') }}">
-        </div>
+        </div> #}
         {% for image in product.get_gallery_attachment_ids %}
           <div class="object-specific__item">
             <img src="{{ fn('wp_get_attachment_url', image) }}">
