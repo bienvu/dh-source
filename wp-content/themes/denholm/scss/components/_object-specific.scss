@@ -1,10 +1,10 @@
 .content-inner .object-specific {
-  display: flex;
-  flex-wrap: wrap;
+  @extend %clearfix;
+  // display: flex;
+  // flex-wrap: wrap;
 
   @include susy-media(mobileOnly) {
     margin-bottom: 30px;
-    height: 100%;
   }
 
   @include susy-media(tablet) {
