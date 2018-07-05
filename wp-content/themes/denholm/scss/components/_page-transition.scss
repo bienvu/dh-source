@@ -420,6 +420,13 @@
         display: none;
       }
     }
+
+    &.sjc-mobile {
+      .content-inner {
+        height: 100%;
+        margin-top: 0;
+      }
+    }
   }
 
   &__menu {
@@ -623,7 +630,8 @@
   }
 }
 
-.woocommerce-cart {
+.woocommerce-cart,
+.woocommerce-checkout {
   .page-transition__logo {
     @include susy-media(mobileOnly) {
       display: block;
