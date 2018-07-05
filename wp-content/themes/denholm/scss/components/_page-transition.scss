@@ -568,21 +568,13 @@
   }
 
   @include susy-media(mobileOnly) {
-    // padding: 35px 45px 40px;
-    // max-height: calc(100% - 100px);
-    // margin-top: 50px;
-    // height: calc(100% - 100px);
     max-height: inherit;
-    padding: 20px 45px 40px;
+    padding: 20px 45px 50px;
     height: calc(100vh - 100px);
     margin-top: 30px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
-
-  // @include susy-media(mobilePortraitOnly) {
-  //   padding: 35px 35px 40px;
-  // }
 
   @include susy-media(desktop) {
     padding: 0;
