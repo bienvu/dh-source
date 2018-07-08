@@ -29,8 +29,12 @@ body {
   // Disable in production mode;
   // @include show-breakpoints;
   text-size-adjust: none;
-  // background: #ccc;
+  background: #ccc;
   font-size: 12px;
+
+  @include susy-media(desktopSuperwide) {
+    font-size: 16.67px;
+  }
 
   @include susy-media(mobileOnly) {
     overflow-x: hidden;
@@ -55,6 +59,12 @@ hr {
     margin-top: 42px;
     margin-bottom: 15px;
   }
+
+  @include susy-media(desktopSuperwide) {
+    margin-top: 60px;
+    height: 60px;
+    margin-bottom: 25px;
+  }
 }
 
 .box-text {
@@ -63,11 +73,12 @@ hr {
   margin: 0 auto;
 
   @include susy-media(mobileOnly) {
-    padding: 0 17px;
+    padding: 47px 5px 0;
   }
 
-  @include susy-media(mobilePortraitOnly) {
-    padding: 0;
+  @include susy-media(desktopSuperwide) {
+    max-width: inherit;
+    padding: 0 50px;
   }
 }
 
@@ -77,6 +88,14 @@ hr {
 
     @include susy-media(tablet) {
       margin-bottom: 28px;
+    }
+
+    @include susy-media(desktopSuperwide) {
+      margin-bottom: 40px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -94,9 +113,23 @@ hr {
     padding: 0 20px;
   }
 
+  @include susy-media(desktopSuperwide) {
+    width: 1132px;
+    height: 600px;
+    overflow: hidden;
+    padding: 0;
+  }
+
   video {
     width: 100%;
     height: auto;
+
+    @include susy-media(desktopSuperwide) {
+      width: 101%;
+      height: auto;
+      margin-left: -4px;
+      margin-top: -15px;
+    }
   }
 
   .wp-video {

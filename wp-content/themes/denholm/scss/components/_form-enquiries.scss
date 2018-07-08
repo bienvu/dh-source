@@ -23,10 +23,6 @@
   text-align: center;
   font-weight: 700;
 
-  @include susy-media(mobileOnly) {
-    margin-bottom: 30px;
-  }
-
   @include susy-media(tablet) {
     margin-bottom: 50px;
   }

@@ -19,6 +19,11 @@ input[type='submit'] {
   transition: all .3s ease-in-out;
   width: 100%;
 
+  @include susy-media(desktopSuperwide) {
+    font-size: 16.67px;
+    padding: 13px;
+  }
+
   &::-ms-clear {
     display: none;
   }
@@ -93,10 +98,10 @@ input[type='email'],
 .form-textarea,
 textarea {
   @extend %form-text;
-  height: auto;
-  min-height: 190px;
-  border: 1px solid #e0b8b7;
-  box-shadow: 0 0 1px 1px #e0b8b7;
+  height: 190px!important;;
+  width: 100%!important;
+  border: 2px solid #e0b8b7;
+  // box-shadow: 0 0 1px 1px #e0b8b7;
   margin-top: 30px;
   margin-bottom: 28px;
 
@@ -119,7 +124,14 @@ textarea {
   @include susy-media(tablet) {
     margin-top: 33px;
     margin-bottom: 8px;
-    min-height: 188px;
+    height: 188px;
+  }
+
+  @include susy-media(desktopSuperwide) {
+    margin-top: 49px;
+    height: 260px;
+    width: 422px;
+    margin-bottom: 20px;
   }
 }
 
@@ -157,14 +169,21 @@ select {
   border: 0;
   border-bottom: 2px solid $text-color;
   font-size: 12px;
-  padding: 8px;
+  padding: 5px 8px;
   height: 33px;
   margin-bottom: rem(10px);
-  padding: rem(5px 25px 5px 10px);
   background-color: $white;
   border-radius: 0;
   width: 100%;
   margin: 0;
+  color: #241F20;
+
+  @include susy-media(desktopSuperwide) {
+    font-size: 16.67px;
+    padding: 13px;
+    height: auto;
+    background-position: calc(100% - 35px) 50%;
+  }
 
   &:focus,
   &:hover,

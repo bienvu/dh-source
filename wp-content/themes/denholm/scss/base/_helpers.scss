@@ -87,11 +87,11 @@
         width: 83px;
       }
 
-      // @include susy-media(desktopSuperwide) {
-      //   border-width: 12px;
-      //   height: 10px;
-      //   width: 140px;
-      // }
+      @include susy-media(desktopSuperwide) {
+        border-width: 11px;
+        height: 10px;
+        width: 120px;
+      }
     }
   }
 
@@ -118,15 +118,15 @@
         width: 91px;
       }
 
-      // @include susy-media(desktopSuperwide) {
-      //   border-width: 12px;
-      //   left: -90px;
-      //   top: 50%;
-      //   height: 10px;
-      //   width: 125px;
-      //   content: '';
-      //   margin-top: -14px;
-      // }
+      @include susy-media(desktopSuperwide) {
+        border-width: 12px;
+        left: -90px;
+        top: 50%;
+        height: 10px;
+        width: 125px;
+        content: '';
+        margin-top: -14px;
+      }
     }
   }
 }
@@ -151,11 +151,12 @@
   &.bg-active {
     background: none;
   }
-  // @include susy-media(desktopSuperwide) {
-  //   font-size: 86px;
-  //   top: 50px;
-  //   left: 50px
-  // }
+
+  @include susy-media(desktopSuperwide) {
+    font-size: 55.57px;
+    top: 55px;
+    left: 182px;
+  }
 
   &:hover {
     color: $text-color;
@@ -170,19 +171,13 @@
     width: 63px;
     content: '';
 
-    // position: absolute;
-    // border-bottom: 7px solid $pink;
-    // left: 0;
-    // bottom: 0;
-    // height: 10px;
-    // width: 80px;
-    // content: '';
-
-    // @include susy-media(desktopSuperwide) {
-    //   border-width: 12px;
-    //   height: 10px;
-    //   width: 140px;
-    // }
+    @include susy-media(desktopSuperwide) {
+      border-width: 8px;
+      height: 8px;
+      width: 86px;
+      bottom: -2px;
+      left: 5px;
+    }
   }
 }
 
@@ -204,14 +199,11 @@
   }
 
   @include susy-media(desktopSuperwide) {
-    left: 175px;
-    top: 30px;
+    left: 246px;
+    top: 44px;
+    font-size: 46px;
+    line-height: 1;
   }
-  // @include susy-media(desktopSuperwide) {
-  //   font-size: 86px;
-  //   top: 50px;
-  //   left: 50px
-  // }
 
   &:hover {
     color: $text-color;
@@ -227,15 +219,11 @@
     content: '';
     margin-top: -11px;
 
-    // @include susy-media(desktopSuperwide) {
-    //   border-width: 12px;
-    //   left: -90px;
-    //   top: 50%;
-    //   height: 10px;
-    //   width: 125px;
-    //   content: '';
-    //   margin-top: -14px;
-    // }
+    @include susy-media(desktopSuperwide) {
+      left: -59px;
+      width: 85px;
+      border-width: 8px;
+    }
   }
 }
 
@@ -264,6 +252,11 @@
     top: 29px;
   }
 
+  @include susy-media(desktopSuperwide) {
+    left: 41px;
+    height: 41px;
+  }
+
   a {
     background: $red;
     width: 25px;
@@ -274,6 +267,11 @@
     @include susy-media(tablet) {
       width: 22px;
       height: 22px;
+    }
+
+    @include susy-media(desktopSuperwide) {
+      width: 30px;
+      height: 30px;
     }
 
     &:hover {

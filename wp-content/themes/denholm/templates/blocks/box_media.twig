@@ -4,7 +4,7 @@
   <h2 class="box-media__title {% if media_file.type == "image"%}denholm-logo{% else %}sjc-logo{% endif %}">{{media_title}}</h2>
       {% if media_file.type == "image"%}
         <div class="box-media__image">
-          <img src="{{media_file.url}}" title="{{media_file.title}}" alt="{{media_file.alt}}">
+          <img src="{{media_file.url}}"  alt="{{media_file.alt}}">
         </div>
       {% else %}
         <div class="box-media__video">

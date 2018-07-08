@@ -61,7 +61,7 @@
           $('window').pagesTransition();
           // $('window').showHideFunction();
           $('body, html').addClass('overflow-hidden');
-          $('.objects .js-change-page').removeClass('bg-active is-active');
+          // $('.objects .js-change-page').removeClass('bg-active is-active');
           $('.page-transition__item.object-specific').addClass('jquery-page-active').removeClass('jquery-page-disabled');
           $('.page-transition__item.objects').addClass('jquery-page-disabled').removeClass('jquery-page-active');
           $('.js-logo, .js-change-page').click(function() {

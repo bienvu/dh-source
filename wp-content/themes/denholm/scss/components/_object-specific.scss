@@ -6,9 +6,13 @@
   }
 
   @include susy-media(tablet) {
-    align-items: center;
+    // align-items: center;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  @include susy-media(desktopSuperwide) {
+    width: 100%;
   }
 
   &__content {
@@ -24,6 +28,10 @@
       width: 46%;
       margin-right: 57px;
       order: 1;
+    }
+
+    @include susy-media(desktopSuperwide) {
+      margin-right: 62px;
     }
   }
 
@@ -47,6 +55,10 @@
       }
     }
 
+    @include susy-media(desktopSuperwide) {
+      width: 40%;
+    }
+
     img {
       height: auto;
       width: calc(100% - 1px);
@@ -67,6 +79,11 @@
       height: 24px;
       margin-left: 27px;
       text-align: center;
+
+      @include susy-media(desktopSuperwide) {
+        width: 30px;
+        height: 30px;
+      }
     }
 
     form {
@@ -94,6 +111,7 @@
     a.button {
       @extend %btn;
       padding: 8px 15px;
+      font-weight: 400;
 
       & + a {
         @include susy-media(tablet) {
@@ -120,12 +138,20 @@
     .woocs_price_code {
       display: none;
     }
+
+    label {
+      font-weight: 400;
+    }
   }
 
   &__group {
     text-align: center;
     margin-top: -21px;
     position: relative;
+
+    @include susy-media(desktopSuperwide) {
+      margin-top: -34px;
+    }
   }
 
   &__body {
@@ -137,7 +163,7 @@
     }
 
     @include susy-media(desktopSuperwide) {
-      margin-bottom: 115px;
+      margin-bottom: 200px;
     }
   }
 
@@ -149,6 +175,11 @@
       margin-bottom: 14px;
       font-size: 42px;
     }
+
+    @include susy-media(desktopSuperwide) {
+      font-size: 59.03px;
+      margin-bottom: 20px;
+    }
   }
 
   .price {
@@ -156,6 +187,10 @@
 
     @include susy-media(tablet) {
       font-size: 18px;
+    }
+
+    @include susy-media(desktopSuperwide) {
+      font-size: 25px;
     }
   }
 
@@ -168,4 +203,15 @@
   font-size: 14px;
   display: inline-block;
   margin-bottom: 30px;
+
+  @include susy-media(desktopSuperwide) {
+    font-size: 20px;
+    margin-bottom: 42px;
+  }
+}
+
+.woocommerce {
+  .coupon {
+    display: none;
+  }
 }

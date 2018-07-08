@@ -18,6 +18,11 @@
     height: 20px;
   }
 
+  @include susy-media(desktopSuperwide) {
+    width: 27px;;
+    height: 27px;
+  }
+
   &:hover {
     background-color: transparent;
   }
@@ -35,6 +40,10 @@
   @include susy-media(desktopWide) {
     right: -75px;
   }
+
+  @include susy-media(desktopSuperwide) {
+    right: -98px;
+  }
 }
 
 .slick-prev {
@@ -49,6 +58,10 @@
   @include susy-media(desktopWide) {
     left: -75px;
   }
+
+  @include susy-media(desktopSuperwide) {
+    left: -98px;
+  }
 }
 
 .box-slide {
@@ -60,6 +73,10 @@
 
   @include susy-media(tablet) {
     padding: 0 23px;
+  }
+
+  @include susy-media(desktopSuperwide) {
+    height: 100%;
   }
 
   .slick-track {
@@ -90,6 +107,10 @@
         width: 100%;
         height: auto;
       }
+
+      @include susy-media(desktopSuperwide) {
+        max-height: calc(100vh - 373px);
+      }
     }
   }
 
@@ -103,6 +124,10 @@
         max-height: 495px;
         height: 100%;
         width: auto;
+      }
+
+      @include susy-media(desktopSuperwide) {
+        max-height: calc(100vh - 373px);
       }
 
       // @include susy-media(desktopSuperwide) {
@@ -126,7 +151,7 @@
       }
 
       @include susy-media(desktopSuperwide) {
-        left: -150px;
+        left: -285px;
       }
 
       &__item {

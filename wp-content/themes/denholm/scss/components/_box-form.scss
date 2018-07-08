@@ -1,6 +1,10 @@
 .box-form {
   @include susy-media(mobileOnly) {
-    margin-top: 44px;
+    margin-top: 17px;
+  }
+
+  @include susy-media(desktopSuperwide) {
+    width: 100%;
   }
 
   form {

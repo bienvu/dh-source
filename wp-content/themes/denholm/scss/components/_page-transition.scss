@@ -13,13 +13,18 @@
       list-style: none;
       position: fixed;
       top: 50%;
-      // transform: translate(0, -50%);
       z-index: 9999;
       cursor: pointer;
       font-size: 24px;
-      margin-top: -17px;
+      // transform: translate(0 , -50%);
+    }
 
-      span {
+    @include susy-media(desktopSuperwide) {
+      font-size: 33.42px;
+    }
+
+    span {
+      @include susy-media(tablet) {
         padding: 4px 8px;
         line-height: .7;
         display: inline-block;
@@ -27,8 +32,14 @@
         z-index: 4;
         min-width: 105px;
         text-align: center;
+      }
 
-        &:before {
+      @include susy-media(desktopSuperwide) {
+        min-width: 140px;
+      }
+
+      &:before {
+        @include susy-media(tablet) {
           content: '>';
           position: absolute;
           color: red;
@@ -36,84 +47,147 @@
           left: 50%;
           transform: rotate(270deg);
         }
-      }
 
-      &.objects,
-      &.top,
-      &.collaborations {
+        @include susy-media(desktopSuperwide) {
+          font-size: 35px;
+        }
+      }
+    }
+
+    &.objects,
+    &.top,
+    &.collaborations {
+      @include susy-media(tablet) {
         position: fixed;
         top: 57px;
         left: 50%;
         transform: translate(-50%, 0);
+      }
 
-        span:before {
+      @include susy-media(desktopSuperwide) {
+        top: 74px;
+      }
+
+      span:before {
+        @include susy-media(tablet) {
           top: -30px;
           margin-left: -2px;
         }
+
+        @include susy-media(desktopSuperwide) {
+          top: -32px;
+          margin-left: -5px;
+        }
+      }
+    }
+
+    &.what,
+    &.left {
+      @include susy-media(tablet) {
+        left: 18px;
+        transform: translate(0 , -50%) rotate(-90deg);
+        background: none;
       }
 
-      &.what,
-      &.left {
-        left: 18px;
-        transform: rotate(-90deg);
-        background: none;
+      @include susy-media(desktopSuperwide) {
+        left: 47px;
+      }
 
-        span:before {
+      span:before {
+        @include susy-media(tablet) {
           top: -32px;
           margin-left: -8px;
         }
+
+        @include susy-media(desktopSuperwide) {
+          top: -48px;
+        }
+      }
+    }
+
+    &.bio {
+      @include susy-media(tablet) {
+        left: 25px;
+        left: 35px;
+        transform: translate(0 , -50%) rotate(-90deg);
       }
 
-      &.bio {
+      @include susy-media(desktop) {
         left: 35px;
-        transform: rotate(-90deg);
+      }
 
+      @include susy-media(desktopSuperwide) {
+        left: 64px;
+      }
+
+      span {
         @include susy-media(tablet) {
-          left: 25px;
-        }
-
-        @include susy-media(desktop) {
-          left: 35px;
-        }
-
-        span {
           min-width: 70px;
+        }
 
-          &:before {
+        @include susy-media(desktopSuperwide) {
+          min-width: 110px;
+        }
+
+        &:before {
+          @include susy-media(tablet) {
             top: -32px;
             margin-left: -8px;
           }
+
+          @include susy-media(desktopSuperwide) {
+            top: -48px;
+            margin-left: -12px;
+          }
         }
       }
+    }
 
-      &.commissions,
-      &.right {
+    &.commissions,
+    &.right {
+      @include susy-media(tablet) {
         right: -15px;
-        transform: rotate(-90deg);
-
-        span:before {
-          top: 38px;
-          transform: rotate(-270deg);
-          margin-left: -8px;
-        }
+        transform: translate(0 , -50%) rotate(-90deg);
       }
 
-      &.exhibit {
-        right: 20px;
-        transform: rotate(-90deg);
+      @include susy-media(desktopSuperwide) {
+        right: 3px;
+      }
 
+      span:before {
         @include susy-media(tablet) {
-          right: 3px;
-        }
-
-        @include susy-media(desktop) {
-          right: 18px;
-        }
-
-        span:before {
           top: 38px;
           transform: rotate(-270deg);
           margin-left: -8px;
+        }
+
+        @include susy-media(desktopSuperwide) {
+          top: 60px;
+        }
+      }
+    }
+
+    &.exhibit {
+      @include susy-media(tablet) {
+        right: 3px;
+        transform: translate(0 , -50%) rotate(-90deg);
+      }
+
+      @include susy-media(desktop) {
+        right: 18px;
+      }
+
+      @include susy-media(desktopSuperwide) {
+        right: 46px;
+      }
+
+      span:before {
+        top: 38px;
+        transform: rotate(-270deg);
+        margin-left: -8px;
+
+        @include susy-media(desktopSuperwide) {
+          top: 57px;
         }
       }
     }
@@ -122,6 +196,7 @@
       background: #f9f1f1;
     }
   }
+
   .arrow {
     text-indent: -999em;
     font-size: 0;
@@ -192,6 +267,10 @@
             transition: top .3s;
             top: -94px;
           }
+
+          @include susy-media(desktopSuperwide) {
+            top: -110px;
+          }
         }
       }
       ul {
@@ -207,7 +286,7 @@
         @include susy-media(tablet) {
           position: absolute;
           left: 42px;
-          top: 100px;
+          top: 200px;
           transform: rotate(90deg);
           font-size: 12px;
           line-height: 1.4;
@@ -224,6 +303,15 @@
             display: inline-block;
             width: 90px;
             height: 120px;
+          }
+        }
+
+        @include susy-media(desktopSuperwide) {
+          left: 55px;
+          font-size: 16.67px;
+
+          &:before {
+            width: 110px;
           }
         }
 
@@ -251,6 +339,10 @@
               top: 50%;
               margin-top: -2px;
             }
+          }
+
+          @include susy-media(desktopSuperwide) {
+            min-width: 85px;
           }
 
           span {
@@ -334,12 +426,19 @@
       margin-left: 20px;
       padding: 4px 13px;
       position: relative;
-      font-weight: 500;
       margin-right: 10px;
 
       @include susy-media(mobileOnly) {
         font-size: 15px;
         margin-left: 40px;
+      }
+
+      @include susy-media(desktopSuperwide) {
+        font-size: 18px;
+      }
+
+      @include susy-media(desktopSuperwide) {
+        margin-left: 34px;
       }
 
       &:before {
@@ -357,6 +456,12 @@
           bottom: -14px;
           width: 30px;
           height: 53px;
+        }
+
+        @include susy-media(desktopSuperwide) {
+          left: -30px;
+          width: 27px;
+          height: 50px;
         }
       }
 
@@ -383,11 +488,13 @@
       transform: translate(0, 0);
       font-size: 12px;
       padding: 4px 13px;
-      font-weight: 500;
-      // display: none;
 
       @include susy-media(mobileOnly) {
         font-size: 15px;
+      }
+
+      @include susy-media(desktopSuperwide) {
+        font-size: 18px;
       }
 
       span {
@@ -402,12 +509,17 @@
 
   &__item {
     display: flex;
-    align-items: center;
+
     justify-content: center;
     height: 100vh;
     background-color: #fff;
+    // background-color: gray;
     position: relative;
     overflow: hidden;
+
+    @include susy-media(tablet) {
+      align-items: center;
+    }
 
     &.home {
       background-color: transparent;
@@ -566,10 +678,10 @@
   }
 
   @include susy-media(mobileOnly) {
-    max-height: inherit;
-    padding: 20px 45px 50px;
-    height: calc(100vh - 100px);
-    margin-top: 30px;
+    // max-height: inherit;
+    padding: 35px 42px 50px;
+    max-height: calc(100vh - 60px);
+    margin-top: 60px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
   }
@@ -584,8 +696,12 @@
   }
 
   @include susy-media(desktopSuperwide) {
-    max-width: 788px;
-    max-height: calc(100% - 100px);
+    max-width: inherit;
+    width: 1060px;
+  }
+
+  @media(min-height:1080px) and (min-width: 1600px) {
+    // height: calc(100% - 373px);
   }
 }
 
@@ -669,5 +785,80 @@
         max-height: inherit;
       }
     }
+  }
+}
+
+.page-transition__content {
+  .content-inner {
+    // @include susy-media(desktopSuperwide) {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    // }
+  }
+}
+
+// .what,
+// .enquiries {
+//   .content-inner {
+//     @include susy-media(desktopSuperwide) {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//     }
+//   }
+// }
+.what,
+.bio,
+.denholm,
+.enquiries,
+.exhibit {
+  .content-inner {
+    @include susy-media(desktopSuperwide) {
+      width: 1060px;
+      max-width: inherit;
+    }
+  }
+}
+
+.objects {
+  .content-inner {
+    @include susy-media(desktopSuperwide) {
+      height: calc(100% - 366px);
+      overflow: auto;
+      width: 1105px;
+      margin-top: 50px;
+      align-items: flex-start;
+    }
+  }
+}
+
+.sjc {
+  .content-inner {
+    @include susy-media(desktopSuperwide) {
+      width: 1132px;
+      max-width: inherit;
+    }
+  }
+}
+
+.commissions,
+.collaborations {
+  .content-inner {
+    @include susy-media(desktopSuperwide) {
+      width: 875px;
+      max-width: inherit;
+    }
+
+    @include susy-media(mobileOnly) {
+      padding-top: 9px;
+    }
+  }
+}
+
+.object-specific .content-inner {
+  @include susy-media(desktopSuperwide) {
+    max-width: calc(100vw - 767px);
+    width: 100%;
   }
 }

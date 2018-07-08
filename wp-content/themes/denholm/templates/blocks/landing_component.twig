@@ -7,10 +7,10 @@
   					{% if item.landing_image is not empty %}
   						<div class="group-content with-image title-center">
   							{% if item.landing_title %}
-  			          <h1 class="title--center">{{ item.landing_title }}</h1>
+  			          <h2 class="title--center">{{ item.landing_title }}</h2>
   							{% endif %}
   							{% if item.landing_image %}
-  		          	<img src="{{ item.landing_image.url }}" title="{{ item.landing_image.title }}">
+  		          	<img src="{{ item.landing_image.url }}" alt="{{ item.landing_image.alt }}">
   							{% endif %}
   							{% if item.landing_link %}
   		          	<a href="#" class="link-more prev js-load-page" data-page-id="89" data-page-trans="slide-in-from-right" data-start-load="sjc-start" data-page-name="sjc-loaded" data-page-url="sjc">Prev</a>
@@ -40,7 +40,7 @@
   					{% if item.landing_image is not empty %}
   						<div class="group-content with-image">
   							{% if item.landing_title %}
-  								<h1 class="title--bottom">{{ item.landing_title }}</h1>
+  								<h2 class="title--bottom">{{ item.landing_title }}</h2>
   							{% endif %}
   							{% if item.landing_image %}
   								<img src="{{ item.landing_image.url }}" title="{{ item.landing_image.title }}">
