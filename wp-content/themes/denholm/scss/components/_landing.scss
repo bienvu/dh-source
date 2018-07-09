@@ -115,6 +115,24 @@
     }
 
     &.with-video {
+      width: 199px;
+      height: 256px;
+
+      @include susy-media(480px) {
+        width: 255px;
+        height: 336px;
+      }
+
+      @include susy-media(tablet) {
+        width: 255px;
+        height: 393px;
+      }
+
+      @include susy-media(desktop) {
+        width: 326px;
+        height: 517px;
+      }
+
       @include susy-media(desktopSuperwide) {
         width: 459px;
         height: 721px;
@@ -436,6 +454,10 @@
 
         @include susy-media(desktopSuperwide) {
           right: -57px;
+        }
+
+        @include susy-media(desktop) {
+          right: -45px;
         }
 
         @include susy-media(mobileOnly) {

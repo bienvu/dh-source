@@ -34,10 +34,6 @@
 .sp-headline.slide .sp-words-wrapper {
   overflow: hidden;
   vertical-align: bottom;
-
-  @include susy-media(desktopSupperWide) {
-    min-width: 276px;
-  }
 }
 
 .sp-headline.slide b {
@@ -170,29 +166,5 @@
     -ms-transform: translateY(100%);
     -o-transform: translateY(100%);
     transform: translateY(100%);
-  }
-}
-
-@media (min-width: 668px) and (max-width: 1024px) {
-  .sp-intro h4,
-  .sp-intro b,
-  .sp-intro i,
-  .sp-intro p,
-  .sp-intro span {
-    line-height: 46px !important;
-    font-size: 38px !important;
-    font-weight: 400 !important;
-  }
-}
-
-@media (max-width: 667px) {
-  .sp-intro h4,
-  .sp-intro b,
-  .sp-intro i,
-  .sp-intro span,
-  .sp-intro p {
-    line-height: 36px !important;
-    font-size: 28px !important;
-    font-weight: 400 !important;
   }
 }

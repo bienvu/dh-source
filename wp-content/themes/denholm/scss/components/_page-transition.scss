@@ -521,6 +521,10 @@
       align-items: center;
     }
 
+    @include susy-media(desktopSuperwide) {
+      padding: 100px 0;
+    }
+
     &.home {
       background-color: transparent;
     }
