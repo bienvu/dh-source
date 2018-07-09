@@ -70,6 +70,19 @@
       display: table;
     }
   }
+
+  .video-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    video {
+      height: 100%;
+      width: auto;
+      position: relative;
+      left: -35px;
+    }
+  }
 }
 
 .group-content {
@@ -99,13 +112,12 @@
       width: 479px;
       height: 631px;
       padding-top: 121px;
-      margin-top: -95px;
     }
 
-    &.title-center {
+    &.with-video {
       @include susy-media(desktopSuperwide) {
         width: 459px;
-        height: 590px;
+        height: 721px;
         padding-top: 131px;
       }
     }
@@ -201,7 +213,7 @@
       font-size: 48px;
 
       @include susy-media(tablet) {
-        top: 52%;
+        top: calc(52% + 5px);
         left: 18px;
         margin-bottom: 0;
       }
@@ -217,7 +229,6 @@
 
       @include susy-media(desktopSuperwide) {
         font-size: 86.52px;
-        top: 64%;
         left: 29px;
       }
 

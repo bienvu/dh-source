@@ -5,14 +5,16 @@
   			{% for item in group_left %}
   				<div class="ms-section" style="background-color: {{ item.bgcolor }}">
   					{% if item.landing_image is not empty %}
-  						<div class="group-content with-image title-center">
+  						<div class="group-content with-image with-video title-center">
   							{% if item.landing_title %}
   			          <h2 class="title--center">{{ item.landing_title }}</h2>
   							{% endif %}
-  							{% if item.landing_image %}
-  		          	<img src="{{ item.landing_image.url }}" alt="{{ item.landing_image.alt }}">
+                {% if item.landing_image.type == "video" %}
+                  <div class="video-wrap"><video width="1280" height="720" muted="muted" loop="loop" autoplay="" preload="auto" id="videoSjc" playsinline=""> <source src="{{ item.landing_image.url }}" type="{{ item.landing_image.mime_type }}"> </video></div>
+  							{% else %}
+  								<img src="{{ item.landing_image.url }}" alt="{{ item.landing_image.alt }}">
   							{% endif %}
-  							{% if item.landing_link %}
+  							{% if item.landing_image %}
   		          	<a href="#" class="link-more prev js-load-page" data-page-id="89" data-page-trans="slide-in-from-right" data-start-load="sjc-start" data-page-name="sjc-loaded" data-page-url="sjc">Prev</a>
   							{% endif %}
   		        </div>
@@ -42,10 +44,12 @@
   							{% if item.landing_title %}
   								<h2 class="title--bottom">{{ item.landing_title }}</h2>
   							{% endif %}
-  							{% if item.landing_image %}
-  								<img src="{{ item.landing_image.url }}" title="{{ item.landing_image.title }}">
+  							{% if item.landing_image.type == "video" %}
+                  <video width="1280" height="720" muted="muted" loop="loop" autoplay="" preload="auto" id="theVideo" playsinline=""> <source src="{{ item.landing_image.url }}" type="{{ item.landing_image.mime_type }}"> </video>
+  							{% else %}
+  								<img src="{{ item.landing_image.url }}" alt="{{ item.landing_image.alt }}">
   							{% endif %}
-  							{% if item.landing_link %}
+  							{% if item.landing_image %}
   								<a href="#" class="link-more prev js-load-page" data-page-id="83" data-page-trans="slide-in-from-left" data-start-load="denholm-start" data-page-name="denholm-loaded" data-page-url="denholm">Prev</a>
   							{% endif %}
   						</div>

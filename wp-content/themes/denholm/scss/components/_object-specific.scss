@@ -50,7 +50,7 @@
       width: 41%;
       order: 2;
 
-      .back-link  {
+      .link-group  {
         display: none;
       }
     }
@@ -203,10 +203,11 @@
   }
 }
 
-.back-link {
-  font-size: 14px;
-  display: inline-block;
+.link-group {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 30px;
+  width: 100%;
 
   @include susy-media(desktopSuperwide) {
     font-size: 20px;

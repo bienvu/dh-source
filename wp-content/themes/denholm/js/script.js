@@ -6,39 +6,6 @@
     mobileLandscape = "(min-width:30em)", // 480px.
     tablet = "(min-width:48em)"; // 768px.
 
-
-    // Contact form 7.
-    // function getZipCode() {
-    //   var this_element = $(this);
-    //
-    //   $.getJSON("http://jsonip.com/?callback=?", function (data_ip) {
-    //     var your_ip = data_ip.ip;
-    //
-    //     $.getJSON('https://ipapi.co/' + your_ip + '/json', function(data){
-    //       var your_lat = data.latitude;
-    //       var your_lon = data.longitude;
-    //
-    //       $.ajax({
-    //         type : "post",
-    //         dataType : "json",
-    //         url : customAjax.ajaxurl,
-    //         data : {action: "getzipcode", lat: your_lat, lon: your_lon},
-    //         beforeSend: function() {
-    //           this_element.append('<span class="zipcode-ajax"></span>');
-    //         },
-    //         success: function(response) {
-    //           $('.zipcode-ajax').remove();
-    //           $('.your-zipcode input[name="your-zipcode"]').val(response.markup);
-    //         },
-    //         error: function(response) {
-    //
-    //         }
-    //       });
-    //     });
-    //   });
-    // }
-
-
     // Ajax Load products Detail
     function ajaxProductDetail() {
       var current_path = $(this).data('current-path');
@@ -59,9 +26,7 @@
           $('window').sliderFunction();
           $(".js-slide").slick("refresh");
           $('window').pagesTransition();
-          // $('window').showHideFunction();
           $('body, html').addClass('overflow-hidden');
-          // $('.objects .js-change-page').removeClass('bg-active is-active');
           $('.page-transition__item.object-specific').addClass('jquery-page-active').removeClass('jquery-page-disabled');
           $('.page-transition__item.objects').addClass('jquery-page-disabled').removeClass('jquery-page-active');
           $('.js-logo, .js-change-page').click(function() {
@@ -121,6 +86,9 @@
             $("body").addClass('is-home');
           });
           $('.back-to-home').click(function() {
+            if($widthWd > 767) {
+              $.fn.multiscroll.moveTo(1);
+            }
             history.pushState({}, null, "/");
             $(".page-transition").removeClass('denholm-start sjc-start');
             $(".page-transition").removeClass(page_name).addClass(start_load);
@@ -155,19 +123,17 @@
     $('window').showHideFunction();
     $('window').scrollPagge();
     $('window').pagesTransition();
-    $('window').rotateText();
     $('window').sliderFunction();
-    // $('window').backToHome();
+    $('window').swipeText();
 
     $('.js-logo').click(function() {
       $("body").addClass('is-home');
     });
 
-    $('.js-back-overview').on('click', function() {
-      alert("ok");
-      $('.objects .js-change-page').trigger('click');
-    });
-    //alert('ok');
+    if($('#videoSjc').length) {
+      document.getElementById('videoSjc').play();
+    }
+
     // Products Detail
     $('.box-product__item .load-product').on('click', ajaxProductDetail);
     $('.js-load-page').on('click', ajaxPageLoad);

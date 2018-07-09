@@ -79,7 +79,7 @@
                                     "key": "field_5b2df93b20028",
                                     "label": "Landing Image",
                                     "name": "landing_image",
-                                    "type": "image",
+                                    "type": "file",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -89,13 +89,8 @@
                                         "id": ""
                                     },
                                     "return_format": "array",
-                                    "preview_size": "medium",
                                     "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
                                     "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
                                     "max_size": "",
                                     "mime_types": ""
                                 },
@@ -140,7 +135,7 @@
                                     "key": "field_5b2e02504fd69",
                                     "label": "Landing Link",
                                     "name": "landing_link",
-                                    "type": "url",
+                                    "type": "page_link",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -149,8 +144,11 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": ""
+                                    "post_type": [],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "allow_archives": 1,
+                                    "multiple": 0
                                 }
                             ]
                         },
@@ -211,7 +209,7 @@
                                     "key": "field_5b2e05360d117",
                                     "label": "Landing Image",
                                     "name": "landing_image",
-                                    "type": "image",
+                                    "type": "file",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -221,13 +219,8 @@
                                         "id": ""
                                     },
                                     "return_format": "array",
-                                    "preview_size": "medium",
                                     "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
                                     "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
                                     "max_size": "",
                                     "mime_types": ""
                                 },
@@ -272,7 +265,7 @@
                                     "key": "field_5b2e05360d11a",
                                     "label": "Landing Link",
                                     "name": "landing_link",
-                                    "type": "url",
+                                    "type": "page_link",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -281,8 +274,11 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": ""
+                                    "post_type": [],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "allow_archives": 1,
+                                    "multiple": 0
                                 }
                             ]
                         },
@@ -351,5 +347,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530590849
+    "modified": 1531118627
 }

@@ -8,7 +8,10 @@
   {# {{product|print_r}} #}
   <div class="object-specific">
     <div class="object-specific__gallery">
-      <a class="back-link prev" href="{{ current_path }}">Back</a>
+      <div class="link-group">
+        <a class="back-link" href="#">Back</a>
+        <a href="/cart">View Cart</a>
+      </div>
       <div class="object-specific__slide js-slide">
         {# <div class="object-specific__item">
           <img src="{{ post.thumbnail.src('shop_single') }}">
@@ -27,7 +30,10 @@
       </div>
     </div>
     <div class="object-specific__content">
-      <a class="back-link prev js-back-overview" href="#" data-page-name="objects" data-page-trans="slide-in-from-bottom">Back</a>
+      <div class="link-group">
+        <a class="back-link" href="#">Back</a>
+        <a href="/cart">View Cart</a>
+      </div>
       <div class="object-specific__body">
         {{ post.content|shortcodes }}
       </div>

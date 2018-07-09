@@ -75,27 +75,27 @@ function pageloadajax_callback() {
 }
 
 // Page ajax action.
-add_action( 'wp_ajax_pageloadlandingajax', 'wp_ajax_pageloadlandingajax' );
-add_action( 'wp_ajax_pageloadlandingajax', 'wp_ajax_pageloadlandingajax' );
-function pageloadlanding_callback() {
-  $values = $_REQUEST;
-
-  ob_start();
-  global $product;
-
-  $context                  = Timber::get_context();
-  $post                     = new TimberPost($values['pageID']);
-  $context['post']          = $post;
-
-  Timber::render( 'page-ajaxloadlanding.twig', $context );
-
-  $content = ob_get_contents();
-  ob_end_clean();
-
-  $result = json_encode($content);
-  echo $result;
-  wp_die();
-}
+// add_action( 'wp_ajax_pageloadlandingajax', 'wp_ajax_pageloadlandingajax' );
+// add_action( 'wp_ajax_pageloadlandingajax', 'wp_ajax_pageloadlandingajax' );
+// function pageloadlanding_callback() {
+//   $values = $_REQUEST;
+//
+//   ob_start();
+//   global $product;
+// 
+//   $context                  = Timber::get_context();
+//   $post                     = new TimberPost($values['pageID']);
+//   $context['post']          = $post;
+//
+//   Timber::render( 'page-ajaxloadlanding.twig', $context );
+//
+//   $content = ob_get_contents();
+//   ob_end_clean();
+//
+//   $result = json_encode($content);
+//   echo $result;
+//   wp_die();
+// }
 
 // ZipCode action.
 /*add_action( 'wp_ajax_getzipcode', 'getzipcode_callback' );
