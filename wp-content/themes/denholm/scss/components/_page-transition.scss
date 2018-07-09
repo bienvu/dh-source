@@ -680,7 +680,7 @@
   @include susy-media(mobileOnly) {
     // max-height: inherit;
     padding: 35px 42px 50px;
-    max-height: calc(100vh - 60px);
+    max-height: calc(100vh - 100px);
     margin-top: 60px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -824,11 +824,16 @@
 .objects {
   .content-inner {
     @include susy-media(desktopSuperwide) {
-      height: calc(100% - 366px);
+      height: calc(100% - 250px);
       overflow: auto;
       width: 1105px;
-      margin-top: 50px;
+      margin-top: 25px;
       align-items: flex-start;
+    }
+
+    @media(min-height:1080px) and (min-width: 1600px) {
+      margin-top: 50px;
+      height: calc(100% - 366px);
     }
   }
 }
@@ -860,5 +865,6 @@
   @include susy-media(desktopSuperwide) {
     max-width: calc(100vw - 767px);
     width: 100%;
+    margin-top: 35px;
   }
 }

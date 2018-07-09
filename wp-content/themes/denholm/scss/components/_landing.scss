@@ -99,6 +99,7 @@
       width: 479px;
       height: 631px;
       padding-top: 121px;
+      margin-top: -95px;
     }
 
     &.title-center {
@@ -535,6 +536,10 @@
   position: relative;
   transition: .5s;
   z-index: 2;
+
+  @include susy-media(tablet) {
+    height: 100vh;
+  }
 }
 .page-ajaxload {
   transition: .5s;

@@ -130,7 +130,11 @@
           margin-top: 0;
           width: 100%;
           transform: translate(-50%, 0);
+        }
 
+        @include susy-media(desktopSuperwide) {
+          right: -85px;
+          margin-top: -18px;
         }
       }
     }
