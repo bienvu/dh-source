@@ -435,10 +435,8 @@
 
       @include susy-media(desktopSuperwide) {
         font-size: 18px;
-      }
-
-      @include susy-media(desktopSuperwide) {
         margin-left: 34px;
+        margin-right: 0;
       }
 
       &:before {
@@ -479,6 +477,10 @@
       padding: 0;
       height: auto;
       overflow: hidden;
+
+      @include susy-media(desktopSuperwide) {
+        left: 13px;
+      }
     }
 
     .nav {
@@ -861,15 +863,21 @@
     }
 
     @include susy-media(desktopSuperwide) {
-
-      height: 800px;
-      overflow: auto;
+      height: 805px;
+      overflow: hidden;
       width: 1105px;
       align-items: flex-start;
     }
 
     @media(min-height:1080px) and (min-width: 1600px) {
+      margin-top: 44px;
+    }
 
+    .box-product {
+      @include susy-media(desktopSuperwide) {
+        height: 780px;
+        overflow: auto;
+      }
     }
   }
 }

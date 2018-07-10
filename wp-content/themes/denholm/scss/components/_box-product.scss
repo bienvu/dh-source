@@ -97,4 +97,9 @@
 .view-cart {
   margin-bottom: 25px;
   text-align: right;
+
+  @include susy-media(desktopSuperwide) {
+    margin-bottom: 27px;
+    font-size: 21px;
+  }
 }
