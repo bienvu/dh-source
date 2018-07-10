@@ -537,6 +537,7 @@
       .content-inner {
         height: 100%;
         margin-top: 0;
+        max-height: inherit;
       }
     }
   }
@@ -921,8 +922,16 @@
     display: flex;
     align-items: center;
     margin-top: 40px;
-    // max-width: calc(100vw - 767px);
-    // width: 100%;
-    // margin-top: 35px;
+  }
+
+  @include susy-media(mobileOnly) {
+    overflow: hidden;
+    max-height: inherit;
+
+    .object-specific {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      height: 100%;
+    }
   }
 }
