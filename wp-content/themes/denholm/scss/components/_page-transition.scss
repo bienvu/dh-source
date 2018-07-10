@@ -925,14 +925,8 @@
   }
 
   @include susy-media(mobileOnly) {
-    overflow: hidden;
-    max-height: inherit;
-
     .object-specific {
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-      height: calc(100% - 40px);
-      overflow-x: hidden;
+      min-height: 700px;
     }
   }
 }
