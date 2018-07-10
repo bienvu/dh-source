@@ -26,6 +26,9 @@ html {
 
   @include susy-media(mobileOnly) {
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 }
 
@@ -46,6 +49,16 @@ body {
   }
 
   &.is-show {
+    overflow: hidden;
+  }
+}
+
+.page-id-89,
+.page-id-83 {
+  @include susy-media(mobileOnly) {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
   }
 }
