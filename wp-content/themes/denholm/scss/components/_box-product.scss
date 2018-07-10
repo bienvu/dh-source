@@ -1,3 +1,9 @@
+.objects .woocommerce {
+  @include susy-media(mobileOnly) {
+    padding: 0 5px;
+  }
+}
+
 .box-product {
   @include susy-media(tablet) {
     display: flex;
@@ -46,6 +52,10 @@
     margin-top: -24px;
     margin-bottom: 15px;
 
+    @include susy-media(mobileOnly) {
+      margin-bottom: 20px;
+    }
+
     @include susy-media(desktopSuperwide) {
       font-size: 37.5px;
       margin-top: -27px;
@@ -65,8 +75,8 @@
 
     a {
       background: url('../images/arrow-right.png') no-repeat scroll 0 0 transparent;
-      width: 14px;
-      height: 14px;
+      width: 18px;
+      height: 18px;
       background-size: 100% auto;
       font-size: 0;
       padding: 0;
@@ -74,6 +84,11 @@
       display: inline-block;
       margin-left: 8px;
       cursor: pointer;
+
+      @include susy-media(tablet) {
+        width: 14px;
+        height: 14px;
+      }
 
       @include susy-media(desktopSuperwide) {
         width: 16px;
@@ -97,6 +112,7 @@
 .view-cart {
   margin-bottom: 25px;
   text-align: right;
+  font-size: 16.67px;
 
   @include susy-media(desktopSuperwide) {
     margin-bottom: 27px;
