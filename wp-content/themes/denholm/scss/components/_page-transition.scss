@@ -931,7 +931,8 @@
     .object-specific {
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
-      height: 100%;
+      height: calc(100% - 40px);
+      overflow-x: hidden;
     }
   }
 }
