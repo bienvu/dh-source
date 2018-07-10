@@ -75,6 +75,10 @@
     padding: 0 23px;
   }
 
+  @include susy-media(desktop) {
+    padding: 0;
+  }
+
   @include susy-media(desktopSuperwide) {
     height: 100%;
   }
@@ -109,7 +113,12 @@
       }
 
       @include susy-media(desktopSuperwide) {
-        max-height: calc(100vh - 373px);
+        height: 640px;
+        max-height: inherit;
+      }
+
+      @media(min-height:1080px) and (min-width: 1600px) {
+        height: 707px;
       }
     }
   }
@@ -150,8 +159,12 @@
         left: -50px;
       }
 
+      @include susy-media(desktopWide) {
+        left: -273px;
+      }
+
       @include susy-media(desktopSuperwide) {
-        left: -285px;
+        left: -242px;
       }
 
       &__item {

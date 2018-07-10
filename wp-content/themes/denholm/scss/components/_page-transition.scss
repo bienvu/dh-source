@@ -509,7 +509,6 @@
 
   &__item {
     display: flex;
-
     justify-content: center;
     height: 100vh;
     background-color: #fff;
@@ -519,10 +518,6 @@
 
     @include susy-media(tablet) {
       align-items: center;
-    }
-
-    @include susy-media(desktopSuperwide) {
-      padding: 100px 0;
     }
 
     &.home {
@@ -669,7 +664,7 @@
 }
 
 .content-inner {
-  max-width: 750px;
+  max-width: 670px;
   width: 100%;
   max-height: calc(100% - 60px);
 
@@ -692,20 +687,20 @@
 
   @include susy-media(desktop) {
     padding: 0;
-    max-width: 660px;
-  }
-
-  @include susy-media(desktopWide) {
-    max-width: 750px;
+    max-width: 670px;
   }
 
   @include susy-media(desktopSuperwide) {
     max-width: inherit;
-    width: 1060px;
+    margin-top: 0;
+    width: 960px;
+    height: 640px;
   }
 
   @media(min-height:1080px) and (min-width: 1600px) {
     // height: calc(100% - 373px);
+    width: 1060px;
+    height: 707px;
   }
 }
 
@@ -713,13 +708,32 @@
   .content-inner {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    max-height: calc(100% - 60px);
+    max-height: calc(100% - 150px);
+
+    @include susy-media(tablet) {
+      margin-top: 30px;
+    }
+
+    @include susy-media(desktopSuperwide) {
+      height: 900px;
+    }
   }
 
   .wc-proceed-to-checkout {
     .checkout-button {
       margin-bottom: 0 !important;
     }
+  }
+
+  .woocommerce .wc-proceed-to-checkout a.button.alt{
+    @extend %btn;
+    width: 100%;
+    padding: 12px 10px;
+  }
+
+  .woocommerce button.button.alt {
+    @extend %btn;
+    padding: 12px 25px;
   }
 }
 
@@ -792,15 +806,15 @@
   }
 }
 
-.page-transition__content {
-  .content-inner {
-    // @include susy-media(desktopSuperwide) {
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    // }
-  }
-}
+// .page-transition__content {
+//   .content-inner {
+//     // @include susy-media(desktopSuperwide) {
+//     //   display: flex;
+//     //   align-items: center;
+//     //   justify-content: center;
+//     // }
+//   }
+// }
 
 // .what,
 // .enquiries {
@@ -812,32 +826,50 @@
 //     }
 //   }
 // }
+// .what,
+// .bio,
+// .denholm,
+// .enquiries,
+// .exhibit {
+//   .content-inner {
+//     @include susy-media(desktopSuperwide) {
+//       width: 1060px;
+//       max-width: inherit;
+//     }
+//   }
+// }
+
 .what,
 .bio,
-.denholm,
-.enquiries,
-.exhibit {
+.sjc,
+.enquiries {
   .content-inner {
-    @include susy-media(desktopSuperwide) {
-      width: 1060px;
-      max-width: inherit;
+    @include susy-media(desktop) {
+      display: flex;
+      align-items: center;
     }
   }
 }
 
 .objects {
   .content-inner {
+    margin-top: 20px;
+
+    @include susy-media(desktop) {
+      height: 560px;
+      overflow: auto;
+    }
+
     @include susy-media(desktopSuperwide) {
-      height: calc(100% - 250px);
+
+      height: 800px;
       overflow: auto;
       width: 1105px;
-      margin-top: 25px;
       align-items: flex-start;
     }
 
     @media(min-height:1080px) and (min-width: 1600px) {
-      margin-top: 50px;
-      height: calc(100% - 366px);
+
     }
   }
 }
@@ -855,20 +887,35 @@
 .collaborations {
   .content-inner {
     @include susy-media(desktopSuperwide) {
-      width: 875px;
+      width: 850px;
       max-width: inherit;
+      height: 640px;
     }
 
     @include susy-media(mobileOnly) {
       padding-top: 9px;
     }
+
+    @media(min-height:1080px) and (min-width: 1600px) {
+      width: 875px;
+      max-width: inherit;
+      height: 678px;
+    }
   }
 }
 
 .object-specific .content-inner {
+  @include susy-media(tablet) {
+    margin-top: 30px;
+  }
+
   @include susy-media(desktopSuperwide) {
-    max-width: calc(100vw - 767px);
-    width: 100%;
-    margin-top: 35px;
+    width: 1120px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    // max-width: calc(100vw - 767px);
+    // width: 100%;
+    // margin-top: 35px;
   }
 }

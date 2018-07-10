@@ -30,6 +30,10 @@
       min-width: 600px;
     }
 
+    @include susy-media(desktopSuperwide) {
+      left: 1px;
+    }
+
     h2 {
       @include susy-media(mobileOnly) {
         position: absolute;
@@ -98,6 +102,10 @@
     }
 
     @include susy-media(desktopSuperwide) {
+      max-width: 524px;
+    }
+
+    @media(min-height:1080px) and (min-width: 1600px) {
       max-width: 554px;
     }
   }

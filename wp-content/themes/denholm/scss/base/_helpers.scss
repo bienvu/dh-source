@@ -191,11 +191,11 @@
   position: absolute;
   top: 15px;
   line-height: 1.05;
-  left: 150px;
+  left: 120px;
   z-index: 99;
 
-  &.bg-active {
-    background: none;
+  @include susy-media(desktop) {
+    left: 150px;
   }
 
   @include susy-media(desktopSuperwide) {
@@ -203,6 +203,10 @@
     top: 44px;
     font-size: 46px;
     line-height: 1;
+  }
+
+  &.bg-active {
+    background: none;
   }
 
   &:hover {

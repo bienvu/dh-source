@@ -452,7 +452,11 @@
         content: '';
         z-index: 9;
 
-        @include susy-media(desktopSuperwide) {
+        @include susy-media(mobileOnly) {
+          display: none;
+        }
+
+        @include susy-media(tablet) {
           right: -57px;
         }
 
@@ -460,8 +464,12 @@
           right: -45px;
         }
 
-        @include susy-media(mobileOnly) {
-          display: none;
+        @include susy-media(desktopSuperwide) {
+          right: -57px;
+        }
+
+        @include susy-media(2000px) {
+          right: -83px;
         }
       }
     }
