@@ -19,7 +19,7 @@
     @include susy-media(mobileOnly) {
       width: 100%;
 
-      .back-link  {
+      .link-group {
         display: none;
       }
     }
@@ -50,7 +50,7 @@
       width: 41%;
       order: 2;
 
-      .link-group  {
+      .link-group {
         display: none;
       }
     }
@@ -208,6 +208,7 @@
   justify-content: space-between;
   margin-bottom: 30px;
   width: 100%;
+  font-size: 16.67px;
 
   @include susy-media(desktopSuperwide) {
     font-size: 20px;
