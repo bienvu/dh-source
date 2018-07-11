@@ -1,13 +1,14 @@
-{% extends 'layout.twig' %}
-
-{% block page_transition %}
-  {% set site_logo  = 'denHolm' %}
-  {% set site_class = 'denholm-logo' %}
-  {% set site_data  = 'denholm' %}
-
-  <div class="page-transition__logo"><a href="#" class="js-change-page js-logo is-active {{ site_class }}" data-page-name="{{ site_data }}" data-page-trans="slide-in-from-bottom">{{ site_logo }}</a></div>
-{% endblock %}
+{% extends 'layout-single.twig' %}
 
 {% block transition_content %}
-  {{context}}
+  <div class="main-content">
+    <div class="content-inner">
+    <p>We couldn't find the page you were looking for. This is either because:</p>
+    <ul>
+    <li>There is an error in the URL entered into your web browser. Please check the URL and try again.</li>
+    <li>The page you are looking for has been moved or deleted.</li>
+    </ul>
+    <p>You can return to our homepage by <a href="/">clicking here</a></a></p>
+    </div>
+  </div>
 {% endblock %}

@@ -29,7 +29,7 @@
           $('body, html').addClass('overflow-hidden');
           $('.page-transition__item.object-specific').addClass('jquery-page-active').removeClass('jquery-page-disabled');
           $('.page-transition__item.objects').addClass('jquery-page-disabled').removeClass('jquery-page-active');
-          $('.js-logo, .js-change-page').click(function() {
+          $('.js-logo, .page-transition__logo .js-change-page').click(function() {
             $("body").addClass('is-home');
           });
           $('.js-logo.denholm-logo, .denholm-loaded .js-change-page').click(function() {
