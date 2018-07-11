@@ -134,6 +134,10 @@
       document.getElementById('videoSjc').play();
     }
 
+    if($('.page-id-83').length || $('.page-id-89').length) {
+      $('html').addClass('mobile-overflow');
+    }
+
     // Products Detail
     $('.box-product__item .load-product').on('click', ajaxProductDetail);
     $('.js-load-page').on('click', ajaxPageLoad);

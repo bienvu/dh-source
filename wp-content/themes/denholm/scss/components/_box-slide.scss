@@ -112,6 +112,14 @@
         height: auto;
       }
 
+      @include susy-media(desktopWide) {
+        max-height: 450px;
+      }
+
+      @media(min-height:768px) and (min-width: 1280px) {
+        max-height: 495px;
+      }
+
       @include susy-media(desktopSuperwide) {
         height: 640px;
         max-height: inherit;
@@ -135,14 +143,17 @@
         width: auto;
       }
 
+      @include susy-media(desktopWide) {
+        max-height: 450px;
+      }
+
+      @media(min-height:768px) and (min-width: 1280px) {
+        max-height: 495px;
+      }
+
       @include susy-media(desktopSuperwide) {
         max-height: calc(100vh - 373px);
       }
-
-      // @include susy-media(desktopSuperwide) {
-      //   max-height: inherit;
-      //   max-width: 322px;
-      // }
     }
 
     .box-info {
@@ -160,6 +171,10 @@
       }
 
       @include susy-media(desktopWide) {
+        left: -220px;
+      }
+
+      @media(min-height:768px) and (min-width: 1280px) {
         left: -273px;
       }
 

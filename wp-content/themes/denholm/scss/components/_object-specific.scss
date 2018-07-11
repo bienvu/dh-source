@@ -208,7 +208,11 @@
   justify-content: space-between;
   margin-bottom: 30px;
   width: 100%;
-  font-size: 16.67px;
+  font-size: 15px;
+
+  @include susy-media(tablet) {
+    font-size: 16.67px;
+  }
 
   @include susy-media(desktopSuperwide) {
     font-size: 20px;
@@ -217,7 +221,8 @@
 }
 
 .woocommerce {
-  .coupon {
-    display: none;
+  a.button,
+  button.button {
+    @extend %btn;
   }
 }

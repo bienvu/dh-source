@@ -32,4 +32,9 @@
     border-color: $btn-color-hover;
     color: $text-color;
   }
+
+  &:disabled[disabled],
+  &:disabled[disabled]:hover {
+    background-color: $btn-color-hover;
+  }
 }

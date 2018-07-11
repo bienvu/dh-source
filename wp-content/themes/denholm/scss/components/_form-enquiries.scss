@@ -27,7 +27,11 @@
     margin-bottom: 50px;
   }
 
-  @include susy-media(desktop) {
+  @include susy-media(desktopWide) {
+    margin-bottom: 40px;
+  }
+
+  @media(min-height:768px) and (min-width: 1280px) {
     margin-bottom: 75px;
   }
 }

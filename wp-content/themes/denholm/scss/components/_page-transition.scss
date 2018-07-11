@@ -709,7 +709,7 @@
     max-height: calc(100% - 150px);
 
     @include susy-media(tablet) {
-      margin-top: 30px;
+      margin-top: 50px;
     }
 
     @include susy-media(desktopSuperwide) {
@@ -814,15 +814,21 @@
 
 .objects {
   .content-inner {
-    @include susy-media(desktop) {
+    @include susy-media(desktopWide) {
+      margin-top: 20px;
+      height: 500px;
+      overflow: hidden;
+      width: 610px;
+    }
+
+    @media(min-height:768px) and (min-width: 1280px) {
       margin-top: 20px;
       height: 560px;
-      overflow: auto;
+      width: 670px;
     }
 
     @include susy-media(desktopSuperwide) {
       height: 650px;
-      overflow: hidden;
       width: 930px;
       align-items: flex-start;
     }
@@ -833,9 +839,24 @@
       height: 805px;
     }
 
+    @include susy-media(mobileOnly) {
+      padding-top: 15px;
+      padding-bottom: 20px;
+    }
+
     .box-product {
+      @include susy-media(desktopWide) {
+        height: 480px;
+        overflow: auto;
+      }
+
+      @media(min-height:768px) and (min-width: 1280px) {
+        height: 540px;
+        overflow: auto;
+      }
+
       @include susy-media(desktopSuperwide) {
-        height: 625px;
+        height: 642px;
         overflow: auto;
       }
 
@@ -889,8 +910,20 @@
   }
 
   @include susy-media(mobileOnly) {
+    padding-top: 15px;
+    padding-bottom: 20px;
+
     .object-specific {
       min-height: 700px;
+      margin-bottom: 0;
     }
+  }
+} 
+
+.mobile-overflow {
+  @include susy-media(mobileOnly) {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
   }
 }
