@@ -911,14 +911,13 @@
 
   @include susy-media(mobileOnly) {
     padding-top: 15px;
-    padding-bottom: 20px;
 
     .object-specific {
       min-height: 700px;
       margin-bottom: 0;
     }
   }
-} 
+}
 
 .mobile-overflow {
   @include susy-media(mobileOnly) {
