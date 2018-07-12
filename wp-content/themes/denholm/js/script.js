@@ -19,9 +19,11 @@
         data : {action: "productdetail", productID: product_id, currentPath: current_path},
         beforeSend: function() {
           $('.object-specific .content-inner').remove();
+          $("body").addClass('loading-overlay');
         },
         success: function(response) {
           $('.object-specific').append(response);
+          $("body").removeClass('loading-overlay');
           history.pushState({}, null, slug);
           $('window').sliderFunction();
           $(".js-slide").slick("refresh");

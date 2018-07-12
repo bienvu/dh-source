@@ -13,12 +13,9 @@
         <a href="/cart">View Cart</a>
       </div>
       <div class="object-specific__slide js-slide">
-        {# <div class="object-specific__item">
-          <img src="{{ post.thumbnail.src('shop_single') }}">
-        </div> #}
         {% for image in product.get_gallery_attachment_ids %}
           <div class="object-specific__item">
-            <img src="{{ fn('wp_get_attachment_url', image) }}">
+            <img src="{{ fn('wp_get_attachment_url', image) }}" width="447" height="595" alt="{{ post.title }}">
           </div>
         {% endfor %}
       </div>
