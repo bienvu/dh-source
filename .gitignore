@@ -12,3 +12,6 @@ backups
 /wp-content/updraft
 /wp-content/uploads
 wp-content/uploads
+wp-content/plugins/contact-form-7-extras/
+wp-content/plugins/contact-form-cfdb7/
+wp-content/plugins/woocommerce-multilingual/
