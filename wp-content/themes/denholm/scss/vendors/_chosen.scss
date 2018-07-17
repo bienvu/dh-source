@@ -2,7 +2,6 @@
 
 .chosen-container {
   display: inline-block;
-  font-size: rem(13px);
   position: relative;
   user-select: none;
   vertical-align: middle;
@@ -14,14 +13,14 @@
 
   .chosen-drop {
     background: $white;
-    border: 1px solid $grey;
-    border-top: 0;
+    border: 2px solid #e0b8b7;
     box-sizing: border-box;
     left: -9999em;
     position: absolute;
     top: 100%;
     width: 100%;
     z-index: 1010;
+    margin-top: -2px;
   }
 
   &.chosen-with-drop .chosen-drop {
@@ -60,7 +59,7 @@
     }
 
     &.disabled-result {
-      color: $dark-grey;
+      color: $black;
       cursor: default;
       display: list-item;
     }
@@ -92,21 +91,26 @@
 }
 
 .chosen-single {
-  padding: rem(0 0 0 8px);
-  line-height: rem(35px);
+  padding: 13px;
   background-color: $white;
-  border: 1px solid $border;
   color: $grey;
   position: relative;
   text-decoration: none;
   white-space: nowrap;
+  display: block;
+  border-bottom: 2px solid #000;
+  height: 49px;
+  background-image: url('../images/icon-down.png');
+  background-position: calc(100% - 25px) 50%;
+  background-repeat: no-repeat;
+  background-size: 8px 7px;
 
   &:hover {
     //@extend .reset_hover;
   }
 
   &:active {
-    color: $grey-6 !important;
+    // color: $grey-6 !important;
   }
 
   div {
@@ -119,8 +123,8 @@
   }
 
   b {
-    @extend %icons;
-    @extend .icon-arrow-down;
+    // @extend %icons;
+    // @extend .icon-arrow-down;
     display: block;
     height: 100%;
     width: 100%;
@@ -144,7 +148,7 @@
 }
 
 .chosen-default {
-  color: $dark-grey;
+  color: $black;
 }
 
 .chosen-single-with-deselect span {
@@ -172,8 +176,8 @@
 
 .chosen-container-active {
   .chosen-single {
-    border-color: $blue;
-    box-shadow: 0 4px 4px -2px rgba($black, .25) inset;
+    // border-color: $blue;
+    // box-shadow: 0 4px 4px -2px rgba($black, .25) inset;
   }
 
   &.chosen-with-drop .chosen-single {
@@ -190,8 +194,8 @@
   }
 
   .chosen-choices {
-    border: 1px solid $grey;
-    box-shadow: 0 0 rem(5px) rgba($black, .3);
+    border: 2px solid #e0b8b7;
+    box-shadow: none;
 
     .search-field {
       input {

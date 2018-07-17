@@ -127,6 +127,10 @@
     $('window').pagesTransition();
     $('window').sliderFunction();
     $('window').swipeText();
+    // $('window').selectDropdown();
+    $("select").chosen({
+      "disable_search": true
+    });
 
     $('.js-logo').click(function() {
       $("body").addClass('is-home');
@@ -143,6 +147,8 @@
     // Products Detail
     $('.box-product__item .load-product').on('click', ajaxProductDetail);
     $('.js-load-page').on('click', ajaxPageLoad);
+
+    // Select js
 
   });
 
