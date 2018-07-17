@@ -34,7 +34,15 @@
 .sp-headline.slide .sp-words-wrapper {
   overflow: hidden;
   vertical-align: bottom;
-  min-width: 276px;
+  min-width: 144px;
+
+  @include susy-media(desktop) {
+    min-width: 203px;
+  }
+
+  @include susy-media(desktopSuperwide) {
+    min-width: 276px;
+  }
 }
 
 .sp-headline.slide b {
