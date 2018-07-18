@@ -34,6 +34,9 @@
           $('.js-logo, .page-transition__logo .js-change-page').click(function() {
             $("body").addClass('is-home');
           });
+          $("select").chosen({
+            "disable_search": true
+          });
           $('.js-logo.denholm-logo, .denholm-loaded .js-change-page').click(function() {
             history.pushState({}, null, "/denholm");
           });
@@ -87,6 +90,9 @@
           $('.js-logo').click(function() {
             $("body").addClass('is-home');
           });
+          $("select").chosen({
+            "disable_search": true
+          });
           $('.back-to-home').click(function() {
             if($widthWd > 767) {
               $.fn.multiscroll.moveTo(1);
@@ -127,7 +133,6 @@
     $('window').pagesTransition();
     $('window').sliderFunction();
     $('window').swipeText();
-    // $('window').selectDropdown();
     $("select").chosen({
       "disable_search": true
     });
@@ -147,9 +152,6 @@
     // Products Detail
     $('.box-product__item .load-product').on('click', ajaxProductDetail);
     $('.js-load-page').on('click', ajaxPageLoad);
-
-    // Select js
-
   });
 
 }(this, this.document, this.jQuery));
