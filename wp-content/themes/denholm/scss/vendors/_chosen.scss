@@ -21,6 +21,7 @@
     width: 100%;
     z-index: 1010;
     margin-top: -2px;
+    overflow: hidden;
   }
 
   &.chosen-with-drop .chosen-drop {
@@ -40,6 +41,8 @@
   overflow-y: auto;
   padding: rem(0 0 0 2px);
   position: relative;
+  width: calc(100% + 20px);
+  padding-right: 20px;
 
   li {
     padding: rem(5px 6px);
@@ -212,5 +215,104 @@
   .chosen-single,
   .chosen-choices .search-choice .search-choice-close {
     cursor: default;
+  }
+}
+
+//
+.select2-search {
+  display: none;
+}
+
+.select2-results {
+  background: #fff;
+  border: 2px solid #e0b8b7;
+  margin-top: -2px;
+  overflow: hidden;
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+
+
+  width: calc(100% + 20px);
+  padding-right: 20px;
+
+  li {
+    background: none;
+    color: $grey;
+  }
+}
+
+.select2-container--default .select2-selection--single {
+  background-color: $white;
+  background-image: url('../images/icon-down.png');
+  background-position: calc(100% - 15px) 50%;
+  background-repeat: no-repeat;
+  background-size: 8px 7px;
+  border: 0;
+  border-bottom: 2px solid $text-color;
+  font-size: 12px;
+  padding: 5px 8px;
+  height: 33px;
+  margin-bottom: rem(10px);
+  background-color: $white;
+  border-radius: 0;
+  width: 100%;
+  margin: 0;
+  color: #241F20;
+
+  @include susy-media(desktopSuperwide) {
+    font-size: 16.67px;
+    padding: 13px;
+    height: auto;
+  }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  display: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding: 0;
+}
+
+.woocommerce .woocommerce-shipping-calculator button.button {
+  margin-top: 30px;
+}
+
+.woocommerce .woocommerce-shipping-calculator .form-row {
+  padding: 0;
+  margin: 0;
+
+  &:last-child {
+    margin-bottom: 30px;
+  }
+}
+
+.select2-results__option {
+  padding: 4px 6px;
+}
+
+.select2-dropdown {
+  border: 0;
+}
+
+.woocommerce form .form-row label.checkbox, .woocommerce-page form .form-row label.checkbox {
+  display: none;
+}
+.woocommerce-checkout #payment {
+  background: none;
+  border-radius: 0;
+
+  div.payment_box {
+    border-radius: 0;
+  }
+
+  ul.payment_methods {
+    padding: 0;
+    border: 0;
+  }
+  
+  div.form-row {
+    padding: 0;
   }
 }

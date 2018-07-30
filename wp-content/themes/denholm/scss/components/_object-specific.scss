@@ -114,28 +114,30 @@
       font-weight: 400;
 
       & + a {
-        @include susy-media(tablet) {
-          margin-left: 10px;
-          position: absolute;
-          right: -60px;
-          top: 50%;
-          margin-top: -12px;
-        }
-
-        @include susy-media(mobileOnly) {
-          margin-left: 0;
-          position: absolute;
-          left: 50%;
-          bottom: -20px;
-          margin-top: 0;
-          width: 100%;
-          transform: translate(-50%, 0);
-        }
-
-        @include susy-media(desktopSuperwide) {
-          right: -85px;
-          margin-top: -18px;
-        }
+        display: none;
+        //
+        // @include susy-media(tablet) {
+        //   margin-left: 10px;
+        //   position: absolute;
+        //   right: -60px;
+        //   top: 50%;
+        //   margin-top: -12px;
+        // }
+        //
+        // @include susy-media(mobileOnly) {
+        //   margin-left: 0;
+        //   position: absolute;
+        //   left: 50%;
+        //   bottom: -20px;
+        //   margin-top: 0;
+        //   width: 100%;
+        //   transform: translate(-50%, 0);
+        // }
+        //
+        // @include susy-media(desktopSuperwide) {
+        //   right: -85px;
+        //   margin-top: -18px;
+        // }
       }
     }
 
@@ -194,7 +196,7 @@
     }
 
     @include susy-media(desktopSuperwide) {
-      font-size: 25px;
+      font-size: 23px;
     }
   }
 
@@ -215,7 +217,7 @@
   }
 
   @include susy-media(desktopSuperwide) {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 42px;
   }
 }

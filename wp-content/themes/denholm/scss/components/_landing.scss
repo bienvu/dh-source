@@ -71,10 +71,18 @@
     }
   }
 
+  .with-image:hover {
+    video {
+      opacity: .7;
+      transition: .3s;
+    }
+  }
+
   .video-wrap {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
 
     video {
       height: 105%;
@@ -82,6 +90,7 @@
       position: relative;
       left: -3px;
       top: -33px;
+      transition: .3s;
     }
   }
 }
@@ -440,37 +449,21 @@
       }
 
       &:before {
-        background-image: url('../images/redline-vertical.png');
+        background-image: url('../images/diving-line.svg');
         background-size: auto 100%;
-        background-position: top right;
+        background-position: top center;
         background-repeat: no-repeat;
         position: absolute;
-        right: -40px;
+        right: -122px;
         top: 0;
         bottom: 0;
-        width: 100%;
+        width: 300px;
         height: 250%;
         content: '';
         z-index: 9;
 
         @include susy-media(mobileOnly) {
           display: none;
-        }
-
-        @include susy-media(tablet) {
-          right: -57px;
-        }
-
-        @include susy-media(desktop) {
-          right: -45px;
-        }
-
-        @include susy-media(desktopSuperwide) {
-          right: -57px;
-        }
-
-        @include susy-media(2000px) {
-          right: -83px;
         }
       }
     }

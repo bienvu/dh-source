@@ -63,13 +63,7 @@
     position: relative;
     display: inline-block;
     text-align: left;
-    // font-size: 53.5px;
-
-
-    // @include susy-media(desktopSuperwide) {
-    //   font-size: 88.31px;
-    // }
-
+    
     &:before {
       position: absolute;
       border-bottom: 7px solid $white;
@@ -232,18 +226,27 @@
 }
 
 .denholm {
-  background: url('../images/bg-red-line.png') no-repeat scroll center center #fff;
-  background-size: 85% auto;
+  background-image:
+    url('../images/home-long-line.svg'),
+    url('../images/home-line.svg');
+  background-position:
+    center center, calc(100% - 300px) 160px;
+  background-repeat:
+    no-repeat; /* this applies to both images */
+  background-size:
+   auto 68%, 70px auto
 }
 
 .what {
-  background: url('../images/bg-what-mobile.png') no-repeat scroll 50% 70% #fff;
-  background-size: auto 60%;
-
-  @include susy-media(tablet) {
-    background: url('../images/bg-red-line2.png') no-repeat scroll 25% bottom #fff;
-    background-size: auto 80%;
-  }
+  background-image:
+    url('../images/what-long-line.svg'),
+    url('../images/what-line.svg');
+  background-position:
+    150px bottom, calc(100% - 400px) 170px;
+  background-repeat:
+    no-repeat; /* this applies to both images */
+  background-size:
+   auto 80%, 100px auto;
 }
 
 .red-button {

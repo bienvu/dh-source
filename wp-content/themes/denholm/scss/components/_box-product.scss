@@ -143,6 +143,20 @@
 
   @include susy-media(desktopSuperwide) {
     margin-bottom: 27px;
-    font-size: 21px;
+    font-size: 18px;
   }
+}
+
+.woocommerce table.shop_table {
+  border-radius: 0;
+}
+.woocommerce-message {
+  border-top-color: $pink;
+  background: none;
+}
+.woocommerce-message::before {
+  color: $pink;
+}
+.woocommerce-NoticeGroup-checkout {
+  display: none;
 }

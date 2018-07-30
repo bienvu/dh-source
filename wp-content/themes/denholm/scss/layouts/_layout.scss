@@ -78,7 +78,7 @@ body {
 
 hr {
   border: 0;
-  background: url('../images/red-line.png') no-repeat scroll 0 0 transparent;
+  background: url('../images/bio-line.svg') no-repeat scroll 0 0 transparent;
   width: 100%;
   height: 45px;
   background-size: 100% auto;
@@ -168,4 +168,8 @@ hr {
 
 .wrapper {
   width: 100%;
+}
+
+.woocommerce-page {
+  overflow: auto;
 }

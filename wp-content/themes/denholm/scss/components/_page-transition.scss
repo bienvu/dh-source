@@ -403,7 +403,7 @@
     }
 
     @include susy-media(desktopSuperwide) {
-      bottom: 40px;
+      bottom: 60px;
     }
 
     &__inner {
@@ -441,7 +441,7 @@
       &:before {
         position: absolute;
         content: '';
-        background: url('../images/line.png') no-repeat scroll 0 0 transparent;
+        background: url('../images/footer-line.svg') no-repeat scroll 0 0 transparent;
         left: -18px;
         bottom: -12px;
         width: 21px;
@@ -704,17 +704,29 @@
 
 .main-content {
   .content-inner {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    max-height: calc(100% - 150px);
-
-    @include susy-media(tablet) {
-      margin-top: 50px;
-    }
-
-    @include susy-media(desktopSuperwide) {
-      height: 900px;
-    }
+    height: auto;
+    max-height: inherit;
+    margin-top: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    margin: 0 auto;
+    padding-top: 120px;
+    // overflow-y: scroll;
+    // -webkit-overflow-scrolling: touch;
+    // max-height: calc(100% - 150px);
+    //
+    // @include susy-media(tablet) {
+    //   margin-top: 50px;
+    // }
+    //
+    // @include susy-media(desktopSuperwide) {
+    //   // height: 900px;
+    //   height: auto;
+    //   max-height: inherit;
+    //   margin-top: 0;
+    // }
   }
 
   .wc-proceed-to-checkout {
@@ -815,14 +827,14 @@
 .objects {
   .content-inner {
     @include susy-media(desktopWide) {
-      margin-top: 20px;
+      margin-top: 12px;
       height: 500px;
       overflow: hidden;
       width: 610px;
     }
 
     @media(min-height:768px) and (min-width: 1280px) {
-      margin-top: 20px;
+      margin-top: 12px;
       height: 560px;
       width: 670px;
     }
