@@ -396,7 +396,7 @@
 
     @include susy-media(tablet) {
       position: fixed;
-      bottom: 25px;
+      bottom: 40px;
       right: 0;
       left: 0;
       z-index: 99;
@@ -686,6 +686,7 @@
   @include susy-media(desktop) {
     padding: 0;
     max-width: 670px;
+    height: 450px;
   }
 
   @include susy-media(desktopSuperwide) {
@@ -828,6 +829,14 @@
 
 .objects {
   .content-inner {
+    @include susy-media(table) {
+      height: auto;
+    }
+
+    @include susy-media(desktop) {
+      height: calc(100vh - 230px);
+    }
+
     @include susy-media(desktopWide) {
       margin-top: 12px;
       height: 500px;
@@ -913,14 +922,14 @@
 
 .object-specific .content-inner {
   @include susy-media(tablet) {
-    margin-top: 30px;
+    margin-top: 25px;
   }
 
   @include susy-media(desktopSuperwide) {
     width: 1120px;
     display: flex;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   @include susy-media(mobileOnly) {

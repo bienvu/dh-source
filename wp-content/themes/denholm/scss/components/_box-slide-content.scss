@@ -7,7 +7,7 @@
   }
 
   @include susy-media(tablet) {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   @include susy-media(desktop) {
@@ -55,7 +55,7 @@
       }
 
       @include susy-media(desktop) {
-        left: 81px;
+        left: 132px;
       }
 
       @include susy-media(desktopSuperwide) {
@@ -98,7 +98,7 @@
     height: auto;
 
     @include susy-media(tablet) {
-      max-width: 340px;
+      max-width: 365px;
     }
 
     @include susy-media(desktopSuperwide) {

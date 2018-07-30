@@ -150,11 +150,15 @@
 .woocommerce table.shop_table {
   border-radius: 0;
 }
-.woocommerce-message {
+
+.woocommerce-message,
+.woocommerce-info {
   border-top-color: $pink;
   background: none;
 }
-.woocommerce-message::before {
+
+.woocommerce-message::before,
+.woocommerce-info::before {
   color: $pink;
 }
 .woocommerce-NoticeGroup-checkout {

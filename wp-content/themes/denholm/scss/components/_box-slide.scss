@@ -102,8 +102,8 @@
       display: inline-block !important;
 
       @include susy-media(tablet) {
-        max-height: 495px;
-        height: 100%;
+        // max-height: 495px;
+        height: 450px;
         width: auto;
       }
 
@@ -116,9 +116,9 @@
         max-height: 450px;
       }
 
-      @media(min-height:768px) and (min-width: 1280px) {
-        max-height: 495px;
-      }
+      // @media(min-height:768px) and (min-width: 1280px) {
+      //   max-height: 495px;
+      // }
 
       @include susy-media(desktopSuperwide) {
         height: 640px;
@@ -138,9 +138,9 @@
 
     img {
       max-height: calc(100vh - 100px);
-      
+
       @include susy-media(tablet) {
-        max-height:  calc(100% - 60px);
+        max-height:  450px;
         height: 100%;
         width: auto;
       }
