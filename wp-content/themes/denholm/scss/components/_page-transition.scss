@@ -805,7 +805,7 @@
   .main-content {
     .content-inner {
       @include susy-media(mobileOnly) {
-        padding-top: 60px;
+        padding-top: 90px;
         height: auto;
         max-height: inherit;
       }

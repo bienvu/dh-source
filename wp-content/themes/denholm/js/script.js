@@ -84,6 +84,7 @@
           $('window').pagesTransition();
           $('window').sliderFunction();
           $('window').showHideFunction();
+          $('window').autoLoadTime();
           $('.page-transition').addClass(page_name).removeClass(start_load);
           $('body').addClass('is-home overflow-hidden');
           $('html').addClass('overflow-hidden');
@@ -133,6 +134,7 @@
     $('window').pagesTransition();
     $('window').sliderFunction();
     $('window').swipeText();
+    $('window').autoLoadTime();
     $("select").chosen({
       "disable_search": true
     });

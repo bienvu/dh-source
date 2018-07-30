@@ -273,18 +273,19 @@
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   padding: 0;
+  text-align: left;
 }
 
 .woocommerce .woocommerce-shipping-calculator button.button {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .woocommerce .woocommerce-shipping-calculator .form-row {
   padding: 0;
-  margin: 0;
+  margin: 0 0 10px;
 
   &:last-child {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 
@@ -311,7 +312,7 @@
     padding: 0;
     border: 0;
   }
-  
+
   div.form-row {
     padding: 0;
   }

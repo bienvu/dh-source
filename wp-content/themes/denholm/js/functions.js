@@ -163,6 +163,13 @@
      });
    }
 
+   // Auto reload time.
+   $.fn.autoLoadTime = function() {
+    setInterval(function(){
+      $(".get-time").load("../gettime.php");
+    }, 1000);
+   }
+
    // Swipe text
    $.fn.swipeText = function() {
      var animationDelay = 2500,
