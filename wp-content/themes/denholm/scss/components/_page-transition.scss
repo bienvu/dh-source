@@ -64,7 +64,7 @@
       }
 
       @include susy-media(desktopSuperwide) {
-        top: 74px;
+        top: 65px;
       }
 
       span:before {
@@ -693,6 +693,7 @@
     margin-top: 0;
     width: 960px;
     height: 640px;
+    // height: 587px;
   }
 
   @media(min-height:1000px) and (min-width: 1600px) {
