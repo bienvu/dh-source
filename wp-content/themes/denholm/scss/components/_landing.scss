@@ -463,29 +463,29 @@
         background-position: top center;
         background-repeat: no-repeat;
         position: absolute;
-        right: -122px;
+        right: calc(-50% + 28px);
         top: 0;
         bottom: 0;
-        width: 300px;
+        width: 100%;
         height: 250%;
         content: '';
         z-index: 9;
 
-        // @include susy-media(2000px) {
-        //   width: 900px;
-        //   right: -375px;
-        // }
+        @media only screen and (min-width: 1024px) {
+          right: calc(-50% + 23px);
+        }
+
+        @media only screen and (min-width: 1600px) {
+          right: calc(-50% + 30px);
+        }
 
         @media only screen and (min-width: 1600px) and (min-height: 2500px) {
-          width: 900px;
-          right: -375px;
+          right: calc(-50% + 70px);
         }
-
+        
         @include susy-media(2000px) {
-          width: 900px;
-          right: -404px;
+          right: calc(-50% + 50px);
         }
-
 
         @include susy-media(mobileOnly) {
           display: none;
