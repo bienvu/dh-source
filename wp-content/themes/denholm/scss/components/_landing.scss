@@ -472,7 +472,7 @@
         z-index: 9;
 
         @media only screen and (min-width: 1024px) {
-          right: calc(-50% + 23px);
+          right: calc(-50% + 21px);
         }
 
         @media only screen and (min-width: 1600px) {
@@ -482,7 +482,7 @@
         @media only screen and (min-width: 1600px) and (min-height: 2500px) {
           right: calc(-50% + 70px);
         }
-        
+
         @include susy-media(2000px) {
           right: calc(-50% + 50px);
         }
