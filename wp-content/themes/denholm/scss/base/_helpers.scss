@@ -63,7 +63,7 @@
     position: relative;
     display: inline-block;
     text-align: left;
-    
+
     &:before {
       position: absolute;
       border-bottom: 7px solid $white;
@@ -95,7 +95,7 @@
     // font-size: 52.25px;
     color: $white;
     text-align: right;
-    line-height: 1;
+    line-height: 1.05;
 
     &:before {
       position: absolute;
