@@ -82,3 +82,16 @@ function create_time_by_locate($attrs) {
   ob_end_clean();
   return $content;
 }
+
+add_shortcode( 'time_refresh', 'refresh_time' );
+function refresh_time() {
+  ?>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      setInterval(function(){
+        do_shortcode( '[time_by_locate]' );
+      }, 2000);
+    });
+  </script>
+  <?php
+}

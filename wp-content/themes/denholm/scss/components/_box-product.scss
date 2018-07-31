@@ -11,6 +11,12 @@
     flex-wrap: wrap;
   }
 
+  &__inner {
+    min-width: calc(100% + 20px);
+    padding-right: 20px;
+    overflow-y: auto;
+  }
+
   .products {
     margin-bottom: 0;
   }

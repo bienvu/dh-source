@@ -94,7 +94,7 @@
 }
 
 .chosen-single {
-  padding: 13px;
+  padding: 8px;
   background-color: $white;
   color: $grey;
   position: relative;
@@ -102,7 +102,6 @@
   white-space: nowrap;
   display: block;
   border-bottom: 2px solid #000;
-  height: 49px;
   background-image: url('../images/icon-down.png');
   background-position: calc(100% - 25px) 50%;
   background-repeat: no-repeat;

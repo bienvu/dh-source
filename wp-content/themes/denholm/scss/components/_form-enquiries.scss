@@ -24,7 +24,7 @@
   font-weight: 700;
 
   @include susy-media(tablet) {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   @include susy-media(desktopWide) {
