@@ -127,6 +127,12 @@
       return false;
     }
 
+  // Read Time
+  function myTimer() {
+    var d = new Date();
+    $('.js-realtime').empty().append(d.toLocaleTimeString());
+  }
+
   $(document).ready(function() {
     $('window').showHideFunction();
     $('window').scrollPagge();
@@ -152,6 +158,7 @@
     // Products Detail
     $('.box-product__item .load-product').on('click', ajaxProductDetail);
     $('.js-load-page').on('click', ajaxPageLoad);
+    setInterval(myTimer, 1000);
   });
 
 }(this, this.document, this.jQuery));
